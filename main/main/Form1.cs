@@ -50,5 +50,11 @@ namespace main
         {
             this.btncerrar.Image = ((System.Drawing.Image)(Properties.Resources.cerrar1));
         }
+
+        private void btnregistro_Click(object sender, EventArgs e)
+        {
+            Registro reg = new Registro();
+            reg.ShowDialog();
+        }
     }
 }

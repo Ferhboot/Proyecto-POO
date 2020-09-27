@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.btncuenta = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btninvitado = new System.Windows.Forms.Button();
             this.btnregistro = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btncuenta
             // 
             this.btncuenta.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.btncuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncuenta.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncuenta.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold);
             this.btncuenta.Location = new System.Drawing.Point(271, 286);
             this.btncuenta.Name = "btncuenta";
             this.btncuenta.Size = new System.Drawing.Size(105, 66);
@@ -50,21 +50,11 @@
             this.btncuenta.Text = "Ingresar con mi cuenta";
             this.btncuenta.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(102, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(440, 240);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // btninvitado
             // 
             this.btninvitado.BackColor = System.Drawing.Color.Red;
             this.btninvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btninvitado.Font = new System.Drawing.Font("Century", 11.25F);
+            this.btninvitado.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold);
             this.btninvitado.Location = new System.Drawing.Point(463, 286);
             this.btninvitado.Name = "btninvitado";
             this.btninvitado.Size = new System.Drawing.Size(105, 66);
@@ -76,13 +66,14 @@
             // 
             this.btnregistro.BackColor = System.Drawing.Color.Yellow;
             this.btnregistro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnregistro.Font = new System.Drawing.Font("Century", 11.25F);
+            this.btnregistro.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregistro.Location = new System.Drawing.Point(72, 286);
             this.btnregistro.Name = "btnregistro";
-            this.btnregistro.Size = new System.Drawing.Size(105, 66);
+            this.btnregistro.Size = new System.Drawing.Size(116, 66);
             this.btnregistro.TabIndex = 7;
             this.btnregistro.Text = "Registrarme";
             this.btnregistro.UseVisualStyleBackColor = false;
+            this.btnregistro.Click += new System.EventHandler(this.btnregistro_Click);
             // 
             // btncerrar
             // 
@@ -96,6 +87,16 @@
             this.btncerrar.Click += new System.EventHandler(this.pictureBox2_Click);
             this.btncerrar.MouseEnter += new System.EventHandler(this.btncerrar_MouseEnter);
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(102, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(440, 240);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // Home
             // 
@@ -116,8 +117,8 @@
             this.Text = "E-Market";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Home_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

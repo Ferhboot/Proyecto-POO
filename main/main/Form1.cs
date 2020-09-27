@@ -56,5 +56,18 @@ namespace main
             Registro reg = new Registro();
             reg.ShowDialog();
         }
+
+        private void btncuenta_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.ShowDialog();
+        }
+
+        private void btninvitado_Click(object sender, EventArgs e)
+        {
+            Main principal = new Main(0);
+            principal.Show();
+            this.Hide();
+        }
     }
 }

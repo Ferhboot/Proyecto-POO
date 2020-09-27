@@ -49,6 +49,7 @@
             this.btncuenta.TabIndex = 0;
             this.btncuenta.Text = "Ingresar con mi cuenta";
             this.btncuenta.UseVisualStyleBackColor = false;
+            this.btncuenta.Click += new System.EventHandler(this.btncuenta_Click);
             // 
             // btninvitado
             // 
@@ -61,6 +62,7 @@
             this.btninvitado.TabIndex = 6;
             this.btninvitado.Text = "Ingresar como Invitado";
             this.btninvitado.UseVisualStyleBackColor = false;
+            this.btninvitado.Click += new System.EventHandler(this.btninvitado_Click);
             // 
             // btnregistro
             // 

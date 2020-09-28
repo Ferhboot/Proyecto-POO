@@ -28,7 +28,12 @@ namespace main
 
         private void Home_Shown(object sender, EventArgs e)
         {
-            
+            start iniciar = new start();
+            this.Hide();
+            iniciar.Show();
+            Task.Delay(5000).Wait();
+            iniciar.Hide();
+            this.Show();
         }
 
 

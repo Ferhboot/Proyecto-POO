@@ -150,7 +150,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 16);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Cristian ";
+            this.label8.Text = "Cristian Enrique Pineda Muñoz";
             // 
             // label9
             // 

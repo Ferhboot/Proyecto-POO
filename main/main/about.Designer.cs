@@ -139,9 +139,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(151, 302);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.Size = new System.Drawing.Size(142, 13);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Fernando";
+            this.label9.Text = "Fernando Raúl López Torres";
             // 
             // label10
             // 

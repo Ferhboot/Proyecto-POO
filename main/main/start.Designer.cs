@@ -126,9 +126,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(33, 236);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 16);
+            this.label6.Size = new System.Drawing.Size(180, 16);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Fernando";
+            this.label6.Text = "Fernando Raúl López Torres";
             // 
             // label7
             // 

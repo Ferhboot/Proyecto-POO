@@ -37,5 +37,12 @@ namespace main
                 e.Cancel = true;
             }
         }
+
+
+        private void toolStripLabel1_Click_1(object sender, EventArgs e)
+        {
+            about acerca = new about();
+            acerca.ShowDialog();
+        }
     }
 }

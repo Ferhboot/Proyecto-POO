@@ -46,6 +46,8 @@
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtemail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             // txtuser
             // 
             this.txtuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtuser.Location = new System.Drawing.Point(133, 183);
+            this.txtuser.Location = new System.Drawing.Point(133, 182);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(207, 21);
             this.txtuser.TabIndex = 2;
@@ -61,20 +63,20 @@
             // txtpass2
             // 
             this.txtpass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass2.Location = new System.Drawing.Point(133, 261);
+            this.txtpass2.Location = new System.Drawing.Point(133, 296);
             this.txtpass2.Name = "txtpass2";
             this.txtpass2.PasswordChar = '*';
             this.txtpass2.Size = new System.Drawing.Size(207, 21);
-            this.txtpass2.TabIndex = 4;
+            this.txtpass2.TabIndex = 5;
             // 
             // txtpass
             // 
             this.txtpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.Location = new System.Drawing.Point(133, 222);
+            this.txtpass.Location = new System.Drawing.Point(133, 258);
             this.txtpass.Name = "txtpass";
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(207, 21);
-            this.txtpass.TabIndex = 3;
+            this.txtpass.TabIndex = 4;
             // 
             // label1
             // 
@@ -103,7 +105,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(12, 186);
+            this.label3.Location = new System.Drawing.Point(12, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 15);
             this.label3.TabIndex = 6;
@@ -133,7 +135,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(12, 225);
+            this.label5.Location = new System.Drawing.Point(12, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 15);
             this.label5.TabIndex = 9;
@@ -144,7 +146,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(12, 264);
+            this.label6.Location = new System.Drawing.Point(12, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 15);
             this.label6.TabIndex = 10;
@@ -155,7 +157,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(12, 303);
+            this.label7.Location = new System.Drawing.Point(12, 337);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 15);
             this.label7.TabIndex = 11;
@@ -169,19 +171,19 @@
             this.cmbcuenta.Items.AddRange(new object[] {
             "Personal",
             "Empresa"});
-            this.cmbcuenta.Location = new System.Drawing.Point(134, 300);
+            this.cmbcuenta.Location = new System.Drawing.Point(134, 334);
             this.cmbcuenta.Name = "cmbcuenta";
             this.cmbcuenta.Size = new System.Drawing.Size(206, 23);
-            this.cmbcuenta.TabIndex = 5;
+            this.cmbcuenta.TabIndex = 6;
             // 
             // btnregistrar
             // 
             this.btnregistrar.BackColor = System.Drawing.Color.Peru;
             this.btnregistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistrar.Location = new System.Drawing.Point(201, 332);
+            this.btnregistrar.Location = new System.Drawing.Point(201, 380);
             this.btnregistrar.Name = "btnregistrar";
             this.btnregistrar.Size = new System.Drawing.Size(75, 36);
-            this.btnregistrar.TabIndex = 6;
+            this.btnregistrar.TabIndex = 7;
             this.btnregistrar.Text = "Registrar";
             this.btnregistrar.UseVisualStyleBackColor = false;
             this.btnregistrar.Click += new System.EventHandler(this.button1_Click);
@@ -190,10 +192,10 @@
             // 
             this.btnlimpiar.BackColor = System.Drawing.Color.Peru;
             this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiar.Location = new System.Drawing.Point(66, 332);
+            this.btnlimpiar.Location = new System.Drawing.Point(66, 380);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(75, 36);
-            this.btnlimpiar.TabIndex = 7;
+            this.btnlimpiar.TabIndex = 8;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.UseVisualStyleBackColor = false;
             this.btnlimpiar.Click += new System.EventHandler(this.button2_Click);
@@ -212,12 +214,33 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(12, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 15);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Email";
+            // 
+            // txtemail
+            // 
+            this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemail.Location = new System.Drawing.Point(133, 220);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(207, 21);
+            this.txtemail.TabIndex = 3;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(366, 391);
+            this.ClientSize = new System.Drawing.Size(366, 427);
+            this.Controls.Add(this.txtemail);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.btnregistrar);
             this.Controls.Add(this.pictureBox1);
@@ -264,5 +287,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnregistrar;
         private System.Windows.Forms.Button btnlimpiar;
+        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.Label label8;
     }
 }

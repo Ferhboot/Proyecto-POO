@@ -10,8 +10,8 @@ namespace main
 {
     class Conexion
     {
-        //SqlConnection conectar;
-        //SqlCommand cmd;
+        SqlConnection conectar;
+        SqlCommand cmd;
         public SqlConnection conect()
         {
             string cadena;
@@ -25,16 +25,19 @@ namespace main
             return conectar;
         }
 
-        //Este comando será para agregar datos a cualquier tabla
-        public void agregarusuario(string table, string userid,string nombre,string pass, int tipo)
+        //Este comando será para agregar datos a USUARIOS
+        public void agregarusuario(string table, string userid,string nombre,string email,string pass, int tipo)
         {
             conect();
             string com="";
-            com += "insert into " + table +" (userid, nombre, pass, tipocuenta) values ";
-            com += "(@userid, @nombre,@pass,@tipocuenta);";
+            com += "insert into " + table +" (userid, nombre,email, pass, tipocuenta) values ";
+            com += "(@userid, @nombre,@email,@pass,@tipocuenta);";
             SqlCommand cmd = new SqlCommand(com,conect());
             cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
             cmd.Parameters["@userid"].Value = userid;
+
+            cmd.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+            cmd.Parameters["@email"].Value = email;
 
             cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
             cmd.Parameters["@nombre"].Value = nombre;

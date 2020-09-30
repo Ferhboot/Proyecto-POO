@@ -38,6 +38,25 @@ namespace main
             {
                 errorProvider1.SetError(txtpass2, "Las contraseñas no son iguales");
             }
+            else if (cmbcuenta.SelectedIndex == -1) errorProvider1.SetError(cmbcuenta, "Elija un tipo de cuenta");
+            else
+            {
+                try
+                {
+                    int tipo = 0;
+                    Conexion con = new Conexion();
+                    if (cmbcuenta.SelectedIndex == 0) tipo = 1;
+                    if (cmbcuenta.SelectedIndex == 1) tipo = 2;
+                    con.agregarusuario("Usuarios", txtuser.Text, txtnom.Text, txtpass.Text, tipo);
+                    MessageBox.Show("Usuario registrado exitosamente", "E-Market", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show("El nombre de usuario ya está registrado, sus datos son inválidos o sus datos son muy largos");
+                }
+            }
         }
     }
 }

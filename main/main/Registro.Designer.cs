@@ -45,10 +45,14 @@
             this.btnregistrar = new System.Windows.Forms.Button();
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
+            this.lbfuerte = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +81,7 @@
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(207, 21);
             this.txtpass.TabIndex = 4;
+            this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             // 
             // label1
             // 
@@ -134,7 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 15);
@@ -204,16 +209,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::main.Properties.Resources.logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(103, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -233,12 +228,43 @@
             this.txtemail.Size = new System.Drawing.Size(207, 21);
             this.txtemail.TabIndex = 3;
             // 
+            // lbfuerte
+            // 
+            this.lbfuerte.AutoSize = true;
+            this.lbfuerte.Location = new System.Drawing.Point(131, 280);
+            this.lbfuerte.Name = "lbfuerte";
+            this.lbfuerte.Size = new System.Drawing.Size(0, 13);
+            this.lbfuerte.TabIndex = 15;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::main.Properties.Resources.info;
+            this.pictureBox2.Location = new System.Drawing.Point(101, 258);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Su contraseña debe tener al menos:\r\n1 Letra mayúscula\r\n1 Número\r\n8 Carácteres");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::main.Properties.Resources.logo2;
+            this.pictureBox1.Location = new System.Drawing.Point(103, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(366, 427);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.lbfuerte);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnlimpiar);
@@ -264,6 +290,7 @@
             this.Text = "Registro";
             this.Shown += new System.EventHandler(this.Registro_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,5 +316,8 @@
         private System.Windows.Forms.Button btnlimpiar;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbfuerte;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

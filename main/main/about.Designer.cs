@@ -121,9 +121,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(151, 256);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.Size = new System.Drawing.Size(160, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Hancel";
+            this.label7.Text = "Hancel Brandon Alvarado Flores";
             // 
             // label8
             // 
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 436);
+            this.ClientSize = new System.Drawing.Size(316, 436);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label11);

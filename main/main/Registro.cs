@@ -48,22 +48,47 @@ namespace main
                     if (cmbcuenta.SelectedIndex == 0) tipo = 1;
                     if (cmbcuenta.SelectedIndex == 1) tipo = 2;
 
-                    Usuario user = new Usuario();
-                    user.IDusuario = txtuser.Text;
-                    user.Nombre = txtnom.Text;
-                    user.Contra = txtpass.Text;
-                    user.Idtipousuario = tipo;
-                    user.Email = txtemail.Text;
-                    user.registrar();        
-                    MessageBox.Show("Usuario registrado exitosamente", "E-Market", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    Validaciones validacion = new Validaciones();
+                    if (validacion.esFuerte(txtpass.Text))
+                    {
+                        Usuario user = new Usuario();
+
+                        user.IDusuario = txtuser.Text;
+                        user.Nombre = txtnom.Text;
+                        user.Contra = txtpass.Text;
+                        user.Idtipousuario = tipo;
+                        user.Email = txtemail.Text;
+                        user.registrar();
+                        MessageBox.Show("Usuario registrado exitosamente", "E-Market",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar una contraseña más fuerte\n\nDebe contener al menos:\n1 Letra mayúscula\n1 Número\n8 Carácteres");
+                    }
+
+                    
                 }
                 catch (Exception x)
                 {
                     //MessageBox.Show("El nombre de usuario ya está registrado, sus datos son inválidos o sus datos son muy largos");
                     MessageBox.Show(x.Message);
                 }
+            }
+        }
+
+        private void txtpass_TextChanged(object sender, EventArgs e)
+        {
+            Validaciones validacion = new Validaciones();
+            if (validacion.esFuerte(txtpass.Text)) { 
+                lbfuerte.Text = "Su contraseña es fuerte";
+                lbfuerte.ForeColor = System.Drawing.Color.LimeGreen;
+            }
+            else
+            {
+                lbfuerte.Text = "Su contraseña es débil";
+                lbfuerte.ForeColor = System.Drawing.Color.Brown;
             }
         }
     }

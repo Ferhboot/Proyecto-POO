@@ -46,7 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cmbpais = new System.Windows.Forms.ComboBox();
+            this.cmbdep = new System.Windows.Forms.ComboBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtpostal = new System.Windows.Forms.TextBox();
@@ -137,7 +137,8 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox2, "Su contraseña debe tener al menos:");
+            this.toolTip1.SetToolTip(this.pictureBox2, "Su contraseña debe tener al menos:\r\n1 Mayúscula\r\n1 Número\r\n8 caracteres como míni" +
+        "mo");
             // 
             // lbfuerte
             // 
@@ -236,7 +237,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.cmbpais);
+            this.tabPage2.Controls.Add(this.cmbdep);
             this.tabPage2.Controls.Add(this.txttelefono);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.txtpostal);
@@ -260,10 +261,10 @@
             this.tabPage2.Text = " Datos personales";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // cmbpais
+            // cmbdep
             // 
-            this.cmbpais.FormattingEnabled = true;
-            this.cmbpais.Items.AddRange(new object[] {
+            this.cmbdep.FormattingEnabled = true;
+            this.cmbdep.Items.AddRange(new object[] {
             "Ahuachapán",
             "Cabañas",
             "Chalatenango",
@@ -278,10 +279,10 @@
             "Santa Ana",
             "Sonsonate",
             "Usulután"});
-            this.cmbpais.Location = new System.Drawing.Point(60, 179);
-            this.cmbpais.Name = "cmbpais";
-            this.cmbpais.Size = new System.Drawing.Size(182, 24);
-            this.cmbpais.TabIndex = 30;
+            this.cmbdep.Location = new System.Drawing.Point(60, 179);
+            this.cmbdep.Name = "cmbdep";
+            this.cmbdep.Size = new System.Drawing.Size(182, 24);
+            this.cmbdep.TabIndex = 30;
             // 
             // txttelefono
             // 
@@ -428,7 +429,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Perfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mi Perfil";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -458,7 +461,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbfuerte;
-        private System.Windows.Forms.ComboBox cmbpais;
+        private System.Windows.Forms.ComboBox cmbdep;
         private System.Windows.Forms.TextBox txttelefono;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtpostal;

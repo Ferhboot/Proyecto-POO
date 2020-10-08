@@ -14,6 +14,8 @@ namespace main
     {
         //El programa recibirá un objeto del tipo usuario para poder identificarlo
         //en el transcurso de toda la sesión
+
+        Usuario user2 = new Usuario();
         public Main(Usuario user)
         {
             InitializeComponent();
@@ -27,9 +29,8 @@ namespace main
                 lbuser.Text = user.Nombre;
                 toolStrip1.Items[2].Visible = false;
             }
-            
-            
-            
+
+            user2 = user;       
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -57,7 +58,7 @@ namespace main
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil();
+            Perfil perfil = new Perfil(user2);
             perfil.ShowDialog();
         }
 

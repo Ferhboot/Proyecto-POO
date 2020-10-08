@@ -12,7 +12,7 @@ namespace main
 {
     public partial class Perfil : Form
     {
-        public Perfil()
+        public Perfil(Usuario user)
         {
             InitializeComponent();
         }

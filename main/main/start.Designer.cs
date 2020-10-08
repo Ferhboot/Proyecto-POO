@@ -171,7 +171,7 @@
             this.pictureBox3.Image = global::main.Properties.Resources.start_logo;
             this.pictureBox3.Location = new System.Drawing.Point(2, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(705, 408);
+            this.pictureBox3.Size = new System.Drawing.Size(705, 406);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
@@ -222,6 +222,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "start";
             this.Load += new System.EventHandler(this.start_Load);
+            this.Shown += new System.EventHandler(this.start_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

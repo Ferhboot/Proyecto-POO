@@ -21,5 +21,13 @@ namespace main
         {
 
         }
+
+        private void start_Shown(object sender, EventArgs e)
+        {
+            Task.Delay(5000).Wait();
+            Home f1 = new Home();
+            f1.Show();
+            this.Hide();
+        }
     }
 }

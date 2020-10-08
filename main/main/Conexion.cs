@@ -26,7 +26,7 @@ namespace main
         }
 
         //Este comando será para agregar datos a USUARIOS
-        public void agregarusuario(string table, string userid,string nombre,string email,string pass, int tipo)
+        public void agregarusuario(string table, string userid, string nombre, string email, string pass, int tipo)
         {
             conect();
             string com1 = "Select userid from Usuarios where userid=@userid";
@@ -34,14 +34,14 @@ namespace main
             cm.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
             cm.Parameters["@userid"].Value = userid;
             SqlDataReader rd = cm.ExecuteReader();
-            
+
 
             string com2 = "Select email from Usuarios where email=@email";
             SqlCommand cm2 = new SqlCommand(com2, conect());
             cm2.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
             cm2.Parameters["@email"].Value = email;
             SqlDataReader rd2 = cm2.ExecuteReader();
-            
+
 
             if (rd.Read())
             {
@@ -55,7 +55,7 @@ namespace main
 
             }
             else
-            {           
+            {
                 string com = "";
                 com += "insert into " + table + " (userid, nombre,email, pass, tipocuenta) values ";
                 com += "(@userid, @nombre,@email,@pass,@tipocuenta);";
@@ -77,9 +77,39 @@ namespace main
 
                 cmd.ExecuteNonQuery();
             }
+        }
+
+            public Usuario login(string user, string pass)
+        {
+            string com = "Select * from Usuarios where userid=@userid and pass=@pass;";
+            SqlCommand cmd = new SqlCommand(com, conect());
+
+            cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
+            cmd.Parameters["@userid"].Value = user;
+
+            cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
+            cmd.Parameters["@pass"].Value = pass;
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.Read())
+            {
+                Usuario u = new Usuario();
+                u.IDusuario = rd["userid"].ToString();
+                u.Nombre = rd["nombre"].ToString();
+                u.Email = rd["email"].ToString();
+                u.Contra = "";
+                u.Idtipousuario = int.Parse(rd["tipocuenta"].ToString());
+                return u;
+            }
+            
+            else
+            {
+                throw new Exception("¡Datos Erróneos!");
+            }
+        }
 
               
         }
 
     }
-}
+

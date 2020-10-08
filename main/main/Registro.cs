@@ -73,7 +73,8 @@ namespace main
                 }
                 catch (Exception x)
                 {                
-                    MessageBox.Show(x.Message);
+                    MessageBox.Show(x.Message, "Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

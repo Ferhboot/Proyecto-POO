@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtuser = new System.Windows.Forms.TextBox();
+            this.txtpass = new System.Windows.Forms.TextBox();
             this.btningresar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,20 +38,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtuser
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtuser.Location = new System.Drawing.Point(48, 129);
+            this.txtuser.Name = "txtuser";
+            this.txtuser.Size = new System.Drawing.Size(204, 20);
+            this.txtuser.TabIndex = 0;
             // 
-            // textBox2
+            // txtpass
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.txtpass.Location = new System.Drawing.Point(82, 192);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
+            this.txtpass.Size = new System.Drawing.Size(135, 20);
+            this.txtpass.TabIndex = 1;
+            this.txtpass.UseSystemPasswordChar = true;
             // 
             // btningresar
             // 
@@ -63,6 +64,7 @@
             this.btningresar.TabIndex = 2;
             this.btningresar.Text = "Iniciar Sesión";
             this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // label1
             // 
@@ -106,14 +108,15 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btningresar);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.txtuser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,8 +125,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtuser;
+        private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.Button btningresar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

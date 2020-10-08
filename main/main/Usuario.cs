@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace main
 {
-    class Usuario
+    public class Usuario
     {
-        string idusuario;
+        public string idusuario;
         public string IDusuario
         {
             get { return idusuario; }
             set { idusuario = value; }
         }
 
-        string email;
+        public string email;
         public string Email
         {
             get { return email; }
             set { email = value; }
         }
 
-        string nombre;
+        public string nombre;
         public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
 
-        string contra;
+        public string contra;
         public string Contra
         {
             get { return contra; }
             set { contra = value; }
         }
 
-        int idtipousuario;
+        public int idtipousuario;
         public int Idtipousuario
         {
             get { return idtipousuario; }

@@ -13,13 +13,10 @@ namespace main
     public partial class Main : Form
     {
         //El programa recibirá un valor int que le permitirá saber qué clase de usuario es
-        public Main(int level)
+        public Main(Usuario user)
         {
             InitializeComponent();
-            if (level == 0)
-            {
-                lbinfo.Text = "Usuario:'Invitado'";
-            }
+            
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)

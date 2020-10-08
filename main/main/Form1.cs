@@ -28,12 +28,12 @@ namespace main
 
         private void Home_Shown(object sender, EventArgs e)
         {
-            start iniciar = new start();
+           /* start iniciar = new start();
             this.Hide();
             iniciar.Show();
             Task.Delay(5000).Wait();
             iniciar.Hide();
-            this.Show();
+            this.Show();*/
         }
 
 
@@ -64,13 +64,15 @@ namespace main
 
         private void btncuenta_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Login log = new Login();
             log.ShowDialog();
         }
 
         private void btninvitado_Click(object sender, EventArgs e)
         {
-            Main principal = new Main(0);
+
+            Main principal = new Main(null);
             principal.Show();
             this.Hide();
         }

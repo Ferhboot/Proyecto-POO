@@ -20,10 +20,11 @@ namespace main
             if (user.Idtipousuario == 0)
             {
                 toolStrip1.Items[1].Visible = false;
+                txtuser.Text = "Invitado";
             }
             else
             {
-
+                txtuser.Text = user.Nombre;
             }
             
             
@@ -67,6 +68,11 @@ namespace main
         }
 
         private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

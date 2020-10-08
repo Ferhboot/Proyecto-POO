@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace main
 {
@@ -56,5 +57,14 @@ namespace main
             inicio.Show();
             this.Close();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'proyecto_pooDataSet.Usuarios' table. You can move, or remove it, as needed.
+            this.usuariosTableAdapter.Fill(this.proyecto_pooDataSet.Usuarios);
+
+        }
+
+
     }
 }

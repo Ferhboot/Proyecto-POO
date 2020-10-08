@@ -79,6 +79,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proyecto_pooDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>proyecto_pooDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +143,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="proyecto_pooDataSet.xsc">
+      <DependentUpon>proyecto_pooDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="proyecto_pooDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>proyecto_pooDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="proyecto_pooDataSet.xss">
+      <DependentUpon>proyecto_pooDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\cerrar1.png" />
   </ItemGroup>
   <ItemGroup>

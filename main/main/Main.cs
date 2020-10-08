@@ -16,6 +16,7 @@ namespace main
         public Main(Usuario user)
         {
             InitializeComponent();
+            toolStrip1.Text = user.idusuario;
             
         }
 
@@ -40,6 +41,20 @@ namespace main
         {
             about acerca = new about();
             acerca.ShowDialog();
+        }
+
+        private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil();
+            perfil.Show();
+            this.Close();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Home inicio = new Home();
+            inicio.Show();
+            this.Close();
         }
     }
 }

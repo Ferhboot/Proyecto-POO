@@ -71,8 +71,12 @@ namespace main
 
         private void btninvitado_Click(object sender, EventArgs e)
         {
-
-            Main principal = new Main(null);
+            Usuario invitado = new Usuario();
+            invitado.IDusuario = "Invitado";
+            invitado.Idtipousuario = 0;
+            invitado.Nombre = "Invitado";
+            invitado.Contra = null;
+            Main principal = new Main(invitado);
             principal.Show();
             this.Hide();
         }

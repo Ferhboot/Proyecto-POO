@@ -12,11 +12,22 @@ namespace main
 {
     public partial class Main : Form
     {
-        //El programa recibirá un valor int que le permitirá saber qué clase de usuario es
+        //El programa recibirá un objeto del tipo usuario para poder identificarlo
+        //en el transcurso de toda la sesión
         public Main(Usuario user)
         {
             InitializeComponent();
-            toolStrip1.Text = user.idusuario;
+            if (user.Idtipousuario == 0)
+            {
+                toolStrip1.Items[1].Visible = false;
+                txtuser.Text = "Invitado";
+            }
+            else
+            {
+                txtuser.Text = user.Nombre;
+            }
+            
+            
             
         }
 
@@ -46,15 +57,24 @@ namespace main
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Perfil perfil = new Perfil();
-            perfil.Show();
-            this.Close();
+            perfil.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Home inicio = new Home();
             inicio.Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

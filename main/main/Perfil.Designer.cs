@@ -57,13 +57,10 @@
             this.txtdireccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtapellidos = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.btnactualizarperso = new System.Windows.Forms.Button();
             this.btnlimpiarperso = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
@@ -99,7 +96,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(-3, -1);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -205,6 +201,7 @@
             this.txtcorreo.Location = new System.Drawing.Point(314, 156);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtcorreo.Name = "txtcorreo";
+            this.txtcorreo.ReadOnly = true;
             this.txtcorreo.Size = new System.Drawing.Size(184, 22);
             this.txtcorreo.TabIndex = 5;
             // 
@@ -233,6 +230,7 @@
             this.txtusuario.Location = new System.Drawing.Point(57, 156);
             this.txtusuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtusuario.Name = "txtusuario";
+            this.txtusuario.ReadOnly = true;
             this.txtusuario.Size = new System.Drawing.Size(185, 22);
             this.txtusuario.TabIndex = 2;
             // 
@@ -249,8 +247,6 @@
             this.tabPage2.Controls.Add(this.txtdireccion);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.txtapellidos);
-            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.txtnombre);
             this.tabPage2.Controls.Add(this.btnactualizarperso);
@@ -379,24 +375,6 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Dirección:";
             // 
-            // txtapellidos
-            // 
-            this.txtapellidos.Location = new System.Drawing.Point(317, 110);
-            this.txtapellidos.Margin = new System.Windows.Forms.Padding(4);
-            this.txtapellidos.Name = "txtapellidos";
-            this.txtapellidos.Size = new System.Drawing.Size(184, 22);
-            this.txtapellidos.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(314, 80);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 16);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Apellidos:";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -412,7 +390,7 @@
             this.txtnombre.Location = new System.Drawing.Point(60, 110);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(185, 22);
+            this.txtnombre.Size = new System.Drawing.Size(322, 22);
             this.txtnombre.TabIndex = 13;
             // 
             // btnactualizarperso
@@ -436,15 +414,6 @@
             this.btnlimpiarperso.Text = "Limpiar";
             this.btnlimpiarperso.UseVisualStyleBackColor = true;
             this.btnlimpiarperso.Click += new System.EventHandler(this.btnlimpiarperso_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(557, 450);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Regresar";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // errorProvider1
             // 
@@ -500,13 +469,10 @@
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtapellidos;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Button btnactualizarperso;
         private System.Windows.Forms.Button btnlimpiarperso;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip toolTip1;

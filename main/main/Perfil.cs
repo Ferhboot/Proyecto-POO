@@ -74,7 +74,7 @@ namespace main
 
                         if (validacion.esFuerte(txtpass.Text))
                         {
-                            //user.registrar();
+                            
                             MessageBox.Show("Datos modificados exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiar1();
                         }
@@ -94,7 +94,7 @@ namespace main
             }
             catch (Exception x)
             {
-                //MessageBox.Show("El nombre de usuario ya está registrado, sus datos son inválidos o sus datos son muy largos");
+                
                 MessageBox.Show(x.Message);
             }
             
@@ -123,7 +123,7 @@ namespace main
 
                 Validaciones validacion = new Validaciones();
 
-                if ((validacion.enBlanco(txtnombre.Text) && validacion.enBlanco(txtapellidos.Text) && validacion.enBlanco(txtciudad.Text) && validacion.enBlanco(txtdireccion.Text) && validacion.enBlanco(txtpostal.Text) && validacion.enBlanco(txttelefono.Text)) == false)
+                if ((validacion.enBlanco(txtnombre.Text) /*&& validacion.enBlanco(txtapellidos.Text)*/ && validacion.enBlanco(txtciudad.Text) && validacion.enBlanco(txtdireccion.Text) && validacion.enBlanco(txtpostal.Text) && validacion.enBlanco(txttelefono.Text)) == false)
                 {
 
                     
@@ -166,7 +166,6 @@ namespace main
         void limpiar2()
         {
             txtnombre.Text = "";
-            txtapellidos.Text = "";
             txtciudad.Text = "";
             txtdireccion.Text = "";
             txtpostal.Text = "";
@@ -236,25 +235,6 @@ namespace main
             }
         }
 
-        private void txtapellidos_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
 
         private void txtciudad_KeyPress(object sender, KeyPressEventArgs e)
         {

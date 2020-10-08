@@ -21,8 +21,6 @@ namespace main
         {
             if (tabControl1.SelectedIndex == 2)
             {
-                Main principal = new Main(null);
-                principal.Show();
                 this.Close();
             }
 

@@ -51,6 +51,7 @@ namespace main
                     Validaciones validacion = new Validaciones();
                     if (validacion.esFuerte(txtpass.Text))
                     {
+
                         Usuario user = new Usuario();
 
                         user.IDusuario = txtuser.Text;
@@ -71,8 +72,7 @@ namespace main
                     
                 }
                 catch (Exception x)
-                {
-                    //MessageBox.Show("El nombre de usuario ya está registrado, sus datos son inválidos o sus datos son muy largos");
+                {                
                     MessageBox.Show(x.Message);
                 }
             }
@@ -83,13 +83,20 @@ namespace main
             Validaciones validacion = new Validaciones();
             if (validacion.esFuerte(txtpass.Text)) { 
                 lbfuerte.Text = "Su contraseña es fuerte";
-                lbfuerte.ForeColor = System.Drawing.Color.LimeGreen;
+                lbfuerte.ForeColor = Color.LimeGreen;
             }
             else
             {
                 lbfuerte.Text = "Su contraseña es débil";
-                lbfuerte.ForeColor = System.Drawing.Color.Brown;
+                lbfuerte.ForeColor = Color.Brown;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string c = "Su contraseña debe tener al menos: \n\t" +
+                "1 Mayúscula \n\t 8 caracteres en total";
+            MessageBox.Show(c, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

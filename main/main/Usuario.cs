@@ -45,7 +45,7 @@ namespace main
 
         public bool registrar()
         {
-            Conexion con = new Conexion();
+            Conexion con = new Conexion();  
             con.agregarusuario("Usuarios", idusuario, nombre,email, contra, idtipousuario);
             return true;
         }

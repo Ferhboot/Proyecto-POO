@@ -29,26 +29,56 @@ namespace main
         public void agregarusuario(string table, string userid,string nombre,string email,string pass, int tipo)
         {
             conect();
-            string com="";
-            com += "insert into " + table +" (userid, nombre,email, pass, tipocuenta) values ";
-            com += "(@userid, @nombre,@email,@pass,@tipocuenta);";
-            SqlCommand cmd = new SqlCommand(com,conect());
-            cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
-            cmd.Parameters["@userid"].Value = userid;
+            string com1 = "Select userid from Usuarios where userid=@userid";
+            SqlCommand cm = new SqlCommand(com1, conect());
+            cm.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
+            cm.Parameters["@userid"].Value = userid;
+            SqlDataReader rd = cm.ExecuteReader();
+            
 
-            cmd.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
-            cmd.Parameters["@email"].Value = email;
+            string com2 = "Select email from Usuarios where email=@email";
+            SqlCommand cm2 = new SqlCommand(com2, conect());
+            cm2.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+            cm2.Parameters["@email"].Value = email;
+            SqlDataReader rd2 = cm2.ExecuteReader();
+            
 
-            cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
-            cmd.Parameters["@nombre"].Value = nombre;
+            if (rd.Read())
+            {
+                throw new Exception("¡El usuario ya existe!");
 
-            cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
-            cmd.Parameters["@pass"].Value = pass;
+            }
 
-            cmd.Parameters.Add(new SqlParameter("@tipocuenta", SqlDbType.Int));
-            cmd.Parameters["@tipocuenta"].Value = tipo;
+            else if (rd2.Read())
+            {
+                throw new Exception("¡El correo indicado ya está registrado!");
 
-            cmd.ExecuteNonQuery();       
+            }
+            else
+            {           
+                string com = "";
+                com += "insert into " + table + " (userid, nombre,email, pass, tipocuenta) values ";
+                com += "(@userid, @nombre,@email,@pass,@tipocuenta);";
+                SqlCommand cmd = new SqlCommand(com, conect());
+                cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
+                cmd.Parameters["@userid"].Value = userid;
+
+                cmd.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+                cmd.Parameters["@email"].Value = email;
+
+                cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+                cmd.Parameters["@nombre"].Value = nombre;
+
+                cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
+                cmd.Parameters["@pass"].Value = pass;
+
+                cmd.Parameters.Add(new SqlParameter("@tipocuenta", SqlDbType.Int));
+                cmd.Parameters["@tipocuenta"].Value = tipo;
+
+                cmd.ExecuteNonQuery();
+            }
+
+              
         }
 
     }

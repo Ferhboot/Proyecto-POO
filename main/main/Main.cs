@@ -22,12 +22,13 @@ namespace main
             if (user.Idtipousuario == 0)
             {
                 toolStrip1.Items[1].Visible = false;
+                toolStrip1.Items[4].Visible = false;
                 lbuser.Text = "Invitado";
             }
             else
             {
                 lbuser.Text = user.Nombre;
-                toolStrip1.Items[2].Visible = false;
+                toolStrip1.Items[3].Visible = false;
             }
 
             user2 = user;       

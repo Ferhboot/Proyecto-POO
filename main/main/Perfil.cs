@@ -12,23 +12,20 @@ namespace main
 {
     public partial class Perfil : Form
     {
-        public Perfil()
+        public Perfil(Usuario user)
         {
             InitializeComponent();
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 4)
+            if (tabControl1.SelectedIndex == 2)
             {
-                Main principal = new Main(null);
-                principal.Show();
                 this.Close();
             }
 
             limpiar1();
             limpiar2();
-            limpiar3();
         }
 
         private void txtpass_TextChanged(object sender, EventArgs e)
@@ -77,7 +74,7 @@ namespace main
 
                         if (validacion.esFuerte(txtpass.Text))
                         {
-                            //user.registrar();
+                            
                             MessageBox.Show("Datos modificados exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiar1();
                         }
@@ -97,7 +94,7 @@ namespace main
             }
             catch (Exception x)
             {
-                //MessageBox.Show("El nombre de usuario ya está registrado, sus datos son inválidos o sus datos son muy largos");
+                
                 MessageBox.Show(x.Message);
             }
             
@@ -126,7 +123,7 @@ namespace main
 
                 Validaciones validacion = new Validaciones();
 
-                if ((validacion.enBlanco(txtnombre.Text) && validacion.enBlanco(txtapellidos.Text) && validacion.enBlanco(txtciudad.Text) && validacion.enBlanco(txtdireccion.Text) && validacion.enBlanco(txtpostal.Text) && validacion.enBlanco(txttelefono.Text)) == false)
+                if ((validacion.enBlanco(txtnombre.Text) /*&& validacion.enBlanco(txtapellidos.Text)*/ && validacion.enBlanco(txtciudad.Text) && validacion.enBlanco(txtdireccion.Text) && validacion.enBlanco(txtpostal.Text) && validacion.enBlanco(txttelefono.Text)) == false)
                 {
 
                     
@@ -169,7 +166,6 @@ namespace main
         void limpiar2()
         {
             txtnombre.Text = "";
-            txtapellidos.Text = "";
             txtciudad.Text = "";
             txtdireccion.Text = "";
             txtpostal.Text = "";
@@ -178,71 +174,86 @@ namespace main
             errorProvider1.SetError(txtpostal, "");
         }
 
-        private void btnagregartarjeta_Click(object sender, EventArgs e)
+        private void txtpostal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (char.IsDigit(e.KeyChar))
             {
-
-                Validaciones validacion = new Validaciones();
-
-                if ((validacion.enBlanco(txttarjeta.Text) && validacion.enBlanco(txtexpiracion.Text) && validacion.enBlanco(txtcodigo.Text) && validacion.enBlanco(txtnombretarjeta.Text) && validacion.enBlanco(txtapellidostarjeta.Text)) == false)
-                {
-
-
-                    if (!validacion.esTarjeta(txttarjeta.Text))
-                    {
-                        errorProvider1.SetError(txttarjeta, "Tarjeta incorrecta");
-                    }
-                    else if (!validacion.esFechaTarjeta(txtexpiracion.Text))
-                    {
-                        errorProvider1.SetError(txtexpiracion, "Debe ingresar una fecha de expiración correcta");
-                        errorProvider1.SetError(txttarjeta, "");
-                    }
-                    else if (!validacion.esNumero(txtcodigo.Text))
-                    {
-                        errorProvider1.SetError(txtcodigo, "Debe ingresar un código de tarjeta válido");
-                        errorProvider1.SetError(txtexpiracion, "");
-                        errorProvider1.SetError(txttarjeta, "");
-                    }
-
-                    else
-                    {
-               
-                        MessageBox.Show("Datos modificados exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        limpiar3();
-
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Debe completar todos los campos");
-                }
-
+                e.Handled = false;
             }
-            catch (Exception x)
+            else if (char.IsControl(e.KeyChar))
             {
-                MessageBox.Show(x.Message);
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
 
-        private void btnlimpiartarjeta_Click(object sender, EventArgs e)
+        private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            limpiar3();
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+            if(txttelefono.Text.Length == 4)
+            {
+                if (!char.IsControl(e.KeyChar))
+                {
+                    txttelefono.Text += "-";
+                    txttelefono.SelectionStart = 5;
+                }
+            }
         }
 
-        void limpiar3()
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txttarjeta.Text = "";
-            txtexpiracion.Text = "";
-            txtcodigo.Text = "";
-            txtnombretarjeta.Text = "";
-            txtapellidostarjeta.Text = "";
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
 
-            errorProvider1.SetError(txttarjeta, "");
-            errorProvider1.SetError(txtexpiracion, "");
-            errorProvider1.SetError(txtcodigo, "");
+
+        private void txtciudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

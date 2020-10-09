@@ -97,7 +97,7 @@ namespace main
                 u.IDusuario = rd["userid"].ToString();
                 u.Nombre = rd["nombre"].ToString();
                 u.Email = rd["email"].ToString();
-                u.Contra = "";
+                u.Contra = rd["pass"].ToString();
                 u.Idtipousuario = int.Parse(rd["tipocuenta"].ToString());
                 return u;
             }

@@ -44,6 +44,7 @@
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(204, 20);
             this.txtuser.TabIndex = 0;
+            this.txtuser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtuser_KeyDown);
             // 
             // txtpass
             // 
@@ -53,6 +54,7 @@
             this.txtpass.Size = new System.Drawing.Size(135, 20);
             this.txtpass.TabIndex = 1;
             this.txtpass.UseSystemPasswordChar = true;
+            this.txtpass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpass_KeyDown);
             // 
             // btningresar
             // 
@@ -71,11 +73,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(45, 110);
+            this.label1.Location = new System.Drawing.Point(75, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 16);
+            this.label1.Size = new System.Drawing.Size(143, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Correo o Nombre de Usuario";
+            this.label1.Text = "Nombre de Usuario";
             // 
             // pictureBox1
             // 
@@ -113,7 +115,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);

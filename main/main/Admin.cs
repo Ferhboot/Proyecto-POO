@@ -19,7 +19,7 @@ namespace main
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AdminCategorias categoria = new AdminCategorias();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)

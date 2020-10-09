@@ -23,7 +23,7 @@ namespace main
                 toolStrip1.Items[1].Visible = false;
                 toolStrip1.Items[4].Visible = false;
                 lbuser.Text = "Invitado";
-                u = user;
+                
             }
 
             //Si no es invitado, tiene acceso a las funciones básicas
@@ -35,6 +35,7 @@ namespace main
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
+            u = user;
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -76,6 +77,12 @@ namespace main
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            Publicacion pub = new Publicacion();
+            pub.ShowDialog();
         }
     }
 }

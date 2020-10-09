@@ -47,12 +47,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgproductos = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgproductos)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -202,12 +204,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Controls.Add(this.dgproductos, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 85);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1046, 337);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1046, 376);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // groupBox1
@@ -217,7 +219,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 331);
+            this.groupBox1.Size = new System.Drawing.Size(203, 370);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categorías";
@@ -251,7 +253,7 @@
             this.dgcategorias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgcategorias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgcategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgcategorias.Size = new System.Drawing.Size(197, 307);
+            this.dgcategorias.Size = new System.Drawing.Size(197, 346);
             this.dgcategorias.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -259,12 +261,20 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 422);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 461);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 49);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // dgproductos
+            // 
+            this.dgproductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgproductos.Location = new System.Drawing.Point(212, 3);
+            this.dgproductos.Name = "dgproductos";
+            this.dgproductos.Size = new System.Drawing.Size(621, 370);
+            this.dgproductos.TabIndex = 0;
             // 
             // Main
             // 
@@ -293,6 +303,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgproductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +327,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgcategorias;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DataGridView dgproductos;
     }
 }

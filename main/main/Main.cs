@@ -13,7 +13,8 @@ namespace main
     public partial class Main : Form
     {
         //Lista temporal de categorías (Sólo para referencia)
-        List<string> categorias = new List<string>();
+        private
+        List<Categoria> categorias = new List<Categoria>();
 
         //El programa recibirá un objeto del tipo usuario para poder identificarlo
         //en el transcurso de toda la sesión
@@ -35,13 +36,54 @@ namespace main
                 lbuser.Text = user.Nombre;
                 toolStrip1.Items[3].Visible = false;
             }
+            Categoria cat1 = new Categoria();
+            cat1.Nombre = "Arte";
+            categorias.Add(cat1);
 
-            categorias.Add("Arte");
-            categorias.Add("Automotriz");
-            categorias.Add("Bebé");
-            categorias.Add("Belleza y Cuidado");
-            categorias.Add("Computadoras");
-            categorias.Add("Electrónicos");
+            Categoria cat2 = new Categoria();
+            cat2.Nombre = "Automotriz";
+            categorias.Add(cat2);
+
+            Categoria cat3 = new Categoria();
+            cat3.Nombre = "Bebé";
+            categorias.Add(cat3);
+
+            Categoria cat4 = new Categoria();
+            cat4.Nombre = "Belleza y cuidado personal";
+            categorias.Add(cat4);
+
+            Categoria cat5 = new Categoria();
+            cat5.Nombre = "Computadoras";
+            categorias.Add(cat5);
+
+            Categoria cat6 = new Categoria();
+            cat6.Nombre = "Deporte";
+            categorias.Add(cat6);
+
+            Categoria cat7 = new Categoria();
+            cat7.Nombre = "Electrónicos";
+            categorias.Add(cat7);
+
+            Categoria cat8 = new Categoria();
+            cat8.Nombre = "Hogar";
+            categorias.Add(cat8);
+
+            Categoria cat9 = new Categoria();
+            cat9.Nombre = "Juguetes";
+            categorias.Add(cat9);
+
+            Categoria cat10 = new Categoria();
+            cat10.Nombre = "Libros";
+            categorias.Add(cat10);
+
+            Categoria cat11 = new Categoria();
+            cat11.Nombre = "Salud";
+            categorias.Add(cat11);
+
+            Categoria cat12 = new Categoria();
+            cat12.Nombre = "Software";
+            categorias.Add(cat12);
+
 
             dgcategorias.DataSource = null;
             dgcategorias.DataSource = categorias;

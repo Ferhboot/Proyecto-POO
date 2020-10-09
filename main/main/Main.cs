@@ -13,13 +13,7 @@ namespace main
 {
     public partial class Main : Form
     {
-        //Lista temporal de categorías (Sólo para referencia)
-        private
-        List<Categoria> categorias = new List<Categoria>();
-
-        //El programa recibirá un objeto del tipo usuario para poder identificarlo
-        //en el transcurso de toda la sesión
-
+        Usuario u = new Usuario();
         public Main(Usuario user)
         {
             //Si es Invitado, no puede ver su perfil ni vender
@@ -40,6 +34,7 @@ namespace main
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
+            u = user;
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -67,7 +62,7 @@ namespace main
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil();
+            Perfil perfil = new Perfil(u);
             perfil.ShowDialog();
         }
 

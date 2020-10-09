@@ -12,9 +12,14 @@ namespace main
 {
     public partial class Perfil : Form
     {
-        public Perfil()
+        Usuario u = new Usuario();
+        public Perfil(Usuario user)
         {
             InitializeComponent();
+            txtusuario.Text = user.IDusuario;
+            txtcorreo.Text = user.Email;
+            txtnombre.Text = user.Nombre;
+            u = user;
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
@@ -24,8 +29,6 @@ namespace main
                 this.Close();
             }
 
-            limpiar1();
-            limpiar2();
         }
 
         private void txtpass_TextChanged(object sender, EventArgs e)
@@ -48,7 +51,7 @@ namespace main
             
             try
             {
-
+                
                 Validaciones validacion = new Validaciones();
 
                 if((validacion.enBlanco(txtusuario.Text) && validacion.enBlanco(txtcorreo.Text) && validacion.enBlanco(txtcorreo.Text) && validacion.enBlanco(txtconfirm.Text)) == false) { 
@@ -74,7 +77,8 @@ namespace main
 
                         if (validacion.esFuerte(txtpass.Text))
                         {
-                            
+                            Conexion con = new Conexion();
+                            con.actualizarpass(u.IDusuario, txtpass.Text);
                             MessageBox.Show("Datos modificados exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiar1();
                         }
@@ -107,8 +111,6 @@ namespace main
 
         void limpiar1()
         {
-            txtusuario.Text = "";
-            txtcorreo.Text = "";
             txtpass.Text = "";
             txtconfirm.Text = "";
             errorProvider1.SetError(txtcorreo, "");

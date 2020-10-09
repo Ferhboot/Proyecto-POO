@@ -117,6 +117,17 @@ namespace main
             return datos;
         }
 
+        public void actualizarpass(string user, string pass)
+        {
+            conect();
+            string com = "update usuarios set pass=@pass where userid=@userid;";
+            SqlCommand cmd = new SqlCommand(com, conect());
+            cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
+            cmd.Parameters["@pass"].Value = pass;
+            cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
+            cmd.Parameters["@userid"].Value = user;
+            cmd.ExecuteNonQuery();
+        }
               
         }
 

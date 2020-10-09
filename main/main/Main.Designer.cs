@@ -226,11 +226,12 @@
             // 
             this.dgcategorias.AllowUserToAddRows = false;
             this.dgcategorias.AllowUserToDeleteRows = false;
+            this.dgcategorias.AllowUserToResizeColumns = false;
+            this.dgcategorias.AllowUserToResizeRows = false;
             this.dgcategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgcategorias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgcategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgcategorias.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -244,7 +245,12 @@
             this.dgcategorias.MultiSelect = false;
             this.dgcategorias.Name = "dgcategorias";
             this.dgcategorias.ReadOnly = true;
-            this.dgcategorias.RowTemplate.Height = 21;
+            this.dgcategorias.RowHeadersVisible = false;
+            this.dgcategorias.RowTemplate.Height = 30;
+            this.dgcategorias.RowTemplate.ReadOnly = true;
+            this.dgcategorias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgcategorias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgcategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgcategorias.Size = new System.Drawing.Size(197, 307);
             this.dgcategorias.TabIndex = 0;
             // 

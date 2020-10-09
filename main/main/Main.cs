@@ -38,7 +38,7 @@ namespace main
                 toolStrip1.Items[3].Visible = false;
             }         
             Conexion cat = new Conexion();
-            DataSet ds = cat.leercat();
+            DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
         }
 

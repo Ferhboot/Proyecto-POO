@@ -269,7 +269,10 @@
             this.ClientSize = new System.Drawing.Size(740, 449);
             this.Controls.Add(this.btnREGRESAR);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Publicacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Publicacion";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

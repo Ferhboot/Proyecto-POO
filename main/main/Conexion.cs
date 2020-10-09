@@ -10,8 +10,8 @@ namespace main
 {
     class Conexion
     {
-        SqlConnection conectar;
-        SqlCommand cmd;
+        //SqlConnection conectar;
+        //SqlCommand cmd;
         public SqlConnection conect()
         {
             string cadena;
@@ -106,6 +106,15 @@ namespace main
             {
                 throw new Exception("¡Datos Erróneos!");
             }
+        }
+
+        public DataSet leercat()
+        {
+            string cmd = "select nombre from categorias;";
+            DataSet datos = new DataSet();
+            SqlDataAdapter ad = new SqlDataAdapter(cmd, conect());
+            ad.Fill(datos, "categorias");
+            return datos;
         }
 
               

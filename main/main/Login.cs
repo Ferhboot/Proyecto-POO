@@ -15,7 +15,6 @@ namespace main
         public Login()
         {
             InitializeComponent();
-
         }
 
         private void btningresar_Click(object sender, EventArgs e)
@@ -49,17 +48,18 @@ namespace main
         {
             if (txtpass.Text != "" && txtuser.Text != "")
             {
-                
+                try
+                {
                     Conexion cn = new Conexion();
                     Main principal = new Main(cn.login(txtuser.Text, txtpass.Text));
                     this.Hide();
                     principal.Show();
-                
-                /*catch (Exception X)
+                }
+                catch (Exception X)
                 {
                     MessageBox.Show(X.Message, "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }*/
+                }
             }
             else
             {

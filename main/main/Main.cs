@@ -13,25 +13,33 @@ namespace main
 {
     public partial class Main : Form
     {
+        //Lista temporal de categorías (Sólo para referencia)
+        private
+        List<Categoria> categorias = new List<Categoria>();
+
         //El programa recibirá un objeto del tipo usuario para poder identificarlo
         //en el transcurso de toda la sesión
 
-        Usuario user2 = new Usuario();
         public Main(Usuario user)
         {
+            //Si es Invitado, no puede ver su perfil ni vender
             InitializeComponent();
             if (user.Idtipousuario == 0)
             {
                 toolStrip1.Items[1].Visible = false;
+                toolStrip1.Items[4].Visible = false;
                 lbuser.Text = "Invitado";
             }
+
+            //Si no es invitado, tiene acceso a las funciones básicas
             else
             {
                 lbuser.Text = user.Nombre;
-                toolStrip1.Items[2].Visible = false;
-            }
-
-            user2 = user;       
+                toolStrip1.Items[3].Visible = false;
+            }         
+            Conexion cat = new Conexion();
+            DataSet ds = cat.leercat ();
+            dgcategorias.DataSource = ds.Tables["categorias"];
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,7 +67,7 @@ namespace main
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil(user2);
+            Perfil perfil = new Perfil();
             perfil.ShowDialog();
         }
 
@@ -70,17 +78,12 @@ namespace main
             this.Hide();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripLabel3_Click(object sender, EventArgs e)
         {
 
         }

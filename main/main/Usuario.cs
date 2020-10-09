@@ -15,43 +15,6 @@ namespace main
             set { idusuario = value; }
         }
 
-        public string departamento;
-        
-        public string Departamento
-        {
-            get { return departamento; }
-            set { departamento = value; }
-        }
-
-        public string municipio;
-
-        public string Municipio
-        {
-            get { return municipio; }
-            set { municipio = value; }
-        }
-
-        public string direccion;
-        public string Direccion
-        {
-            get { return direccion; }
-            set { direccion = value; }
-        }
-
-        public int codpostal;
-        public int Codpostal
-        {
-            get { return codpostal; }
-            set { codpostal = value; }
-        }
-
-        public string telefono;
-        public string Telefono
-        {
-            get { return telefono; }
-            set { telefono = value; }
-        }
-
         public string email;
         public string Email
         {

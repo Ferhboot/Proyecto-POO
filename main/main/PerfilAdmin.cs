@@ -12,10 +12,16 @@ namespace main
 {
     public partial class PerfilAdmin : Form
     {
-        public PerfilAdmin()
+        Usuario u = new Usuario();
+        public PerfilAdmin(Usuario user)
         {
             InitializeComponent();
+            txtusuario.Text = user.IDusuario;
+            txtcorreo.Text = user.Email;
+            u = user;
         }
+
+
 
         private void btnactualizaruser_Click(object sender, EventArgs e)
         {

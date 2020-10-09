@@ -86,12 +86,14 @@
             this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
             this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
+            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -133,6 +135,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(263, 127);
             this.panel3.TabIndex = 7;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             // 
             // label5
             // 
@@ -165,6 +168,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(263, 127);
             this.panel4.TabIndex = 8;
+            this.panel4.Click += new System.EventHandler(this.panel4_Click);
             // 
             // label6
             // 

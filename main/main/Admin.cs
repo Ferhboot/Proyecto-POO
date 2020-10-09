@@ -12,19 +12,48 @@ namespace main
 {
     public partial class Admin : Form
     {
-        public Admin()
+        Usuario u = new Usuario();
+        public Admin(Usuario user)
         {
             InitializeComponent();
+            lbuser.Text = user.Nombre;
+            u = user;
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdminCategorias categoria = new AdminCategorias();
+            AdminCategorias categorias = new AdminCategorias();
+            categorias.ShowDialog();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //AgregarAdmin admin = new AgregarAdmin();
+        }
+
+        private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PerfilAdmin admin = new PerfilAdmin(u);
+            admin.ShowDialog();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            AdminCategorias categorias = new AdminCategorias();
+            categorias.ShowDialog();
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            PerfilAdmin admin = new PerfilAdmin(u);
+            admin.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Home inicio = new Home();
+            inicio.Show();
+            this.Close();
         }
     }
 }

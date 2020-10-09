@@ -58,6 +58,12 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCategorias.Designer.cs">
+      <DependentUpon>AdminCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Form1.cs">
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="Perfil.Designer.cs">
       <DependentUpon>Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerfilAdmin.Designer.cs">
+      <DependentUpon>PerfilAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +124,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminCategorias.resx">
+      <DependentUpon>AdminCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerfilAdmin.resx">
+      <DependentUpon>PerfilAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

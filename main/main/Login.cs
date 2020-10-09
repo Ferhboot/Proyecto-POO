@@ -51,9 +51,18 @@ namespace main
                 try
                 {
                     Conexion cn = new Conexion();
-                    Main principal = new Main(cn.login(txtuser.Text, txtpass.Text));
+                    Usuario user = new Usuario();
+                    user = cn.login(txtuser.Text, txtpass.Text);
+                    if (user.idtipousuario == 3) {
+                        Admin admin = new Admin(user);
+                        admin.Show();
+                    }
+                    else { 
+                        Main principal = new Main(user);
+                        principal.Show();
+                    }
                     this.Hide();
-                    principal.Show();
+                    
                 }
                 catch (Exception X)
                 {

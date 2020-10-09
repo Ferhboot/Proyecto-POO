@@ -82,5 +82,10 @@ namespace main
         {
 
         }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -241,8 +241,10 @@
             this.dgcategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgcategorias.EnableHeadersVisualStyles = false;
             this.dgcategorias.Location = new System.Drawing.Point(3, 21);
+            this.dgcategorias.MultiSelect = false;
             this.dgcategorias.Name = "dgcategorias";
             this.dgcategorias.ReadOnly = true;
+            this.dgcategorias.RowTemplate.Height = 21;
             this.dgcategorias.Size = new System.Drawing.Size(197, 307);
             this.dgcategorias.TabIndex = 0;
             // 

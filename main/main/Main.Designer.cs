@@ -50,6 +50,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgcuenta = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -288,6 +290,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dgcuenta, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(839, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -307,6 +310,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // dgcuenta
+            // 
+            this.dgcuenta.AllowUserToAddRows = false;
+            this.dgcuenta.AllowUserToDeleteRows = false;
+            this.dgcuenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgcuenta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgcuenta.Location = new System.Drawing.Point(3, 95);
+            this.dgcuenta.Name = "dgcuenta";
+            this.dgcuenta.ReadOnly = true;
+            this.dgcuenta.Size = new System.Drawing.Size(198, 272);
+            this.dgcuenta.TabIndex = 1;
             // 
             // Main
             // 
@@ -338,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,5 +380,6 @@
         private System.Windows.Forms.DataGridView dgproductos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgcuenta;
     }
 }

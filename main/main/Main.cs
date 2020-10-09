@@ -23,6 +23,7 @@ namespace main
                 toolStrip1.Items[1].Visible = false;
                 toolStrip1.Items[4].Visible = false;
                 lbuser.Text = "Invitado";
+                u = user;
             }
 
             //Si no es invitado, tiene acceso a las funciones básicas
@@ -34,7 +35,6 @@ namespace main
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
-            u = user;
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -77,19 +77,5 @@ namespace main
         {
 
         }
-
-        private void toolStripLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'proyecto_pooDataSet.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.Fill(this.proyecto_pooDataSet.Usuarios);
-
-        }
-
-
     }
 }

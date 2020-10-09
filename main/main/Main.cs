@@ -87,5 +87,14 @@ namespace main
         {
 
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'proyecto_pooDataSet.Usuarios' table. You can move, or remove it, as needed.
+            this.usuariosTableAdapter.Fill(this.proyecto_pooDataSet.Usuarios);
+
+        }
+
+
     }
 }

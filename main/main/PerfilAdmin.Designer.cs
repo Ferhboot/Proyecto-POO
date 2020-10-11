@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PerfilAdmin));
             this.lbfuerte = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtconfirm = new System.Windows.Forms.TextBox();
@@ -202,7 +203,11 @@
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.btnactualizaruser);
             this.Controls.Add(this.btnlimpiaruser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PerfilAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-Market";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

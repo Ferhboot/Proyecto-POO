@@ -87,20 +87,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(307, 218);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.Size = new System.Drawing.Size(138, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Confirmar contraseña:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(49, 218);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.Size = new System.Drawing.Size(121, 16);
             this.label3.TabIndex = 24;
             this.label3.Text = "Nueva contraseña:";
             // 
@@ -116,20 +118,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(306, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(121, 16);
             this.label2.TabIndex = 22;
             this.label2.Text = "Correo electrónico:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(49, 108);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(126, 16);
             this.label1.TabIndex = 21;
             this.label1.Text = "Nombre de usuario:";
             // 
@@ -146,6 +150,7 @@
             // 
             this.btnactualizaruser.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnactualizaruser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnactualizaruser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnactualizaruser.ForeColor = System.Drawing.Color.White;
             this.btnactualizaruser.Location = new System.Drawing.Point(137, 371);
             this.btnactualizaruser.Margin = new System.Windows.Forms.Padding(4);
@@ -160,6 +165,7 @@
             // 
             this.btnlimpiaruser.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnlimpiaruser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlimpiaruser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlimpiaruser.ForeColor = System.Drawing.Color.White;
             this.btnlimpiaruser.Location = new System.Drawing.Point(308, 371);
             this.btnlimpiaruser.Margin = new System.Windows.Forms.Padding(4);
@@ -209,6 +215,7 @@
             this.Name = "PerfilAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-Market";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PerfilAdmin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

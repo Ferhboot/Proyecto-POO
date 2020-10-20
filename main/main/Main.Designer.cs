@@ -99,18 +99,19 @@
             this.tsUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tsUser.Size = new System.Drawing.Size(96, 22);
             this.tsUser.Text = "Mi Usuario";
+            this.tsUser.ButtonClick += new System.EventHandler(this.tsUser_ButtonClick);
             // 
             // miPerfilToolStripMenuItem
             // 
             this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
             this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 

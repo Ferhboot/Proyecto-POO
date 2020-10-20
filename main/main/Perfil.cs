@@ -12,14 +12,17 @@ namespace main
 {
     public partial class Perfil : Form
     {
-        Usuario u = new Usuario();
-        public Perfil(Usuario user)
+        Datos d = new Datos();
+        public Perfil(Datos user)
         {
             InitializeComponent();
             txtusuario.Text = user.IDusuario;
             txtcorreo.Text = user.Email;
             txtnombre.Text = user.Nombre;
-            u = user;
+            txtciudad.Text = user.Municipio;
+            txttelefono.Text = user.Telefono;
+            cmbdep.SelectedItem = user.Departamento;
+            d = user;
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
@@ -78,7 +81,7 @@ namespace main
                         if (validacion.esFuerte(txtpass.Text))
                         {
                             Conexion con = new Conexion();
-                            con.actualizarpass(u.IDusuario, txtpass.Text);
+                            con.actualizarpass(d.IDusuario, txtpass.Text);
                             MessageBox.Show("Datos modificados exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiar1();
                         }
@@ -125,7 +128,9 @@ namespace main
 
                 Validaciones validacion = new Validaciones();
 
-                if ((validacion.enBlanco(txtnombre.Text) /*&& validacion.enBlanco(txtapellidos.Text)*/ && validacion.enBlanco(txtciudad.Text) && validacion.enBlanco(txtdireccion.Text) && validacion.enBlanco(txtpostal.Text) && validacion.enBlanco(txttelefono.Text)) == false)
+                if ((validacion.enBlanco(txtnombre.Text) && validacion.enBlanco(txtciudad.Text) && 
+                    validacion.enBlanco(txtdireccion.Text) && 
+                    validacion.enBlanco(txttelefono.Text)) == false)
                 {
 
                     
@@ -133,17 +138,14 @@ namespace main
                     {
                         errorProvider1.SetError(txttelefono, "Teléfono debe ser mayor a 7 dígitos");
                     }
-                    else if (!validacion.esNumero(txtpostal.Text))
-                    {
-                        errorProvider1.SetError(txtpostal, "Debe ingresar un código postal correcto");
-                        errorProvider1.SetError(txttelefono, "");
-                    }
 
                     else
                     {
-
-                        MessageBox.Show("Datos modificados exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        limpiar2();
+                        Conexion cn = new Conexion();
+                        cn.actualizardatos(txtnombre.Text, cmbdep.SelectedItem.ToString(),
+                            txtciudad.Text, txtdireccion.Text, txttelefono.Text, d.IDusuario);
+                        MessageBox.Show("Datos modificados exitosamente", "E-Market",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                     }
 
@@ -170,27 +172,10 @@ namespace main
             txtnombre.Text = "";
             txtciudad.Text = "";
             txtdireccion.Text = "";
-            txtpostal.Text = "";
             txttelefono.Text = "";
             errorProvider1.SetError(txttelefono, "");
-            errorProvider1.SetError(txtpostal, "");
         }
 
-        private void txtpostal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
 
         private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
         {

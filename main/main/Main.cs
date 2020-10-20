@@ -13,8 +13,8 @@ namespace main
 {
     public partial class Main : Form
     {
-        Usuario u = new Usuario();
-        public Main(Usuario user)
+        Datos d = new Datos();
+        public Main(Datos user)
         {
             //Si es Invitado, no puede ver su perfil ni vender
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace main
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
-            u = user;
+            d = user;
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -63,7 +63,7 @@ namespace main
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil(u);
+            Perfil perfil = new Perfil(d);
             perfil.ShowDialog();
         }
 
@@ -83,6 +83,12 @@ namespace main
         {
             Publicacion pub = new Publicacion();
             pub.ShowDialog();
+        }
+
+        private void tsUser_ButtonClick(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil(d);
+            perfil.ShowDialog();
         }
     }
 }

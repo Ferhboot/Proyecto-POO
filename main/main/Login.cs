@@ -51,7 +51,7 @@ namespace main
                 try
                 {
                     Conexion cn = new Conexion();
-                    Usuario user = new Usuario();
+                    Datos user = new Datos();
                     user = cn.login(txtuser.Text, txtpass.Text);
                     if (user.idtipousuario == 3) {
                         Admin admin = new Admin(user);

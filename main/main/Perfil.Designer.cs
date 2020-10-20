@@ -34,6 +34,7 @@
             this.btnlimpiaruser = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbfuerte = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtconfirm = new System.Windows.Forms.TextBox();
@@ -48,8 +49,6 @@
             this.cmbdep = new System.Windows.Forms.ComboBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtpostal = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtciudad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,12 +61,11 @@
             this.btnlimpiarperso = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnactualizaruser
@@ -134,6 +132,18 @@
             this.tabPage1.Size = new System.Drawing.Size(486, 450);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos de usuario";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::main.Properties.Resources.info;
+            this.pictureBox2.Location = new System.Drawing.Point(218, 268);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Su contraseña debe tener al menos:\r\n1 Mayúscula\r\n1 Número\r\n8 caracteres como míni" +
+        "mo");
             // 
             // lbfuerte
             // 
@@ -236,8 +246,6 @@
             this.tabPage2.Controls.Add(this.cmbdep);
             this.tabPage2.Controls.Add(this.txttelefono);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.txtpostal);
-            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.txtciudad);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label6);
@@ -258,6 +266,7 @@
             // 
             // cmbdep
             // 
+            this.cmbdep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbdep.FormattingEnabled = true;
             this.cmbdep.Items.AddRange(new object[] {
             "Ahuachapán",
@@ -281,52 +290,36 @@
             // 
             // txttelefono
             // 
-            this.txttelefono.Location = new System.Drawing.Point(277, 314);
+            this.txttelefono.Location = new System.Drawing.Point(165, 314);
             this.txttelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(160, 22);
             this.txttelefono.TabIndex = 29;
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefono_KeyPress);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(275, 283);
+            this.label13.Location = new System.Drawing.Point(215, 290);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 16);
             this.label13.TabIndex = 28;
             this.label13.Text = "Teléfono:";
             // 
-            // txtpostal
-            // 
-            this.txtpostal.Location = new System.Drawing.Point(52, 314);
-            this.txtpostal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtpostal.Name = "txtpostal";
-            this.txtpostal.Size = new System.Drawing.Size(160, 22);
-            this.txtpostal.TabIndex = 27;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(50, 283);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 16);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Código postal:";
-            // 
             // txtciudad
             // 
-            this.txtciudad.Location = new System.Drawing.Point(277, 179);
+            this.txtciudad.Location = new System.Drawing.Point(266, 181);
             this.txtciudad.Margin = new System.Windows.Forms.Padding(4);
             this.txtciudad.Name = "txtciudad";
             this.txtciudad.Size = new System.Drawing.Size(160, 22);
             this.txtciudad.TabIndex = 25;
+            this.txtciudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtciudad_KeyPress);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(275, 148);
+            this.label11.Location = new System.Drawing.Point(276, 148);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 16);
@@ -388,6 +381,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(385, 22);
             this.txtnombre.TabIndex = 13;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // btnactualizarperso
             // 
@@ -421,18 +415,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::main.Properties.Resources.info;
-            this.pictureBox2.Location = new System.Drawing.Point(218, 268);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox2, "Su contraseña debe tener al menos:\r\n1 Mayúscula\r\n1 Número\r\n8 caracteres como míni" +
-        "mo");
-            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -450,10 +432,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -478,8 +460,6 @@
         private System.Windows.Forms.ComboBox cmbdep;
         private System.Windows.Forms.TextBox txttelefono;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtpostal;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtciudad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;

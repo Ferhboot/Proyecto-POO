@@ -90,5 +90,16 @@ namespace main
             Perfil perfil = new Perfil(d);
             perfil.ShowDialog();
         }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea salir?", "Confirmación", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Home h = new Home();
+                h.Show();
+            }
+        }
     }
 }

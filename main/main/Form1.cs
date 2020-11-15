@@ -58,8 +58,8 @@ namespace main
 
         private void btnregistro_Click(object sender, EventArgs e)
         {
-            Registro reg = new Registro();
-            reg.ShowDialog();
+            TipoUsuario tipo = new TipoUsuario();
+            tipo.ShowDialog();
         }
 
         private void btncuenta_Click(object sender, EventArgs e)
@@ -71,12 +71,7 @@ namespace main
 
         private void btninvitado_Click(object sender, EventArgs e)
         {
-            Datos invitado = new Datos();
-            invitado.IDusuario = "Invitado";
-            invitado.Idtipousuario = 0;
-            invitado.Nombre = "Invitado";
-            invitado.Contra = null;
-            Main principal = new Main(invitado);
+            Main principal = new Main();
             principal.Show();
             this.Hide();
         }

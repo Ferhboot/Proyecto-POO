@@ -8,7 +8,30 @@ namespace main
 {
     public class Datos:Usuario
     {
-        public string departamento;
+
+        private int idDatos;
+
+        public int IdDatos
+        {
+            get { return idDatos; }
+            set { idDatos = value; }
+        }
+
+        private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        private string apellido;
+        public string Apellido
+        {
+            get { return apellido; }
+            set { apellido = value; }
+        }
+
+        private string departamento;
         public string Departamento
         {
             get { return departamento; }
@@ -16,7 +39,7 @@ namespace main
         }
 
 
-        public string municipio;
+        private string municipio;
         public string Municipio
         {
             get { return municipio; }
@@ -24,7 +47,7 @@ namespace main
         }
 
 
-        public string direccion;
+        private string direccion;
         public string Direccion
         {
             get { return direccion; }
@@ -32,11 +55,20 @@ namespace main
         }
 
 
-        public string telefono;
+        private string telefono;
         public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
+
+
+        public bool registrar(Datos datos)
+        {
+            Conexion con = new Conexion();
+            con.agregarusuario("Datos", datos);
+            return true;
+        }
+
     }
 }

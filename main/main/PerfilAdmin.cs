@@ -96,7 +96,7 @@ namespace main
 
         private void PerfilAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
         }
     }
 }

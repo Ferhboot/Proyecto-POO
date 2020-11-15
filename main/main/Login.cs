@@ -51,15 +51,31 @@ namespace main
                 try
                 {
                     Conexion cn = new Conexion();
-                    Datos user = new Datos();
+                    Usuario user = new Usuario();
                     user = cn.login(txtuser.Text, txtpass.Text);
-                    if (user.idtipousuario == 3) {
+                    if (user.Idtipousuario == 3) { //Admin
                         Admin admin = new Admin(user);
                         admin.Show();
                     }
-                    else { 
-                        Main principal = new Main(user);
-                        principal.Show();
+                    else {
+
+                        Datos datos = new Datos();
+                        datos = cn.obtenerDatos(user);
+
+                        if (user.Idtipousuario == 2) //Personal
+                        {     
+                            Main principal = new Main(datos);
+                            principal.Show();
+                        }
+                        else //Empresa
+                        {
+                            Empresa empresa = new Empresa();
+                            empresa = cn.obtenerEmpresa(datos);
+                            Main principal = new Main(empresa);
+                            principal.Show();
+                        }
+
+                        
                     }
                     this.Hide();
                     

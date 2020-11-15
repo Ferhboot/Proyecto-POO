@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace main
 {
-    public partial class Registro : Form
+    public partial class RegistroEmpresa : Form
     {
-        public Registro()
+        public RegistroEmpresa()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace main
             txtnom.Clear();
             txtpass.Clear();
             txtpass2.Clear();
-            txtuser.Clear();           
+            txtuser.Clear();
         }
 
         private void Registro_Shown(object sender, EventArgs e)
@@ -31,10 +31,6 @@ namespace main
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            registrar();
-        }
 
         private void txtpass_TextChanged(object sender, EventArgs e)
         {
@@ -75,7 +71,9 @@ namespace main
                         if (validacion.esFuerte(txtpass.Text))
                         {
 
-                            Datos user = new Datos();
+                            Empresa user = new Empresa();
+
+                            user.NombreEmpresa = txtempresa.Text;
 
                             user.Nombre = txtnom.Text;
                             user.Apellido = txtapellido.Text;
@@ -86,11 +84,12 @@ namespace main
 
                             user.IDusuario = txtuser.Text;
                             user.Contra = txtpass.Text;
-                            user.Idtipousuario = 2;
+                            user.Idtipousuario = 3;
                             user.Email = txtemail.Text;
 
                             user.registrar(user);
-                            MessageBox.Show("Usuario registrado exitosamente", "E-Market",
+
+                            MessageBox.Show("Empresa registrada exitosamente", "E-Market",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
@@ -98,7 +97,6 @@ namespace main
                         {
                             MessageBox.Show("Debe ingresar una contraseña más fuerte\n\nDebe contener al menos:\n1 Letra mayúscula\n1 Número\n8 Carácteres");
                         }
-
 
                     }
                     catch (Exception x)
@@ -113,6 +111,11 @@ namespace main
                 MessageBox.Show("Debe rellenar todos los campos", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void btnregistrar_Click(object sender, EventArgs e)
+        {
+            registrar();
         }
     }
 }

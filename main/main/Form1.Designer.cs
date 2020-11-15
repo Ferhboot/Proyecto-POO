@@ -42,10 +42,11 @@
             // 
             this.btncuenta.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.btncuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btncuenta.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btncuenta.Location = new System.Drawing.Point(271, 286);
+            this.btncuenta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncuenta.ForeColor = System.Drawing.Color.White;
+            this.btncuenta.Location = new System.Drawing.Point(272, 286);
             this.btncuenta.Name = "btncuenta";
-            this.btncuenta.Size = new System.Drawing.Size(105, 66);
+            this.btncuenta.Size = new System.Drawing.Size(116, 66);
             this.btncuenta.TabIndex = 0;
             this.btncuenta.Text = "Ingresar con mi cuenta";
             this.btncuenta.UseVisualStyleBackColor = false;
@@ -53,12 +54,13 @@
             // 
             // btninvitado
             // 
-            this.btninvitado.BackColor = System.Drawing.Color.Red;
+            this.btninvitado.BackColor = System.Drawing.Color.RoyalBlue;
             this.btninvitado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btninvitado.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btninvitado.Location = new System.Drawing.Point(463, 286);
+            this.btninvitado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninvitado.ForeColor = System.Drawing.Color.White;
+            this.btninvitado.Location = new System.Drawing.Point(448, 286);
             this.btninvitado.Name = "btninvitado";
-            this.btninvitado.Size = new System.Drawing.Size(105, 66);
+            this.btninvitado.Size = new System.Drawing.Size(116, 66);
             this.btninvitado.TabIndex = 6;
             this.btninvitado.Text = "Ingresar como Invitado";
             this.btninvitado.UseVisualStyleBackColor = false;
@@ -66,10 +68,11 @@
             // 
             // btnregistro
             // 
-            this.btnregistro.BackColor = System.Drawing.Color.Yellow;
+            this.btnregistro.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnregistro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnregistro.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistro.Location = new System.Drawing.Point(72, 286);
+            this.btnregistro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregistro.ForeColor = System.Drawing.Color.White;
+            this.btnregistro.Location = new System.Drawing.Point(88, 286);
             this.btnregistro.Name = "btnregistro";
             this.btnregistro.Size = new System.Drawing.Size(116, 66);
             this.btnregistro.TabIndex = 7;

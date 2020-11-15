@@ -26,20 +26,20 @@ namespace main
         }
 
         //Este comando será para agregar datos a USUARIOS
-        public void agregarusuario(string table, string userid, string nombre, string email, string pass, int tipo)
+        public void agregarusuario(string table, Datos datos)
         {
             conect();
             string com1 = "Select userid from Usuarios where userid=@userid";
             SqlCommand cm = new SqlCommand(com1, conect());
             cm.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
-            cm.Parameters["@userid"].Value = userid;
+            cm.Parameters["@userid"].Value = datos.IDusuario;
             SqlDataReader rd = cm.ExecuteReader();
 
 
             string com2 = "Select email from Usuarios where email=@email";
             SqlCommand cm2 = new SqlCommand(com2, conect());
             cm2.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
-            cm2.Parameters["@email"].Value = email;
+            cm2.Parameters["@email"].Value = datos.Email;
             SqlDataReader rd2 = cm2.ExecuteReader();
 
 
@@ -57,29 +57,153 @@ namespace main
             else
             {
                 string com = "";
-                com += "insert into " + table + " (userid, nombre,email, pass, tipocuenta) values ";
-                com += "(@userid, @nombre,@email,@pass,@tipocuenta);";
+                com += "insert into Usuarios (userid,email, pass, tipocuenta) values ";
+                com += "(@userid,@email,@pass,@tipocuenta);";
                 SqlCommand cmd = new SqlCommand(com, conect());
                 cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
-                cmd.Parameters["@userid"].Value = userid;
+                cmd.Parameters["@userid"].Value = datos.IDusuario;
 
                 cmd.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
-                cmd.Parameters["@email"].Value = email;
-
-                cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
-                cmd.Parameters["@nombre"].Value = nombre;
+                cmd.Parameters["@email"].Value = datos.Email;
 
                 cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
-                cmd.Parameters["@pass"].Value = pass;
+                cmd.Parameters["@pass"].Value = datos.Contra;
 
                 cmd.Parameters.Add(new SqlParameter("@tipocuenta", SqlDbType.Int));
-                cmd.Parameters["@tipocuenta"].Value = tipo;
+                cmd.Parameters["@tipocuenta"].Value = datos.Idtipousuario;
 
                 cmd.ExecuteNonQuery();
+
+
+                com = "";
+                com += "insert into Datos (nombre, apellido, departamento, municipio, direccion, telefono, idUsuario) values ";
+                com += "(@nombre, @apellido, @departamento, @municipio, @direccion, @telefono, @idUsuario);";
+                cmd = new SqlCommand(com, conect());
+
+                cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+                cmd.Parameters["@nombre"].Value = datos.Nombre;
+
+                cmd.Parameters.Add(new SqlParameter("@apellido", SqlDbType.VarChar));
+                cmd.Parameters["@apellido"].Value = datos.Apellido;
+
+                cmd.Parameters.Add(new SqlParameter("@departamento", SqlDbType.VarChar));
+                cmd.Parameters["@departamento"].Value = datos.Departamento;
+
+                cmd.Parameters.Add(new SqlParameter("@municipio", SqlDbType.VarChar));
+                cmd.Parameters["@municipio"].Value = datos.Municipio;
+
+                cmd.Parameters.Add(new SqlParameter("@direccion", SqlDbType.VarChar));
+                cmd.Parameters["@direccion"].Value = datos.Direccion;
+
+                cmd.Parameters.Add(new SqlParameter("@telefono", SqlDbType.VarChar));
+                cmd.Parameters["@telefono"].Value = datos.Telefono;
+
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", SqlDbType.VarChar));
+                cmd.Parameters["@idUsuario"].Value = datos.IDusuario;
+
+                cmd.ExecuteNonQuery();
+
             }
         }
 
-            public Datos login(string user, string pass)
+
+        public void agregarempresa(string table, Empresa empresa)
+        {
+            conect();
+            string com1 = "Select userid from Usuarios where userid=@userid";
+            SqlCommand cm = new SqlCommand(com1, conect());
+            cm.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
+            cm.Parameters["@userid"].Value = empresa.IDusuario;
+            SqlDataReader rd = cm.ExecuteReader();
+
+
+            string com2 = "Select email from Usuarios where email=@email";
+            SqlCommand cm2 = new SqlCommand(com2, conect());
+            cm2.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+            cm2.Parameters["@email"].Value = empresa.Email;
+            SqlDataReader rd2 = cm2.ExecuteReader();
+
+
+            if (rd.Read())
+            {
+                throw new Exception("¡El usuario ya existe!");
+
+            }
+
+            else if (rd2.Read())
+            {
+                throw new Exception("¡El correo indicado ya está registrado!");
+
+            }
+            else
+            {
+                string com = "";
+                com += "insert into Usuarios (userid,email, pass, tipocuenta) values ";
+                com += "(@userid,@email,@pass,@tipocuenta);";
+                SqlCommand cmd = new SqlCommand(com, conect());
+                cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
+                cmd.Parameters["@userid"].Value = empresa.IDusuario;
+
+                cmd.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+                cmd.Parameters["@email"].Value = empresa.Email;
+
+                cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
+                cmd.Parameters["@pass"].Value = empresa.Contra;
+
+                cmd.Parameters.Add(new SqlParameter("@tipocuenta", SqlDbType.Int));
+                cmd.Parameters["@tipocuenta"].Value = empresa.Idtipousuario;
+
+                cmd.ExecuteNonQuery();
+
+
+                com = "";
+                com += "insert into Datos (nombre, apellido, departamento, municipio, direccion, telefono, idUsuario) values ";
+                com += "(@nombre, @apellido, @departamento, @municipio, @direccion, @telefono, @idUsuario);";
+                cmd = new SqlCommand(com, conect());
+
+                cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+                cmd.Parameters["@nombre"].Value = empresa.Nombre;
+
+                cmd.Parameters.Add(new SqlParameter("@apellido", SqlDbType.VarChar));
+                cmd.Parameters["@apellido"].Value = empresa.Apellido;
+
+                cmd.Parameters.Add(new SqlParameter("@departamento", SqlDbType.VarChar));
+                cmd.Parameters["@departamento"].Value = empresa.Departamento;
+
+                cmd.Parameters.Add(new SqlParameter("@municipio", SqlDbType.VarChar));
+                cmd.Parameters["@municipio"].Value = empresa.Municipio;
+
+                cmd.Parameters.Add(new SqlParameter("@direccion", SqlDbType.VarChar));
+                cmd.Parameters["@direccion"].Value = empresa.Direccion;
+
+                cmd.Parameters.Add(new SqlParameter("@telefono", SqlDbType.VarChar));
+                cmd.Parameters["@telefono"].Value = empresa.Telefono;
+
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", SqlDbType.VarChar));
+                cmd.Parameters["@idUsuario"].Value = empresa.IDusuario;
+
+                cmd.ExecuteNonQuery();
+
+
+                com = "";
+                com += "insert into Empresa (nombreEmpresa, idDatos) values ";
+                com += "(@nombreEmpresa,@idDatos);";
+                cmd = new SqlCommand(com, conect());
+
+                cmd.Parameters.Add(new SqlParameter("@nombreEmpresa", SqlDbType.VarChar));
+                cmd.Parameters["@nombreEmpresa"].Value = empresa.IDusuario;
+
+                cmd.Parameters.Add(new SqlParameter("@idDatos", SqlDbType.Int));
+                cmd.Parameters["@idDatos"].Value = empresa.IdDatos;
+
+
+                cmd.ExecuteNonQuery();
+
+            }
+        }
+
+
+        public Usuario login(string user, string pass)
         {
             string com = "Select * from Usuarios where userid=@userid and pass=@pass;";
             SqlCommand cmd = new SqlCommand(com, conect());
@@ -93,17 +217,13 @@ namespace main
             SqlDataReader rd = cmd.ExecuteReader();
             if (rd.Read())
             {
-                Datos d = new Datos();
-                d.IDusuario = rd["userid"].ToString();
-                d.Nombre = rd["nombre"].ToString();
-                d.Email = rd["email"].ToString();
-                d.Contra = rd["pass"].ToString();
-                d.Idtipousuario = int.Parse(rd["tipocuenta"].ToString());
-                d.Departamento = rd["departamento"].ToString();
-                d.Municipio = rd["municipio"].ToString();
-                d.Direccion = rd["direccion"].ToString();
-                d.Telefono = rd["telefono"].ToString();
-                return d;
+                Usuario u = new Usuario();
+                u.IDusuario = rd["userid"].ToString();
+                u.Email = rd["email"].ToString();
+                u.Contra = rd["pass"].ToString();
+                u.Idtipousuario = int.Parse(rd["tipocuenta"].ToString());
+
+                return u;
             }
             
             else
@@ -111,6 +231,76 @@ namespace main
                 throw new Exception("¡Datos Erróneos!");
             }
         }
+
+
+        public Datos obtenerDatos(Usuario user)
+        {
+            string com = "Select * from datos where idUsuario=@idUsuario;";
+            SqlCommand cmd = new SqlCommand(com, conect());
+
+            cmd.Parameters.Add(new SqlParameter("@idUsuario", SqlDbType.VarChar));
+            cmd.Parameters["@idUsuario"].Value = user.IDusuario;
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.Read())
+            {
+                Datos d = new Datos();
+                d.IdDatos = int.Parse(rd["idDatos"].ToString());
+                d.Nombre = rd["nombre"].ToString();
+                d.Apellido = rd["apellido"].ToString();
+                d.Departamento = rd["departamento"].ToString();
+                d.Municipio = rd["municipio"].ToString();
+                d.Direccion = rd["direccion"].ToString();
+                d.Telefono = rd["idDatos"].ToString();
+                d.IDusuario = user.IDusuario;
+                d.Email = user.Email;
+                d.Idtipousuario = user.Idtipousuario;
+
+                return d;
+            }
+
+            else
+            {
+                throw new Exception("¡Datos Erróneos!");
+            }
+        }
+
+
+        public Empresa obtenerEmpresa(Datos datos)
+        {
+            string com = "Select * from empresa where idDatos=@idDatos;";
+            SqlCommand cmd = new SqlCommand(com, conect());
+
+            cmd.Parameters.Add(new SqlParameter("@idDatos", SqlDbType.Int));
+            cmd.Parameters["@idDatos"].Value = datos.IdDatos;
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.Read())
+            {
+                Empresa e = new Empresa();
+
+                e.IdEmpresa = int.Parse(rd["idEmpresa"].ToString());
+                e.NombreEmpresa = rd["nombreEmpresa"].ToString();
+                e.IdDatos = datos.IdDatos;
+                e.Nombre = datos.Nombre;
+                e.Apellido = datos.Apellido;
+                e.Departamento = datos.Departamento;
+                e.Municipio = datos.Municipio;
+                e.Direccion = datos.Direccion;
+                e.Telefono = datos.Telefono;
+                e.IDusuario = datos.IDusuario;
+                e.Email = datos.Email;               
+                e.Idtipousuario = datos.Idtipousuario;
+
+                return e;
+            }
+
+            else
+            {
+                throw new Exception("¡Datos Erróneos!");
+            }
+        }
+
 
         public DataSet leercat()
         {

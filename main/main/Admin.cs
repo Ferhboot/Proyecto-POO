@@ -16,7 +16,7 @@ namespace main
         public Admin(Usuario user)
         {
             InitializeComponent();
-            lbuser.Text = user.Nombre;
+            lbuser.Text = user.IDusuario;
             u = user;
         }
 

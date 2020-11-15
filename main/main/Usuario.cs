@@ -8,46 +8,33 @@ namespace main
 {
     public class Usuario
     {
-        public string idusuario;
+        private string idusuario;
         public string IDusuario
         {
             get { return idusuario; }
             set { idusuario = value; }
         }
 
-        public string email;
+        private string email;
         public string Email
         {
             get { return email; }
             set { email = value; }
-        }
+        }    
 
-        public string nombre;
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public string contra;
+        private string contra;
         public string Contra
         {
             get { return contra; }
             set { contra = value; }
         }
 
-        public int idtipousuario;
+        private int idtipousuario;
         public int Idtipousuario
         {
             get { return idtipousuario; }
             set { idtipousuario = value; }
         }
-
-        public bool registrar()
-        {
-            Conexion con = new Conexion();  
-            con.agregarusuario("Usuarios", idusuario, nombre,email, contra, idtipousuario);
-            return true;
-        }
+   
     }
 }

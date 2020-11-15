@@ -67,6 +67,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Datos.cs" />
+    <Compile Include="Empresa.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +106,12 @@
     <Compile Include="Publicacion.Designer.cs">
       <DependentUpon>Publicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroEmpresa.Designer.cs">
+      <DependentUpon>RegistroEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +123,12 @@
     </Compile>
     <Compile Include="start.Designer.cs">
       <DependentUpon>start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoUsuario.Designer.cs">
+      <DependentUpon>TipoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Validaciones.cs" />
@@ -156,11 +169,17 @@
     <EmbeddedResource Include="Publicacion.resx">
       <DependentUpon>Publicacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroEmpresa.resx">
+      <DependentUpon>RegistroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="start.resx">
       <DependentUpon>start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoUsuario.resx">
+      <DependentUpon>TipoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -225,6 +244,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volver-flecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

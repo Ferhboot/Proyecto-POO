@@ -13,30 +13,40 @@ namespace main
 {
     public partial class Main : Form
     {
-        Datos d = new Datos();
+        Datos d = null;
+        Empresa e = null;
         public Main(Datos user)
         {
-            //Si es Invitado, no puede ver su perfil ni vender
             InitializeComponent();
-            if (user.Idtipousuario == 0)
-            {
-                toolStrip1.Items[1].Visible = false;
-                toolStrip1.Items[4].Visible = false;
-                lbuser.Text = "Invitado";
-                
-            }
-
-            //Si no es invitado, tiene acceso a las funciones básicas
-            else
-            {
-                lbuser.Text = user.Nombre;
-                toolStrip1.Items[3].Visible = false;
-            }         
+            lbuser.Text = user.IDusuario;
+            toolStrip1.Items[3].Visible = false;      
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
             d = user;
         }
+
+        public Main(Empresa empresa)
+        {
+            InitializeComponent();
+            lbuser.Text = empresa.IDusuario;
+            toolStrip1.Items[3].Visible = false;
+            Conexion cat = new Conexion();
+            DataSet ds = cat.leercat();
+            dgcategorias.DataSource = ds.Tables["categorias"];
+            e = empresa;
+        }
+
+
+        public Main()
+        {
+            InitializeComponent();
+            toolStrip1.Items[1].Visible = false;
+            toolStrip1.Items[4].Visible = false;
+            lbuser.Text = "Invitado";
+      
+        }
+
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {

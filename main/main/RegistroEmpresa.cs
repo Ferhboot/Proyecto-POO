@@ -127,5 +127,26 @@ namespace main
         {
 
         }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+
+        private void limpiar()
+        {
+            txtnom.Clear();
+            txtapellido.Clear();
+            txtmunicipio.Clear();
+            txtdireccion.Clear();
+            txttelefono.Clear();
+            txtempresa.Clear();
+            txtuser.Clear();
+            txtemail.Clear();
+            txtpass.Clear();
+            txtpass2.Clear();
+            txtuser.Clear();
+        }
     }
 }

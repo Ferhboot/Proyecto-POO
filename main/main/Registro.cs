@@ -20,10 +20,21 @@ namespace main
         //Éste es el botón para limpiar
         private void button2_Click(object sender, EventArgs e)
         {
+            limpiar();
+        }
+
+        private void limpiar()
+        {
             txtnom.Clear();
+            txtapellido.Clear();
+            txtmunicipio.Clear();
+            txtdireccion.Clear();
+            txttelefono.Clear();
+            txtuser.Clear();
+            txtemail.Clear();
             txtpass.Clear();
             txtpass2.Clear();
-            txtuser.Clear();           
+            txtuser.Clear();
         }
 
         private void Registro_Shown(object sender, EventArgs e)

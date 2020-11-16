@@ -64,6 +64,7 @@
     <Compile Include="AdminCategorias.Designer.cs">
       <DependentUpon>AdminCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="BienOServicio.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Datos.cs" />
@@ -259,6 +260,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\volver-flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

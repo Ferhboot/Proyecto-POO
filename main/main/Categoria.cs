@@ -8,13 +8,13 @@ namespace main
 {
     class Categoria
     {
-        /*private string idcategoria;
-        public string Idcategoria
+        private int idcategoria;
+        public int Idcategoria
         {
           get { return idcategoria; }
           set { idcategoria = value; }  
         }
-        */
+        
         private string nombre;
         public string Nombre
         {

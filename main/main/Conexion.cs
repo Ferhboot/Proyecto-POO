@@ -321,6 +321,15 @@ namespace main
             return datos;
         }
 
+        public DataSet leercat1()
+        {
+            string cmd = "select * from categorias;";
+            DataSet datos = new DataSet();
+            SqlDataAdapter ad = new SqlDataAdapter(cmd, conect());
+            ad.Fill(datos, "categorias");
+            return datos;
+        }
+
         public void actualizarpass(string user, string pass)
         {
             conect();
@@ -361,8 +370,106 @@ namespace main
             
             cmd.ExecuteNonQuery();
         }
-              
+
+
+
+        public void agregarBienOServicio(string table, BienOServicio b)
+        {
+            conect();
+
+            string com = "";
+            com += "insert into BienOServicio (nombre, descripcion, precio,cantidad,imagen,mayoreo,idCategoria,idUsuario) values ";
+            com += "(@nombre,@descripcion,@precio,@cantidad,@imagen,@mayoreo,@idCategoria,@idUsuario);";
+
+            SqlCommand cmd = new SqlCommand(com, conect());
+
+            cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+            cmd.Parameters["@nombre"].Value = b.Nombre;
+
+            cmd.Parameters.Add(new SqlParameter("@descripcion", SqlDbType.Text));
+            cmd.Parameters["@descripcion"].Value = b.Descripcion;
+
+            cmd.Parameters.Add(new SqlParameter("@precio", SqlDbType.Float));
+            cmd.Parameters["@precio"].Value = b.Precio;
+
+            cmd.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
+            cmd.Parameters["@cantidad"].Value = b.Cantidad;
+
+            cmd.Parameters.Add(new SqlParameter("@imagen", SqlDbType.Image));
+            cmd.Parameters["@imagen"].Value = b.Imagen;
+
+            cmd.Parameters.Add(new SqlParameter("@mayoreo", SqlDbType.Int));
+            cmd.Parameters["@mayoreo"].Value = b.Mayoreo;
+
+            cmd.Parameters.Add(new SqlParameter("@idCategoria", SqlDbType.Int));
+            cmd.Parameters["@idCategoria"].Value = b.Cat.Idcategoria;
+
+            cmd.Parameters.Add(new SqlParameter("@idUsuario", SqlDbType.VarChar));
+            cmd.Parameters["@idUsuario"].Value = b.User.IDusuario;
+
+            cmd.ExecuteNonQuery();  
+           
+        }
+
+        public List<BienOServicio> listaBienOServicio()
+        {
+            string consulta = "select * from BienOServicio WHERE cantidad>0 or cantidad=-1;";
+            SqlCommand cmd = new SqlCommand(consulta, conect());
+
+            List<BienOServicio> lista = new List<BienOServicio>();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            while(rd.Read())
+            {
+                BienOServicio b = new BienOServicio();
+
+                b.IdBienOServicio = int.Parse(rd["idBienOServicio"].ToString());
+                b.Imagen = (byte[])rd["imagen"];
+                b.Nombre = rd["nombre"].ToString();
+
+                lista.Add(b);    
+            }
+
+            return lista;
+
+        }
+
+        public List<BienOServicio> listaPorCategoria(string categoria)
+        {
+
+            string getIdCat = "SELECT idcategoria FROM categorias WHERE nombre = @nombre;";
+            SqlCommand obteneridCat = new SqlCommand(getIdCat, conect());
+            obteneridCat.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+            obteneridCat.Parameters["@nombre"].Value = categoria;
+            SqlDataReader rdid = obteneridCat.ExecuteReader();
+            rdid.Read();
+            int idcategoria = int.Parse(rdid["idcategoria"].ToString());
+
+            string consulta = "select * from BienOServicio WHERE (cantidad>0 or cantidad=-1) AND (idCategoria = @idCategoria);";
+            SqlCommand cmd = new SqlCommand(consulta, conect());
+
+            cmd.Parameters.Add(new SqlParameter("@idCategoria", SqlDbType.Int));
+            cmd.Parameters["@idCategoria"].Value = idcategoria;
+
+            List<BienOServicio> lista = new List<BienOServicio>();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                BienOServicio b = new BienOServicio();
+
+                b.IdBienOServicio = int.Parse(rd["idBienOServicio"].ToString());
+                b.Imagen = (byte[])rd["imagen"];
+                b.Nombre = rd["nombre"].ToString();
+
+                lista.Add(b);
+            }
+
+            return lista;
+
         }
 
     }
+
+}
 

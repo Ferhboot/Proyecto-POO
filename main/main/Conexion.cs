@@ -185,16 +185,26 @@ namespace main
                 cmd.ExecuteNonQuery();
 
 
+
+                string getIdDatos = "select iddatos from datos where idusuario=@iduser;";
+                SqlCommand obteneridDatos = new SqlCommand(getIdDatos, conect());
+                obteneridDatos.Parameters.Add(new SqlParameter("@iduser", SqlDbType.VarChar));
+                obteneridDatos.Parameters["@iduser"].Value = empresa.IDusuario;
+                SqlDataReader rdid = obteneridDatos.ExecuteReader();
+                rdid.Read();
+                int iddatos = int.Parse(rdid["iddatos"].ToString());
+
+
+
                 com = "";
                 com += "insert into Empresa (nombreEmpresa, idDatos) values ";
                 com += "(@nombreEmpresa,@idDatos);";
                 cmd = new SqlCommand(com, conect());
 
                 cmd.Parameters.Add(new SqlParameter("@nombreEmpresa", SqlDbType.VarChar));
-                cmd.Parameters["@nombreEmpresa"].Value = empresa.IDusuario;
-
+                cmd.Parameters["@nombreEmpresa"].Value = empresa.NombreEmpresa;
                 cmd.Parameters.Add(new SqlParameter("@idDatos", SqlDbType.Int));
-                cmd.Parameters["@idDatos"].Value = empresa.IdDatos;
+                cmd.Parameters["@idDatos"].Value = /*empresa.IdDatos*/ iddatos;
 
 
                 cmd.ExecuteNonQuery();

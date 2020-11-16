@@ -87,6 +87,7 @@
             this.tabPage1.Size = new System.Drawing.Size(819, 414);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label5
             // 
@@ -221,11 +222,11 @@
             this.tabPage2.Controls.Add(this.btnELIMINAR);
             this.tabPage2.Controls.Add(this.btnAGREGAR);
             this.tabPage2.Controls.Add(this.dtvpublicaciones);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(819, 413);
+            this.tabPage2.Size = new System.Drawing.Size(819, 414);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Eliminar";
             // 

@@ -86,7 +86,7 @@ namespace main
 
                             user.IDusuario = txtuser.Text;
                             user.Contra = txtpass.Text;
-                            user.Idtipousuario = 2;
+                            user.Idtipousuario = 1;
                             user.Email = txtemail.Text;
 
                             user.registrar(user);

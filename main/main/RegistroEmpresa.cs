@@ -84,7 +84,7 @@ namespace main
 
                             user.IDusuario = txtuser.Text;
                             user.Contra = txtpass.Text;
-                            user.Idtipousuario = 3;
+                            user.Idtipousuario = 2;
                             user.Email = txtemail.Text;
 
                             user.registrar(user);
@@ -116,6 +116,16 @@ namespace main
         private void btnregistrar_Click(object sender, EventArgs e)
         {
             registrar();
+        }
+
+        private void RegistroEmpresa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

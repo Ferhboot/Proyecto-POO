@@ -18,7 +18,7 @@ namespace main
         public Main(Datos user)
         {
             InitializeComponent();
-            lbuser.Text = user.IDusuario;
+            lbuser.Text = user.Nombre + ' ' + user.Apellido;
             toolStrip1.Items[3].Visible = false;      
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat ();
@@ -29,12 +29,13 @@ namespace main
         public Main(Empresa empresa)
         {
             InitializeComponent();
-            lbuser.Text = empresa.IDusuario;
+            lbuser.Text = empresa.Nombre;
             toolStrip1.Items[3].Visible = false;
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat();
             dgcategorias.DataSource = ds.Tables["categorias"];
             e = empresa;
+
         }
 
 
@@ -44,7 +45,11 @@ namespace main
             toolStrip1.Items[1].Visible = false;
             toolStrip1.Items[4].Visible = false;
             lbuser.Text = "Invitado";
-      
+            Conexion cat = new Conexion();
+            DataSet ds = cat.leercat();
+            dgcategorias.DataSource = ds.Tables["categorias"];
+
+
         }
 
 
@@ -110,6 +115,11 @@ namespace main
                 Home h = new Home();
                 h.Show();
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            dgcategorias.ClearSelection();
         }
     }
 }

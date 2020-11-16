@@ -57,12 +57,13 @@ namespace main
                         Admin admin = new Admin(user);
                         admin.Show();
                     }
+                    
                     else {
 
-                        Datos datos = new Datos();
-                        datos = cn.obtenerDatos(user);
+                       Datos datos = new Datos();
+                       datos = cn.obtenerDatos(user);
 
-                        if (user.Idtipousuario == 2) //Personal
+                        if (user.Idtipousuario == 1) //Personal
                         {     
                             Main principal = new Main(datos);
                             principal.Show();
@@ -93,6 +94,9 @@ namespace main
             }
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

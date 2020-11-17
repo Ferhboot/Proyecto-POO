@@ -70,7 +70,7 @@ namespace main
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show("Hubo un error"+x.Message, "Error", MessageBoxButtons.OK,
+                    MessageBox.Show("Hubo un error", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }                              
             }

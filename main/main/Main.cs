@@ -685,5 +685,16 @@ namespace main
             paginador();
             dgcategorias.ClearSelection();
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void lbreportar_Click(object sender, EventArgs e)
+        {
+            Reporte rp = new Reporte();
+            rp.ShowDialog();
+        }
     }
 }

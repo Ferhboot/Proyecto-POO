@@ -139,6 +139,12 @@
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Validaciones.cs" />
+    <Compile Include="VerReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerReportes.Designer.cs">
+      <DependentUpon>VerReportes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TipoUsuario.resx">
       <DependentUpon>TipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerReportes.resx">
+      <DependentUpon>VerReportes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -278,6 +287,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lupa %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

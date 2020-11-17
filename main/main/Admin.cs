@@ -61,5 +61,16 @@ namespace main
             Home h = new Home();
             h.Show();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Reporte r = new Reporte();
+            r.ShowDialog();
+        }
     }
 }

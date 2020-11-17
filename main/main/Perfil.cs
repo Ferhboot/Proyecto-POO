@@ -242,5 +242,10 @@ namespace main
                 e.Handled = true;
             }
         }
+
+        private void Perfil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

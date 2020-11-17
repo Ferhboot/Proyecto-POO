@@ -261,7 +261,7 @@ namespace main
                 d.Departamento = rd["departamento"].ToString();
                 d.Municipio = rd["municipio"].ToString();
                 d.Direccion = rd["direccion"].ToString();
-                d.Telefono = rd["idDatos"].ToString();
+                d.Telefono = rd["telefono"].ToString();
                 d.IDusuario = user.IDusuario;
                 d.Email = user.Email;
                 d.Idtipousuario = user.Idtipousuario;

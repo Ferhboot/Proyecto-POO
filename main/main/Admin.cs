@@ -67,9 +67,9 @@ namespace main
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void panel1_Click(object sender, EventArgs e)
         {
-            Reporte r = new Reporte();
+            VerReportes r = new VerReportes();
             r.ShowDialog();
         }
     }

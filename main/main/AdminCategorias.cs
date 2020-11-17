@@ -76,7 +76,7 @@ namespace main
             Categoria cat = new Categoria();
             if (cat.modificarCategoria(cat.Idcategoria, txtnom.Text) == true){
                 MessageBox.Show("Categoría modificada con éxito", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);//
             }
             else
             {

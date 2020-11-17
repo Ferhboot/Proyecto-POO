@@ -323,7 +323,7 @@ namespace main
 
         public DataSet leercat1()
         {
-            string cmd = "select * from categorias;";
+            string cmd = "select * from datoscategoria;";
             DataSet datos = new DataSet();
             SqlDataAdapter ad = new SqlDataAdapter(cmd, conect());
             ad.Fill(datos, "categorias");
@@ -469,6 +469,21 @@ namespace main
 
         }
 
+        //Para leer datos de una categoría
+        public Categoria datoscat(int id)
+        {
+            SqlCommand cmd = new SqlCommand("select top 1 * from datoscategoria where id=@id;",conect());
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = id;
+            SqlDataReader rd = cmd.ExecuteReader();
+            rd.Read();
+            Categoria cat = new Categoria();
+            cat.Idcategoria = int.Parse(rd[0].ToString());
+            cat.Nombre = rd[1].ToString();
+            cat.Cantidad = int.Parse(rd[2].ToString());
+
+            return cat;
+        }
     }
 
 }

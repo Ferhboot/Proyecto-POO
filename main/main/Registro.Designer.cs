@@ -73,7 +73,7 @@
             this.txtuser.Location = new System.Drawing.Point(139, 22);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(159, 21);
-            this.txtuser.TabIndex = 2;
+            this.txtuser.TabIndex = 7;
             // 
             // txtpass2
             // 
@@ -82,7 +82,7 @@
             this.txtpass2.Name = "txtpass2";
             this.txtpass2.PasswordChar = '*';
             this.txtpass2.Size = new System.Drawing.Size(159, 21);
-            this.txtpass2.TabIndex = 5;
+            this.txtpass2.TabIndex = 10;
             // 
             // txtpass
             // 
@@ -91,7 +91,7 @@
             this.txtpass.Name = "txtpass";
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(159, 21);
-            this.txtpass.TabIndex = 4;
+            this.txtpass.TabIndex = 9;
             this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             // 
             // label1
@@ -166,7 +166,7 @@
             this.btnregistrar.Location = new System.Drawing.Point(375, 477);
             this.btnregistrar.Name = "btnregistrar";
             this.btnregistrar.Size = new System.Drawing.Size(91, 36);
-            this.btnregistrar.TabIndex = 7;
+            this.btnregistrar.TabIndex = 11;
             this.btnregistrar.Text = "Registrar";
             this.btnregistrar.UseVisualStyleBackColor = false;
             this.btnregistrar.Click += new System.EventHandler(this.button1_Click);
@@ -180,7 +180,7 @@
             this.btnlimpiar.Location = new System.Drawing.Point(249, 477);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(91, 36);
-            this.btnlimpiar.TabIndex = 8;
+            this.btnlimpiar.TabIndex = 12;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.UseVisualStyleBackColor = false;
             this.btnlimpiar.Click += new System.EventHandler(this.button2_Click);
@@ -206,7 +206,7 @@
             this.txtemail.Location = new System.Drawing.Point(139, 62);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(159, 21);
-            this.txtemail.TabIndex = 3;
+            this.txtemail.TabIndex = 8;
             // 
             // lbfuerte
             // 
@@ -255,7 +255,7 @@
             this.txtapellido.Location = new System.Drawing.Point(133, 60);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(159, 21);
-            this.txtapellido.TabIndex = 17;
+            this.txtapellido.TabIndex = 2;
             // 
             // label7
             // 
@@ -285,7 +285,7 @@
             this.txtmunicipio.Location = new System.Drawing.Point(133, 141);
             this.txtmunicipio.Name = "txtmunicipio";
             this.txtmunicipio.Size = new System.Drawing.Size(159, 21);
-            this.txtmunicipio.TabIndex = 21;
+            this.txtmunicipio.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -331,7 +331,7 @@
             this.cmbdep.Location = new System.Drawing.Point(132, 101);
             this.cmbdep.Name = "cmbdep";
             this.cmbdep.Size = new System.Drawing.Size(160, 21);
-            this.cmbdep.TabIndex = 31;
+            this.cmbdep.TabIndex = 3;
             // 
             // label11
             // 
@@ -350,7 +350,7 @@
             this.txttelefono.Location = new System.Drawing.Point(132, 252);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(159, 21);
-            this.txttelefono.TabIndex = 25;
+            this.txttelefono.TabIndex = 6;
             // 
             // label2
             // 
@@ -370,7 +370,7 @@
             this.txtdireccion.Multiline = true;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(159, 57);
-            this.txtdireccion.TabIndex = 23;
+            this.txtdireccion.TabIndex = 5;
             // 
             // groupBox2
             // 

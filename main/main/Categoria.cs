@@ -22,9 +22,16 @@ namespace main
             set { nombre = value; }
         }
 
-        public void agregarCategoria()
+        public int cantidad;
+        public int Cantidad
         {
+            get { return cantidad; }
+            set { cantidad = value; }
+        }
 
+        public void agregarCategoria(int id)
+        {
+           
         }
 
         public void modificarCategoria()

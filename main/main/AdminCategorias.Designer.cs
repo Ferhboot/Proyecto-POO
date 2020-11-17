@@ -136,6 +136,7 @@
             // btnmodificar
             // 
             this.btnmodificar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnmodificar.Enabled = false;
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.ForeColor = System.Drawing.Color.White;
             this.btnmodificar.Location = new System.Drawing.Point(415, 331);
@@ -150,6 +151,7 @@
             // btneliminar
             // 
             this.btneliminar.BackColor = System.Drawing.Color.Maroon;
+            this.btneliminar.Enabled = false;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Location = new System.Drawing.Point(508, 331);

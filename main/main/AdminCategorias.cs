@@ -51,20 +51,28 @@ namespace main
             Validaciones validacion = new Validaciones();
             if (!validacion.enBlanco(txtcategoria.Text))
             {
-                if(cat.agregarCategoria(txtcategoria.Text)==true)
+                try
                 {
-                    MessageBox.Show("Categoría agregada exitosamente", "E-Market", 
+                    if (cat.agregarCategoria(txtcategoria.Text) == true)
+                    {
+                        MessageBox.Show("Categoría agregada exitosamente", "E-Market",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiar();
-                    DataSet ds = con.leercat1();
-                    dgvcategorias.DataSource = null;
-                    dgvcategorias.DataSource = ds.Tables["categorias"];
-                }
-                else
-                {
-                    MessageBox.Show("Hubo un error", "Error", MessageBoxButtons.OK, 
+                        limpiar();
+                        DataSet ds = con.leercat1();
+                        dgvcategorias.DataSource = null;
+                        dgvcategorias.DataSource = ds.Tables["categorias"];
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }                               
+                    }
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show("Hubo un error"+x.Message, "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }                              
             }
             else
             {
@@ -86,51 +94,77 @@ namespace main
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
-        {         
-            if (cat.modificarCategoria(cat.Idcategoria, txtnom.Text) == true){
-                MessageBox.Show("Categoría modificada con éxito", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DataSet ds = con.leercat1();
-                dgvcategorias.DataSource = null;
-                dgvcategorias.DataSource = ds.Tables["categorias"];
-            }
-            else
-            {
-                MessageBox.Show("Hubo un error, intente nuevamente", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btneliminar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Realmente desea eliminar esta categoría?", "E-Market",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (cat.eliminarCategoria(cat.Idcategoria) == true)
-                {
-                    MessageBox.Show("Categoría eliminada con éxito", "Éxito",
+            try {
+                if (cat.modificarCategoria(cat.Idcategoria, txtnom.Text) == true)
+                    {
+                    MessageBox.Show("Categoría modificada con éxito", "Éxito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DataSet ds = con.leercat1();
                     dgvcategorias.DataSource = null;
                     dgvcategorias.DataSource = ds.Tables["categorias"];
-                }
+                    txtnom.Clear();
+                    cat = null;
+                    btneliminar.Enabled = false;
+                    btnmodificar.Enabled = false;
+                    }
                 else
-                {
+                    {
                     MessageBox.Show("Hubo un error, intente nuevamente", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+            }
+            catch
+                {
+                MessageBox.Show("Hubo un error", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             
+        
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea eliminar esta categoría?", "E-Market",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (cat.eliminarCategoria(cat.Idcategoria) == true)
+                    {
+                        MessageBox.Show("Categoría eliminada con éxito", "Éxito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataSet ds = con.leercat1();
+                        dgvcategorias.DataSource = null;
+                        dgvcategorias.DataSource = ds.Tables["categorias"];
+                        txtnom.Clear();
+                        cat = null;
+                        btneliminar.Enabled = false;
+                        btnmodificar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error, intente nuevamente", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error, intente nuevamente", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvcategorias_DoubleClick(object sender, EventArgs e)
         {
             int idcat = 0;
-            string nomcat = "";
             Conexion con = new Conexion();    
             idcat = int.Parse(dgvcategorias.CurrentRow.Cells[0].FormattedValue.ToString());       
             cat = con.datoscat(idcat);
             txtnom.Text = cat.Nombre;
+            btneliminar.Enabled = true;
+            btnmodificar.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

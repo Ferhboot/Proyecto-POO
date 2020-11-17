@@ -13,6 +13,8 @@ namespace main
     public partial class AdminCategorias : Form
     {
         Categoria cat = new Categoria();
+        Conexion con = new Conexion();
+        
         public AdminCategorias()
         {
             InitializeComponent();
@@ -40,7 +42,6 @@ namespace main
 
         private void AdminCategorias_Load(object sender, EventArgs e)
         {
-            Conexion con = new Conexion();
             DataSet ds = con.leercat1();
             dgvcategorias.DataSource = ds.Tables["categorias"];
         }
@@ -50,12 +51,25 @@ namespace main
             Validaciones validacion = new Validaciones();
             if (!validacion.enBlanco(txtcategoria.Text))
             {
-                MessageBox.Show("Categoría agregada exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                limpiar();
+                if(cat.agregarCategoria(txtcategoria.Text)==true)
+                {
+                    MessageBox.Show("Categoría agregada exitosamente", "E-Market", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+                    DataSet ds = con.leercat1();
+                    dgvcategorias.DataSource = null;
+                    dgvcategorias.DataSource = ds.Tables["categorias"];
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error", "Error", MessageBoxButtons.OK, 
+                        MessageBoxIcon.Error);
+                }                               
             }
             else
             {
-                MessageBox.Show("Debe ingresar el nombre de la categoría");
+                MessageBox.Show("Debe ingresar el nombre de la categoría", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,11 +86,13 @@ namespace main
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
-        {
-            Categoria cat = new Categoria();
+        {         
             if (cat.modificarCategoria(cat.Idcategoria, txtnom.Text) == true){
                 MessageBox.Show("Categoría modificada con éxito", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);//
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataSet ds = con.leercat1();
+                dgvcategorias.DataSource = null;
+                dgvcategorias.DataSource = ds.Tables["categorias"];
             }
             else
             {
@@ -87,15 +103,32 @@ namespace main
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-
+            if(MessageBox.Show("¿Realmente desea eliminar esta categoría?", "E-Market",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (cat.eliminarCategoria(cat.Idcategoria) == true)
+                {
+                    MessageBox.Show("Categoría eliminada con éxito", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataSet ds = con.leercat1();
+                    dgvcategorias.DataSource = null;
+                    dgvcategorias.DataSource = ds.Tables["categorias"];
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error, intente nuevamente", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
         }
 
         private void dgvcategorias_DoubleClick(object sender, EventArgs e)
         {
             int idcat = 0;
-            
+            string nomcat = "";
             Conexion con = new Conexion();    
-            idcat = int.Parse(dgvcategorias.CurrentRow.Cells[0].FormattedValue.ToString());
+            idcat = int.Parse(dgvcategorias.CurrentRow.Cells[0].FormattedValue.ToString());       
             cat = con.datoscat(idcat);
             txtnom.Text = cat.Nombre;
         }

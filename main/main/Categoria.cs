@@ -29,15 +29,22 @@ namespace main
             set { cantidad = value; }
         }
 
-        public void agregarCategoria(int id)
+        public bool agregarCategoria(string nom)
         {
-           
+            Conexion cn = new Conexion();
+            return cn.agregarCat(nom);
         }
 
         public bool modificarCategoria(int id, string nom)
         {
             Conexion cn = new Conexion();
             return cn.modificarCat(id, nom);
+        }
+
+        public bool eliminarCategoria(int id)
+        {
+            Conexion cn = new Conexion();
+            return cn.eliminarCat(id);
         }
     }
 }

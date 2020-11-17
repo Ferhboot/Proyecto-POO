@@ -499,6 +499,26 @@ namespace main
             if (cmd.ExecuteNonQuery() > 0) return true;
             else return false;
         }
+
+        public bool agregarCat(string nom)
+        {
+            string com = "insert into categorias (Nombre) values (@nom)";
+            SqlCommand cmd = new SqlCommand(com, conect());
+            cmd.Parameters.Add(new SqlParameter("@nom", SqlDbType.VarChar));
+            cmd.Parameters["@nom"].Value = nom;
+            if (cmd.ExecuteNonQuery() > 0) return true;
+            else return false;
+        }
+
+        public bool eliminarCat(int id)
+        {
+            string com = "delete from categorias where idcategoria =@id";
+            SqlCommand cmd = new SqlCommand(com, conect());
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = id;
+            if (cmd.ExecuteNonQuery() > 0) return true;
+            else return false;
+        }
     }
 
 }

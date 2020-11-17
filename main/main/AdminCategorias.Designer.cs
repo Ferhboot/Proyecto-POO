@@ -80,7 +80,7 @@
             this.btnagregar.BackColor = System.Drawing.Color.LightCoral;
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(470, 457);
+            this.btnagregar.Location = new System.Drawing.Point(470, 459);
             this.btnagregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(87, 28);
@@ -102,6 +102,7 @@
             // 
             // dgvcategorias
             // 
+            this.dgvcategorias.AllowUserToAddRows = false;
             this.dgvcategorias.AllowUserToResizeRows = false;
             this.dgvcategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcategorias.BackgroundColor = System.Drawing.Color.White;

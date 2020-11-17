@@ -117,7 +117,17 @@ namespace main
 
         private void tsUser_ButtonClick(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil(d);
+            Perfil perfil;
+            if (d != null)
+            {
+                perfil = new Perfil(d);
+            }
+            else
+            {
+                perfil = new Perfil(emp);
+            }
+
+            
             perfil.ShowDialog();
         }
 
@@ -144,166 +154,182 @@ namespace main
              
                 b = p.listaBienOServicio();
 
-               if (b.Count>=4)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-                    System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
-                    System.IO.MemoryStream ms3 = new System.IO.MemoryStream(b[2].Imagen);
-                    System.IO.MemoryStream ms4 = new System.IO.MemoryStream(b[3].Imagen);
+                paginador();
 
-                    pb1.Image = Image.FromStream(ms);
-                    pb2.Image = Image.FromStream(ms2);
-                    pb3.Image = Image.FromStream(ms3);
-                    pb4.Image = Image.FromStream(ms4);
+               //if (b.Count>=4)
+               // {
+               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
+               //     System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
+               //     System.IO.MemoryStream ms3 = new System.IO.MemoryStream(b[2].Imagen);
+               //     System.IO.MemoryStream ms4 = new System.IO.MemoryStream(b[3].Imagen);
 
-                    label1.Text = b[0].Nombre;
-                    label2.Text = b[1].Nombre;
-                    label3.Text = b[2].Nombre;
-                    label4.Text = b[3].Nombre;
+               //     pb1.Image = Image.FromStream(ms);
+               //     pb2.Image = Image.FromStream(ms2);
+               //     pb3.Image = Image.FromStream(ms3);
+               //     pb4.Image = Image.FromStream(ms4);
 
-                    pb1.Visible = true;
-                    pb2.Visible = true;
-                    pb3.Visible = true;
-                    pb4.Visible = true;
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = true;
-                    label4.Visible = true;
-                    button1.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = true;
-                    button4.Visible = true;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = true;
-                    tableLayoutPanel8.Visible = true;
-                    tableLayoutPanel9.Visible = true;
+               //     label1.Text = b[0].Nombre;
+               //     label2.Text = b[1].Nombre;
+               //     label3.Text = b[2].Nombre;
+               //     label4.Text = b[3].Nombre;
+
+               //     label5.Text = b[0].Precio.ToString() ;
+               //     label6.Text = b[1].Precio.ToString();
+               //     label7.Text = b[2].Precio.ToString();
+               //     label8.Text = b[3].Precio.ToString();
+
+               //     pb1.Visible = true;
+               //     pb2.Visible = true;
+               //     pb3.Visible = true;
+               //     pb4.Visible = true;
+               //     label1.Visible = true;
+               //     label2.Visible = true;
+               //     label3.Visible = true;
+               //     label4.Visible = true;
+               //     button1.Visible = true;
+               //     button2.Visible = true;
+               //     button3.Visible = true;
+               //     button4.Visible = true;
+               //     tableLayoutPanel6.Visible = true;
+               //     tableLayoutPanel7.Visible = true;
+               //     tableLayoutPanel8.Visible = true;
+               //     tableLayoutPanel9.Visible = true;
 
 
-                }
-                else if(b.Count == 3)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-                    System.IO.MemoryStream ms1 = new System.IO.MemoryStream(b[1].Imagen);
-                    System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[2].Imagen);
+               // }
+               // else if(b.Count == 3)
+               // {
+               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
+               //     System.IO.MemoryStream ms1 = new System.IO.MemoryStream(b[1].Imagen);
+               //     System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[2].Imagen);
 
-                    pb1.Image = Image.FromStream(ms);
-                    pb2.Image = Image.FromStream(ms1);
-                    pb3.Image = Image.FromStream(ms2);
+               //     pb1.Image = Image.FromStream(ms);
+               //     pb2.Image = Image.FromStream(ms1);
+               //     pb3.Image = Image.FromStream(ms2);
 
-                    label1.Text = b[0].Nombre;
-                    label2.Text = b[1].Nombre;
-                    label3.Text = b[2].Nombre;
+               //     label1.Text = b[0].Nombre;
+               //     label2.Text = b[1].Nombre;
+               //     label3.Text = b[2].Nombre;
 
-                    pb1.Visible = true;
-                    pb2.Visible = true;
-                    pb3.Visible = true;
-                    pb4.Visible = false;
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = true;
-                    label4.Visible = false;
-                    button1.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = true;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = true;
-                    tableLayoutPanel8.Visible = true;
-                    tableLayoutPanel9.Visible = false;
+               //     label5.Text = b[0].Precio.ToString();
+               //     label6.Text = b[1].Precio.ToString();
+               //     label7.Text = b[2].Precio.ToString();
 
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
+               //     pb1.Visible = true;
+               //     pb2.Visible = true;
+               //     pb3.Visible = true;
+               //     pb4.Visible = false;
+               //     label1.Visible = true;
+               //     label2.Visible = true;
+               //     label3.Visible = true;
+               //     label4.Visible = false;
+               //     button1.Visible = true;
+               //     button2.Visible = true;
+               //     button3.Visible = true;
+               //     button4.Visible = false;
+               //     tableLayoutPanel6.Visible = true;
+               //     tableLayoutPanel7.Visible = true;
+               //     tableLayoutPanel8.Visible = true;
+               //     tableLayoutPanel9.Visible = false;
 
-                }
-                else if (b.Count == 2)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-                    System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
+               //     button5.Enabled = false;
+               //     button6.Enabled = false;
+               //     button7.Enabled = false;
+               //     button8.Enabled = false;
 
-                    pb1.Image = Image.FromStream(ms);
-                    pb2.Image = Image.FromStream(ms2);
+               // }
+               // else if (b.Count == 2)
+               // {
+               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
+               //     System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
 
-                    label1.Text = b[0].Nombre;
-                    label2.Text = b[1].Nombre;
+               //     pb1.Image = Image.FromStream(ms);
+               //     pb2.Image = Image.FromStream(ms2);
 
-                    pb1.Visible = true;
-                    pb2.Visible = true;
-                    pb3.Visible = false;
-                    pb4.Visible = false;
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = false;
-                    label4.Visible = false;
-                    button1.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = false;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = true;
-                    tableLayoutPanel8.Visible = false;
-                    tableLayoutPanel9.Visible = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
+               //     label1.Text = b[0].Nombre;
+               //     label2.Text = b[1].Nombre;
 
-                }
-                else if (b.Count == 1)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
+               //     label5.Text = b[0].Precio.ToString();
+               //     label6.Text = b[1].Precio.ToString();
 
-                    pb1.Image = Image.FromStream(ms);
+               //     pb1.Visible = true;
+               //     pb2.Visible = true;
+               //     pb3.Visible = false;
+               //     pb4.Visible = false;
+               //     label1.Visible = true;
+               //     label2.Visible = true;
+               //     label3.Visible = false;
+               //     label4.Visible = false;
+               //     button1.Visible = true;
+               //     button2.Visible = true;
+               //     button3.Visible = false;
+               //     button4.Visible = false;
+               //     tableLayoutPanel6.Visible = true;
+               //     tableLayoutPanel7.Visible = true;
+               //     tableLayoutPanel8.Visible = false;
+               //     tableLayoutPanel9.Visible = false;
+               //     button5.Enabled = false;
+               //     button6.Enabled = false;
+               //     button7.Enabled = false;
+               //     button8.Enabled = false;
 
-                    label1.Text = b[0].Nombre;
+               // }
+               // else if (b.Count == 1)
+               // {
+               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
 
-                    pb1.Visible = true;
-                    pb2.Visible = false;
-                    pb3.Visible = false;
-                    pb4.Visible = false;
-                    label1.Visible = true;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    label4.Visible = false;
-                    button1.Visible = true;
-                    button2.Visible = false;
-                    button3.Visible = false;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = false;
-                    tableLayoutPanel8.Visible = false;
-                    tableLayoutPanel9.Visible = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
+               //     pb1.Image = Image.FromStream(ms);
 
-                }
-                else if (b.Count <= 1)
-                {
+               //     label1.Text = b[0].Nombre;
 
-                    pb1.Visible = false;
-                    pb2.Visible = false;
-                    pb3.Visible = false;
-                    pb4.Visible = false;
-                    label1.Visible = false;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    label4.Visible = false;
-                    button1.Visible = false;
-                    button2.Visible = false;
-                    button3.Visible = false;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = false;
-                    tableLayoutPanel7.Visible = false;
-                    tableLayoutPanel8.Visible = false;
-                    tableLayoutPanel9.Visible = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
-                }
+               //     label5.Text = b[0].Precio.ToString();
+
+               //     pb1.Visible = true;
+               //     pb2.Visible = false;
+               //     pb3.Visible = false;
+               //     pb4.Visible = false;
+               //     label1.Visible = true;
+               //     label2.Visible = false;
+               //     label3.Visible = false;
+               //     label4.Visible = false;
+               //     button1.Visible = true;
+               //     button2.Visible = false;
+               //     button3.Visible = false;
+               //     button4.Visible = false;
+               //     tableLayoutPanel6.Visible = true;
+               //     tableLayoutPanel7.Visible = false;
+               //     tableLayoutPanel8.Visible = false;
+               //     tableLayoutPanel9.Visible = false;
+               //     button5.Enabled = false;
+               //     button6.Enabled = false;
+               //     button7.Enabled = false;
+               //     button8.Enabled = false;
+
+               // }
+               // else if (b.Count <= 1)
+               // {
+
+               //     pb1.Visible = false;
+               //     pb2.Visible = false;
+               //     pb3.Visible = false;
+               //     pb4.Visible = false;
+               //     label1.Visible = false;
+               //     label2.Visible = false;
+               //     label3.Visible = false;
+               //     label4.Visible = false;
+               //     button1.Visible = false;
+               //     button2.Visible = false;
+               //     button3.Visible = false;
+               //     button4.Visible = false;
+               //     tableLayoutPanel6.Visible = false;
+               //     tableLayoutPanel7.Visible = false;
+               //     tableLayoutPanel8.Visible = false;
+               //     tableLayoutPanel9.Visible = false;
+               //     button5.Enabled = false;
+               //     button6.Enabled = false;
+               //     button7.Enabled = false;
+               //     button8.Enabled = false;
+               // }
 
 
             }
@@ -345,6 +371,11 @@ namespace main
                 label3.Text = b[(paginaActual * 4) - 2].Nombre;
                 label4.Text = b[(paginaActual * 4) - 1].Nombre;
 
+                label5.Text = "$" + b[(paginaActual * 4) - 4].Precio.ToString("n2");
+                label6.Text = "$" + b[(paginaActual * 4) - 3].Precio.ToString("n2");
+                label7.Text = "$" + b[(paginaActual * 4) - 2].Precio.ToString("n2");
+                label8.Text = "$" + b[(paginaActual * 4) - 1].Precio.ToString("n2");
+
                 pb1.Visible = true;
                 pb2.Visible = true;
                 pb3.Visible = true;
@@ -377,6 +408,10 @@ namespace main
                 label1.Text = b[(paginaActual * 4) - 4].Nombre;
                 label2.Text = b[(paginaActual * 4) - 3].Nombre;
                 label3.Text = b[(paginaActual * 4) - 2].Nombre;
+
+                label5.Text = "$" + b[(paginaActual * 4) - 4].Precio.ToString("n2");
+                label6.Text = "$" + b[(paginaActual * 4) - 3].Precio.ToString("n2");
+                label7.Text = "$" + b[(paginaActual * 4) - 2].Precio.ToString("n2");
 
                 pb1.Visible = true;
                 pb2.Visible = true;
@@ -412,6 +447,9 @@ namespace main
                 label1.Text = b[(paginaActual * 4) - 4].Nombre;
                 label2.Text = b[(paginaActual * 4) - 3].Nombre;
 
+                label5.Text = "$" + b[(paginaActual * 4) - 4].Precio.ToString("n2");
+                label6.Text = "$" + b[(paginaActual * 4) - 3].Precio.ToString("n2");
+
                 pb1.Visible = true;
                 pb2.Visible = true;
                 pb3.Visible = false;
@@ -441,6 +479,8 @@ namespace main
                 pb1.Image = Image.FromStream(ms);
 
                 label1.Text = b[(paginaActual * 4) - 4].Nombre;
+
+                label5.Text = "$" + b[(paginaActual * 4) - 4].Precio.ToString("n2");
 
                 pb1.Visible = true;
                 pb2.Visible = false;
@@ -475,6 +515,17 @@ namespace main
 
                 paginador();
 
+                if ((paginaActual * 4) != b.Count)
+                {                 
+                    button6.BackColor = Color.IndianRed;
+                    button6.ForeColor = Color.White;
+                    button7.BackColor = Color.Wheat;
+                    button7.ForeColor = Color.Black;
+                    button6.Text = (paginaActual - 1).ToString();
+                    button7.Text = (paginaActual).ToString();
+                }
+
+
             }
             else
             {
@@ -489,6 +540,11 @@ namespace main
 
             if (paginaActual  >= 1)
             {
+
+                button6.BackColor = Color.Wheat;
+                button6.ForeColor = Color.Black;
+                button7.BackColor = Color.IndianRed;
+                button7.ForeColor = Color.White;
 
                 paginador();
 
@@ -510,9 +566,19 @@ namespace main
             paginaActual += 1;
 
             if ((paginaActual * 4) >= (b.Count))
-            {
+            {   
 
                 paginador();
+
+                if ((paginaActual * 4) != b.Count)
+                {
+                    button6.BackColor = Color.IndianRed;
+                    button6.ForeColor = Color.White;
+                    button7.BackColor = Color.Wheat;
+                    button7.ForeColor = Color.Black;
+                    button6.Text = (paginaActual - 1).ToString();
+                    button7.Text = (paginaActual).ToString();
+                }
 
             }
             else
@@ -523,7 +589,28 @@ namespace main
 
         private void button6_Click(object sender, EventArgs e)
         {
+            paginaActual -= 1;
 
+            if (paginaActual >= 1)
+            {
+
+                button6.BackColor = Color.Wheat;
+                button6.ForeColor = Color.Black;
+                button7.BackColor = Color.IndianRed;
+                button7.ForeColor = Color.White;
+
+                paginador();
+
+                button5.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button8.Enabled = true;
+
+            }
+            else
+            {
+                paginaActual += 1;
+            }
         }
 
         private void dgcategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -548,170 +635,47 @@ namespace main
 
                 b = p.listaPorCategoria(categoria);
 
-                if (b.Count >= 4)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-                    System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
-                    System.IO.MemoryStream ms3 = new System.IO.MemoryStream(b[2].Imagen);
-                    System.IO.MemoryStream ms4 = new System.IO.MemoryStream(b[3].Imagen);
-
-                    pb1.Image = Image.FromStream(ms);
-                    pb2.Image = Image.FromStream(ms2);
-                    pb3.Image = Image.FromStream(ms3);
-                    pb4.Image = Image.FromStream(ms4);
-
-                    label1.Text = b[0].Nombre;
-                    label2.Text = b[1].Nombre;
-                    label3.Text = b[2].Nombre;
-                    label4.Text = b[3].Nombre;
-
-                    pb1.Visible = true;
-                    pb2.Visible = true;
-                    pb3.Visible = true;
-                    pb4.Visible = true;
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = true;
-                    label4.Visible = true;
-                    button1.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = true;
-                    button4.Visible = true;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = true;
-                    tableLayoutPanel8.Visible = true;
-                    tableLayoutPanel9.Visible = true;
-
-
-                }
-                else if (b.Count == 3)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-                    System.IO.MemoryStream ms1 = new System.IO.MemoryStream(b[1].Imagen);
-                    System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[2].Imagen);
-
-                    pb1.Image = Image.FromStream(ms);
-                    pb2.Image = Image.FromStream(ms1);
-                    pb3.Image = Image.FromStream(ms2);
-
-                    label1.Text = b[0].Nombre;
-                    label2.Text = b[1].Nombre;
-                    label3.Text = b[2].Nombre;
-
-                    pb1.Visible = true;
-                    pb2.Visible = true;
-                    pb3.Visible = true;
-                    pb4.Visible = false;
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = true;
-                    label4.Visible = false;
-                    button1.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = true;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = true;
-                    tableLayoutPanel8.Visible = true;
-                    tableLayoutPanel9.Visible = false;
-
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
-
-                }
-                else if (b.Count == 2)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-                    System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
-
-                    pb1.Image = Image.FromStream(ms);
-                    pb2.Image = Image.FromStream(ms2);
-
-                    label1.Text = b[0].Nombre;
-                    label2.Text = b[1].Nombre;
-
-                    pb1.Visible = true;
-                    pb2.Visible = true;
-                    pb3.Visible = false;
-                    pb4.Visible = false;
-                    label1.Visible = true;
-                    label2.Visible = true;
-                    label3.Visible = false;
-                    label4.Visible = false;
-                    button1.Visible = true;
-                    button2.Visible = true;
-                    button3.Visible = false;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = true;
-                    tableLayoutPanel8.Visible = false;
-                    tableLayoutPanel9.Visible = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
-
-                }
-                else if (b.Count == 1)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-
-                    pb1.Image = Image.FromStream(ms);
-
-                    label1.Text = b[0].Nombre;
-
-                    pb1.Visible = true;
-                    pb2.Visible = false;
-                    pb3.Visible = false;
-                    pb4.Visible = false;
-                    label1.Visible = true;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    label4.Visible = false;
-                    button1.Visible = true;
-                    button2.Visible = false;
-                    button3.Visible = false;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = true;
-                    tableLayoutPanel7.Visible = false;
-                    tableLayoutPanel8.Visible = false;
-                    tableLayoutPanel9.Visible = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
-
-                }
-                else if (b.Count <= 1)
-                {
-
-                    pb1.Visible = false;
-                    pb2.Visible = false;
-                    pb3.Visible = false;
-                    pb4.Visible = false;
-                    label1.Visible = false;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    label4.Visible = false;
-                    button1.Visible = false;
-                    button2.Visible = false;
-                    button3.Visible = false;
-                    button4.Visible = false;
-                    tableLayoutPanel6.Visible = false;
-                    tableLayoutPanel7.Visible = false;
-                    tableLayoutPanel8.Visible = false;
-                    tableLayoutPanel9.Visible = false;
-                    button5.Enabled = false;
-                    button6.Enabled = false;
-                    button7.Enabled = false;
-                    button8.Enabled = false;
-                }
-
+                paginador();
 
             }
 
+        }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            if (txtbuscar.Text.Trim()!="")
+            {
+                Conexion p = new Conexion();
+                if (p.buscarBienOServicio(txtbuscar.Text) != null)
+                {
+                    if (txtbuscar.Text.Length > 4)
+                    {
+                        
+                        paginaActual = 1;
+
+                        b = p.buscarBienOServicio(txtbuscar.Text);
+
+                        paginador();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar al menos 5 caracteres", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar el buscador", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
         }
     }
 }

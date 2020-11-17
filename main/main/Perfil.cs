@@ -13,6 +13,7 @@ namespace main
     public partial class Perfil : Form
     {
         Datos d = new Datos();
+        Empresa emp = new Empresa();
         public Perfil(Datos user)
         {
             InitializeComponent();
@@ -23,6 +24,18 @@ namespace main
             txttelefono.Text = user.Telefono;
             cmbdep.SelectedItem = user.Departamento;
             d = user;
+        }
+
+        public Perfil(Empresa empresa)
+        {
+            InitializeComponent();
+            txtusuario.Text = empresa.IDusuario;
+            txtcorreo.Text = empresa.Email;
+            txtnombre.Text = empresa.Nombre;
+            txtciudad.Text = empresa.Municipio;
+            txttelefono.Text = empresa.Telefono;
+            cmbdep.SelectedItem = empresa.Departamento;
+            emp = empresa;
         }
 
         private void tabControl1_Click(object sender, EventArgs e)

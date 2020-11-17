@@ -424,6 +424,7 @@ namespace main
                 BienOServicio b = new BienOServicio();
 
                 b.IdBienOServicio = int.Parse(rd["idBienOServicio"].ToString());
+                b.Precio = float.Parse(rd["precio"].ToString());
                 b.Imagen = (byte[])rd["imagen"];
                 b.Nombre = rd["nombre"].ToString();
 
@@ -459,6 +460,34 @@ namespace main
                 BienOServicio b = new BienOServicio();
 
                 b.IdBienOServicio = int.Parse(rd["idBienOServicio"].ToString());
+                b.Precio = float.Parse(rd["precio"].ToString());
+                b.Imagen = (byte[])rd["imagen"];
+                b.Nombre = rd["nombre"].ToString();
+
+                lista.Add(b);
+            }
+
+            return lista;
+
+        }
+
+
+        public List<BienOServicio> buscarBienOServicio(string nombre)
+        {
+            string consulta = "select * from BienOServicio WHERE (cantidad>0 or cantidad=-1) AND nombre like '%'+@nombre+'%' ;";
+            SqlCommand cmd = new SqlCommand(consulta, conect());
+            cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+            cmd.Parameters["@nombre"].Value = nombre;
+
+            List<BienOServicio> lista = new List<BienOServicio>();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                BienOServicio b = new BienOServicio();
+
+                b.IdBienOServicio = int.Parse(rd["idBienOServicio"].ToString());
+                b.Precio = float.Parse(rd["precio"].ToString());
                 b.Imagen = (byte[])rd["imagen"];
                 b.Nombre = rd["nombre"].ToString();
 

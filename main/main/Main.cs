@@ -677,5 +677,13 @@ namespace main
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Conexion p = new Conexion();
+            b = p.buscarBienOServicio("");
+            paginador();
+            dgcategorias.ClearSelection();
+        }
     }
 }

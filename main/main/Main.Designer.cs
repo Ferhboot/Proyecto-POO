@@ -72,10 +72,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.button9 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -95,6 +97,7 @@
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -249,9 +252,9 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 85);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -269,7 +272,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 488);
+            this.groupBox1.Size = new System.Drawing.Size(197, 452);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Categorías";
@@ -305,7 +308,7 @@
             this.dgcategorias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgcategorias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgcategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgcategorias.Size = new System.Drawing.Size(197, 464);
+            this.dgcategorias.Size = new System.Drawing.Size(191, 428);
             this.dgcategorias.TabIndex = 0;
             this.dgcategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellClick);
             this.dgcategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellContentClick);
@@ -357,11 +360,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
             this.tableLayoutPanel5.ColumnCount = 5;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.16162F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.29293F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.29293F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.16162F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.25733F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.87419F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.144745F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.4664F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.25733F));
             this.tableLayoutPanel5.Controls.Add(this.pb1, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.pb2, 3, 1);
             this.tableLayoutPanel5.Controls.Add(this.pb3, 1, 4);
@@ -375,13 +378,13 @@
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 7;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.027182F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.4882F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.460979F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.651538F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.48826F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.460979F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.422868F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.027094F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.48958F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.45986F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.651431F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.48958F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.45986F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.42259F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(615, 482);
             this.tableLayoutPanel5.TabIndex = 2;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint_1);
@@ -393,7 +396,7 @@
             this.pb1.Location = new System.Drawing.Point(99, 14);
             this.pb1.Margin = new System.Windows.Forms.Padding(0);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(180, 161);
+            this.pb1.Size = new System.Drawing.Size(177, 151);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 0;
             this.pb1.TabStop = false;
@@ -402,10 +405,10 @@
             // 
             this.pb2.BackColor = System.Drawing.Color.Transparent;
             this.pb2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb2.Location = new System.Drawing.Point(334, 14);
+            this.pb2.Location = new System.Drawing.Point(332, 14);
             this.pb2.Margin = new System.Windows.Forms.Padding(0);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(180, 161);
+            this.pb2.Size = new System.Drawing.Size(181, 151);
             this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 1;
             this.pb2.TabStop = false;
@@ -417,7 +420,7 @@
             this.pb3.Location = new System.Drawing.Point(99, 232);
             this.pb3.Margin = new System.Windows.Forms.Padding(0);
             this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(180, 161);
+            this.pb3.Size = new System.Drawing.Size(177, 151);
             this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 2;
             this.pb3.TabStop = false;
@@ -426,10 +429,10 @@
             // 
             this.pb4.BackColor = System.Drawing.Color.Transparent;
             this.pb4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb4.Location = new System.Drawing.Point(334, 232);
+            this.pb4.Location = new System.Drawing.Point(332, 232);
             this.pb4.Margin = new System.Windows.Forms.Padding(0);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(180, 161);
+            this.pb4.Size = new System.Drawing.Size(181, 151);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb4.TabIndex = 3;
             this.pb4.TabStop = false;
@@ -446,13 +449,13 @@
             this.tableLayoutPanel8.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.button3, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(99, 393);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(99, 383);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(180, 40);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(177, 50);
             this.tableLayoutPanel8.TabIndex = 6;
             // 
             // label7
@@ -464,9 +467,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label7.Location = new System.Drawing.Point(129, 0);
+            this.label7.Location = new System.Drawing.Point(126, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.Size = new System.Drawing.Size(48, 25);
             this.label7.TabIndex = 4;
             this.label7.Text = "$10";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -484,9 +487,9 @@
             this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 23);
+            this.button3.Location = new System.Drawing.Point(3, 28);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 14);
+            this.button3.Size = new System.Drawing.Size(171, 19);
             this.button3.TabIndex = 1;
             this.button3.Text = "Ver Publicación";
             this.button3.UseVisualStyleBackColor = false;
@@ -503,7 +506,7 @@
             this.label3.Location = new System.Drawing.Point(6, 6);
             this.label3.Margin = new System.Windows.Forms.Padding(6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 8);
+            this.label3.Size = new System.Drawing.Size(111, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -520,13 +523,13 @@
             this.tableLayoutPanel9.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.button4, 0, 1);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(334, 393);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(332, 383);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(180, 40);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(181, 50);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // label8
@@ -540,7 +543,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(129, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
+            this.label8.Size = new System.Drawing.Size(49, 25);
             this.label8.TabIndex = 4;
             this.label8.Text = "$10";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -557,7 +560,7 @@
             this.label4.Location = new System.Drawing.Point(6, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 8);
+            this.label4.Size = new System.Drawing.Size(114, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "label4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -575,9 +578,9 @@
             this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 23);
+            this.button4.Location = new System.Drawing.Point(3, 28);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(174, 14);
+            this.button4.Size = new System.Drawing.Size(175, 19);
             this.button4.TabIndex = 1;
             this.button4.Text = "Ver Publicación";
             this.button4.UseVisualStyleBackColor = false;
@@ -601,7 +604,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(174, 43);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(171, 43);
             this.tableLayoutPanel10.TabIndex = 8;
             // 
             // button5
@@ -616,7 +619,7 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(3, 24);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(37, 16);
+            this.button5.Size = new System.Drawing.Size(36, 16);
             this.button5.TabIndex = 0;
             this.button5.Text = "Anterior";
             this.button5.UseVisualStyleBackColor = false;
@@ -633,9 +636,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(46, 24);
+            this.button6.Location = new System.Drawing.Point(45, 24);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 16);
+            this.button6.Size = new System.Drawing.Size(36, 16);
             this.button6.TabIndex = 1;
             this.button6.Text = "1";
             this.button6.UseVisualStyleBackColor = false;
@@ -651,9 +654,9 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(89, 24);
+            this.button7.Location = new System.Drawing.Point(87, 24);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(37, 16);
+            this.button7.Size = new System.Drawing.Size(36, 16);
             this.button7.TabIndex = 2;
             this.button7.Text = "2";
             this.button7.UseVisualStyleBackColor = false;
@@ -669,7 +672,7 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(132, 24);
+            this.button8.Location = new System.Drawing.Point(129, 24);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(39, 16);
             this.button8.TabIndex = 3;
@@ -689,13 +692,13 @@
             this.tableLayoutPanel6.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(99, 175);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(99, 165);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(180, 40);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(177, 50);
             this.tableLayoutPanel6.TabIndex = 9;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
@@ -712,10 +715,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(2, 22);
+            this.button1.Location = new System.Drawing.Point(2, 27);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 16);
+            this.button1.Size = new System.Drawing.Size(173, 21);
             this.button1.TabIndex = 1;
             this.button1.Text = "Ver Publicación";
             this.button1.UseVisualStyleBackColor = false;
@@ -732,7 +735,7 @@
             this.label1.Location = new System.Drawing.Point(6, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 8);
+            this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -747,9 +750,9 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label5.Location = new System.Drawing.Point(129, 0);
+            this.label5.Location = new System.Drawing.Point(126, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.Size = new System.Drawing.Size(48, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "$10";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -766,14 +769,30 @@
             this.tableLayoutPanel7.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.button2, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(334, 175);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(332, 165);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(180, 40);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(181, 50);
             this.tableLayoutPanel7.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label6.Location = new System.Drawing.Point(129, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "$10";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -788,28 +807,12 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 23);
+            this.button2.Location = new System.Drawing.Point(3, 28);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 14);
+            this.button2.Size = new System.Drawing.Size(175, 19);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ver Publicación";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label6.Location = new System.Drawing.Point(129, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "$10";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -823,7 +826,7 @@
             this.label2.Location = new System.Drawing.Point(6, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 8);
+            this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -840,6 +843,36 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.button9, 0, 1);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(203, 488);
+            this.tableLayoutPanel11.TabIndex = 3;
+            // 
+            // button9
+            // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button9.BackColor = System.Drawing.Color.DarkBlue;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(17, 461);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(168, 23);
+            this.button9.TabIndex = 1;
+            this.button9.Text = "Ver todos los productos";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Main
             // 
@@ -886,6 +919,7 @@
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -938,5 +972,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Button button9;
     }
 }

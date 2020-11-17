@@ -56,6 +56,7 @@ namespace main
                     if (user.Idtipousuario == 3) { //Admin
                         Admin admin = new Admin(user);
                         admin.Show();
+                        this.Hide();
                     }
                     
                     else {
@@ -67,6 +68,7 @@ namespace main
                         {     
                             Main principal = new Main(datos);
                             principal.Show();
+                            this.Hide();
                         }
                         else //Empresa
                         {
@@ -74,6 +76,7 @@ namespace main
                             empresa = cn.obtenerEmpresa(datos);
                             Main principal = new Main(empresa);
                             principal.Show();
+                            this.Hide();
                         }
 
                         

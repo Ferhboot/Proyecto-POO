@@ -55,5 +55,11 @@ namespace main
             inicio.Show();
             this.Close();
         }
+
+        private void Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Home h = new Home();
+            h.Show();
+        }
     }
 }

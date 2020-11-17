@@ -34,9 +34,10 @@ namespace main
            
         }
 
-        public void modificarCategoria()
+        public bool modificarCategoria(int id, string nom)
         {
-
+            Conexion cn = new Conexion();
+            return cn.modificarCat(id, nom);
         }
     }
 }

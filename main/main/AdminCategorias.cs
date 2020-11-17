@@ -12,6 +12,7 @@ namespace main
 {
     public partial class AdminCategorias : Form
     {
+        Categoria cat = new Categoria();
         public AdminCategorias()
         {
             InitializeComponent();
@@ -72,7 +73,16 @@ namespace main
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-
+            Categoria cat = new Categoria();
+            if (cat.modificarCategoria(cat.Idcategoria, txtnom.Text) == true){
+                MessageBox.Show("Categoría modificada con éxito", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error, intente nuevamente", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -83,13 +93,17 @@ namespace main
         private void dgvcategorias_DoubleClick(object sender, EventArgs e)
         {
             int idcat = 0;
-            string ncat = "";
-            Conexion con = new Conexion();
-            Categoria cat = new Categoria();
+            
+            Conexion con = new Conexion();    
             idcat = int.Parse(dgvcategorias.CurrentRow.Cells[0].FormattedValue.ToString());
             cat = con.datoscat(idcat);
-
             txtnom.Text = cat.Nombre;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtnom.ReadOnly = false;
+            button1.Enabled = false;
         }
     }
 }

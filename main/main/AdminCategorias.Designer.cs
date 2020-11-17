@@ -41,6 +41,7 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.txtnom = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(40, 476);
+            this.label2.Location = new System.Drawing.Point(40, 465);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 16);
             this.label2.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             // txtcategoria
             // 
-            this.txtcategoria.Location = new System.Drawing.Point(193, 473);
+            this.txtcategoria.Location = new System.Drawing.Point(205, 462);
             this.txtcategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcategoria.Name = "txtcategoria";
             this.txtcategoria.Size = new System.Drawing.Size(238, 22);
@@ -79,7 +80,7 @@
             this.btnagregar.BackColor = System.Drawing.Color.LightCoral;
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(470, 473);
+            this.btnagregar.Location = new System.Drawing.Point(470, 457);
             this.btnagregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(87, 28);
@@ -134,10 +135,9 @@
             // btnmodificar
             // 
             this.btnmodificar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnmodificar.Enabled = false;
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.Location = new System.Drawing.Point(405, 331);
+            this.btnmodificar.Location = new System.Drawing.Point(415, 331);
             this.btnmodificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(87, 28);
@@ -149,10 +149,9 @@
             // btneliminar
             // 
             this.btneliminar.BackColor = System.Drawing.Color.Maroon;
-            this.btneliminar.Enabled = false;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(520, 331);
+            this.btneliminar.Location = new System.Drawing.Point(508, 331);
             this.btneliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(87, 28);
@@ -163,21 +162,34 @@
             // 
             // txtnom
             // 
-            this.txtnom.Location = new System.Drawing.Point(433, 275);
+            this.txtnom.Location = new System.Drawing.Point(432, 246);
             this.txtnom.Name = "txtnom";
+            this.txtnom.ReadOnly = true;
             this.txtnom.Size = new System.Drawing.Size(144, 22);
             this.txtnom.TabIndex = 10;
+            this.txtnom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(467, 256);
+            this.label4.Location = new System.Drawing.Point(467, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Categoría";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(455, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 24);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Habilitar Edición";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminCategorias
             // 
@@ -185,6 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(607, 501);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtnom);
             this.Controls.Add(this.btneliminar);
@@ -224,5 +237,6 @@
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.TextBox txtnom;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

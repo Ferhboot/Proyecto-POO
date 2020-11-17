@@ -484,6 +484,21 @@ namespace main
 
             return cat;
         }
+
+        //Para modificar una categoría
+        public bool modificarCat (int id, string nuevoNombre)
+        {
+            string com = "update categorias set nombre = @nuevonombre where idcategoria=@id;";
+            SqlCommand cmd = new SqlCommand(com, conect());
+            cmd.Parameters.Add(new SqlParameter("@nuevonombre", SqlDbType.VarChar));
+            cmd.Parameters["@nuevonombre"].Value = nuevoNombre;
+
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = id;
+
+            if (cmd.ExecuteNonQuery() > 0) return true;
+            else return false;
+        }
     }
 
 }

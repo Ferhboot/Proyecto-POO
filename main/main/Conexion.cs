@@ -321,6 +321,15 @@ namespace main
             return datos;
         }
 
+        public DataSet cargarReportes()
+        {
+            string cmd = "select * from inforeporte;";
+            DataSet Datos = new DataSet();
+            SqlDataAdapter ad = new SqlDataAdapter(cmd, conect());
+            ad.Fill(Datos, "reportes");
+            return Datos;
+        }
+
         public DataSet leercat1()
         {
             string cmd = "select * from datoscategoria;";

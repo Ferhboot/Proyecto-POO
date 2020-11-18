@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerReportes));
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgreportes = new System.Windows.Forms.DataGridView();
             this.rbtodo = new System.Windows.Forms.RadioButton();
             this.rbnoleido = new System.Windows.Forms.RadioButton();
             this.rbleido = new System.Windows.Forms.RadioButton();
             this.btnresponder = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgreportes)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTextBoxColumn1
@@ -73,19 +75,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Historial de Reportes";
             // 
-            // dataGridView1
+            // dgreportes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(471, 210);
-            this.dataGridView1.TabIndex = 1;
+            this.dgreportes.AllowUserToAddRows = false;
+            this.dgreportes.AllowUserToDeleteRows = false;
+            this.dgreportes.AllowUserToResizeRows = false;
+            this.dgreportes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgreportes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgreportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgreportes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgreportes.EnableHeadersVisualStyles = false;
+            this.dgreportes.Location = new System.Drawing.Point(21, 67);
+            this.dgreportes.Name = "dgreportes";
+            this.dgreportes.RowHeadersVisible = false;
+            this.dgreportes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgreportes.Size = new System.Drawing.Size(709, 210);
+            this.dgreportes.TabIndex = 1;
             // 
             // rbtodo
             // 
             this.rbtodo.AutoSize = true;
             this.rbtodo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtodo.Location = new System.Drawing.Point(365, 285);
+            this.rbtodo.Location = new System.Drawing.Point(492, 285);
             this.rbtodo.Name = "rbtodo";
             this.rbtodo.Size = new System.Drawing.Size(144, 21);
             this.rbtodo.TabIndex = 2;
@@ -97,7 +122,7 @@
             // 
             this.rbnoleido.AutoSize = true;
             this.rbnoleido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnoleido.Location = new System.Drawing.Point(365, 322);
+            this.rbnoleido.Location = new System.Drawing.Point(492, 322);
             this.rbnoleido.Name = "rbnoleido";
             this.rbnoleido.Size = new System.Drawing.Size(86, 21);
             this.rbnoleido.TabIndex = 3;
@@ -109,7 +134,7 @@
             // 
             this.rbleido.AutoSize = true;
             this.rbleido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbleido.Location = new System.Drawing.Point(365, 357);
+            this.rbleido.Location = new System.Drawing.Point(492, 357);
             this.rbleido.Name = "rbleido";
             this.rbleido.Size = new System.Drawing.Size(66, 21);
             this.rbleido.TabIndex = 4;
@@ -123,7 +148,7 @@
             this.btnresponder.FlatAppearance.BorderSize = 0;
             this.btnresponder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnresponder.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnresponder.Location = new System.Drawing.Point(63, 312);
+            this.btnresponder.Location = new System.Drawing.Point(126, 312);
             this.btnresponder.Name = "btnresponder";
             this.btnresponder.Size = new System.Drawing.Size(84, 40);
             this.btnresponder.TabIndex = 5;
@@ -136,7 +161,7 @@
             this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Location = new System.Drawing.Point(184, 312);
+            this.btneliminar.Location = new System.Drawing.Point(292, 312);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(83, 40);
             this.btneliminar.TabIndex = 6;
@@ -148,13 +173,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(524, 384);
+            this.ClientSize = new System.Drawing.Size(747, 384);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnresponder);
             this.Controls.Add(this.rbleido);
             this.Controls.Add(this.rbnoleido);
             this.Controls.Add(this.rbtodo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgreportes);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -164,7 +189,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Reportes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.VerReportes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgreportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,7 +202,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgreportes;
         private System.Windows.Forms.RadioButton rbtodo;
         private System.Windows.Forms.RadioButton rbnoleido;
         private System.Windows.Forms.RadioButton rbleido;

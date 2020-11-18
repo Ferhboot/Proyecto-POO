@@ -71,7 +71,7 @@ namespace main
 
         private void btninvitado_Click(object sender, EventArgs e)
         {
-            Main principal = new Main();
+            Main principal = new Main(1);
             principal.Show();
             this.Hide();
         }

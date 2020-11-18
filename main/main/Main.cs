@@ -16,6 +16,7 @@ namespace main
     {
         Datos d = null;
         Empresa emp = null;
+        int invitado = 0;
 
         List<BienOServicio> b = new List<BienOServicio>();
 
@@ -45,7 +46,7 @@ namespace main
         }
 
 
-        public Main()
+        public Main(int inv)
         {
             InitializeComponent();
             toolStrip1.Items[1].Visible = false;
@@ -54,7 +55,7 @@ namespace main
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat();
             dgcategorias.DataSource = ds.Tables["categorias"];
-
+            invitado = inv;
 
         }
 
@@ -693,8 +694,27 @@ namespace main
 
         private void lbreportar_Click(object sender, EventArgs e)
         {
-            Reporte rp = new Reporte(d.IDusuario);
-            rp.ShowDialog();
+            Reporte rp;
+            if (emp == null && invitado == 0)
+            {
+                rp = new Reporte(d.IDusuario);
+                rp.ShowDialog();
+            }
+            else if (d == null && invitado == 0)
+            {
+                rp = new Reporte(emp.IDusuario);
+                rp.ShowDialog();
+            }
+            else if (d == null && emp == null)
+            {
+                MessageBox.Show("Debe registrarse previamente", "E-Market",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error grave, por favor reinicie el programa",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

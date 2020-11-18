@@ -22,6 +22,7 @@ namespace main
             txtnombre.Text = user.Nombre;
             txtciudad.Text = user.Municipio;
             txttelefono.Text = user.Telefono;
+            txtdireccion.Text = user.Direccion;
             cmbdep.SelectedItem = user.Departamento;
             d = user;
         }
@@ -34,6 +35,7 @@ namespace main
             txtnombre.Text = empresa.Nombre;
             txtciudad.Text = empresa.Municipio;
             txttelefono.Text = empresa.Telefono;
+            txtdireccion.Text = empresa.Direccion;
             cmbdep.SelectedItem = empresa.Departamento;
             emp = empresa;
         }

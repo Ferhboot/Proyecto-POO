@@ -64,6 +64,12 @@
     <Compile Include="AdminCategorias.Designer.cs">
       <DependentUpon>AdminCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarAdmin.Designer.cs">
+      <DependentUpon>AgregarAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="BienOServicio.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminCategorias.resx">
       <DependentUpon>AdminCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarAdmin.resx">
+      <DependentUpon>AgregarAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

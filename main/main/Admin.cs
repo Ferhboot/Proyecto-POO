@@ -75,7 +75,8 @@ namespace main
 
         private void panel2_Click(object sender, EventArgs e)
         {
-
+            AgregarAdmin ad = new AgregarAdmin();
+            ad.ShowDialog();
         }
     }
 }

@@ -382,7 +382,7 @@ namespace main
 
         public void actualizardatos(string nom, string dep, string mun, string dir, string tel, string id)
         {
-            string com = "update usuarios set departamento=@departamento, nombre=@nombre, " +
+            string com = "update datos set departamento=@departamento, nombre=@nombre, " +
                 "municipio=@municipio, direccion=@direccion, telefono=@telefono " +
                 "where userid=@userid;";
             SqlCommand cmd = new SqlCommand(com, conect());
@@ -568,22 +568,28 @@ namespace main
 
         public bool agregarCat(string nom)
         {
-                string com = "insert into categorias (Nombre) values (@nom)";
-                SqlCommand cmd = new SqlCommand(com, conect());
-                cmd.Parameters.Add(new SqlParameter("@nom", SqlDbType.VarChar));
-                cmd.Parameters["@nom"].Value = nom;
-                if (cmd.ExecuteNonQuery() > 0) return true;
-                else return false;          
+            cadena = cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "insert into categorias (Nombre) values (@nom)";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@nom", SqlDbType.VarChar));
+            cmd.Parameters["@nom"].Value = nom;
+            if (cmd.ExecuteNonQuery() > 0) { conexion.Close(); return true; }
+            else { conexion.Close(); return false; }        
         }
 
         public bool eliminarCat(int id)
         {
+            cadena = cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
             string com = "delete from categorias where idcategoria =@id";
-            SqlCommand cmd = new SqlCommand(com, conect());
+            SqlCommand cmd = new SqlCommand(com, conexion);          
             cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
             cmd.Parameters["@id"].Value = id;
-            if (cmd.ExecuteNonQuery() > 0) return true;
-            else return false;
+            if (cmd.ExecuteNonQuery() > 0) { conexion.Close(); return true; }
+            else { conexion.Close(); return false; }
         }
 
         public void enviarReporte(string id, string mensaje)
@@ -602,6 +608,44 @@ namespace main
             cmd.Parameters["@mensaje"].Value = mensaje;
 
             cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public DataSet mostrarAdmin()
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+
+            string com = "select userid as [ID Usuario], email as [Email] from Usuarios where tipocuenta=3;";
+            DataSet ds = new DataSet();
+            SqlDataAdapter ad = new SqlDataAdapter(com, conexion);
+            ad.Fill(ds, "administradores");
+            conexion.Close();
+            return ds;
+        }
+
+        public void agregarAdmin(string id, string email, string clave)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+
+            string com = "insert into usuarios values (@id, @email, @pass, 3);";
+
+            SqlCommand cmd = new SqlCommand(com, conexion);
+
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar));
+            cmd.Parameters["@id"].Value = id;
+
+            cmd.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+            cmd.Parameters["@email"].Value = email;
+
+            cmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar));
+            cmd.Parameters["@pass"].Value = clave;
+
+            cmd.ExecuteNonQuery();
+
             conexion.Close();
         }
     }

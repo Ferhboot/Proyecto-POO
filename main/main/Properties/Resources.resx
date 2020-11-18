@@ -124,11 +124,8 @@
   <data name="cerrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,17 +145,17 @@
   <data name="candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mastercard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mastercard.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="udblogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\udblogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,20 +163,26 @@
   <data name="lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lupa (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lupa (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="udb2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\udb2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="udblogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\udblogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cerrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,13 +205,13 @@
   <data name="visa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mastercard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mastercard.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="udblogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\udblogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mensaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mensaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

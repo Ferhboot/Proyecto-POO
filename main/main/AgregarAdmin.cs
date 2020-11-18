@@ -46,7 +46,7 @@ namespace main
             }
             catch (Exception x)
             {
-                MessageBox.Show("No se pudo completar la acción" + x.ToString(), 
+                MessageBox.Show("No se pudo completar la acción", 
                     "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

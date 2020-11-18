@@ -35,12 +35,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.lbreportar = new System.Windows.Forms.ToolStripLabel();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbuser = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgcuenta = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,12 +65,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.lbreportar = new System.Windows.Forms.ToolStripLabel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
             this.pb3 = new System.Windows.Forms.PictureBox();
@@ -83,8 +84,6 @@
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
@@ -94,6 +93,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
@@ -150,6 +151,21 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(95, 22);
             this.toolStripLabel3.Text = "Vender Producto";
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // lbreportar
+            // 
+            this.lbreportar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.lbreportar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbreportar.Name = "lbreportar";
+            this.lbreportar.Size = new System.Drawing.Size(106, 22);
+            this.lbreportar.Text = "Reportar problema";
+            this.lbreportar.Click += new System.EventHandler(this.lbreportar_Click);
             // 
             // txtbuscar
             // 
@@ -213,68 +229,21 @@
             this.tableLayoutPanel2.TabIndex = 4;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dgcategorias);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 452);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Categorías";
-            // 
-            // dgcategorias
-            // 
-            this.dgcategorias.AllowUserToAddRows = false;
-            this.dgcategorias.AllowUserToDeleteRows = false;
-            this.dgcategorias.AllowUserToResizeColumns = false;
-            this.dgcategorias.AllowUserToResizeRows = false;
-            this.dgcategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgcategorias.BackgroundColor = System.Drawing.Color.White;
-            this.dgcategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgcategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgcategorias.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgcategorias.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgcategorias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgcategorias.EnableHeadersVisualStyles = false;
-            this.dgcategorias.Location = new System.Drawing.Point(3, 21);
-            this.dgcategorias.MultiSelect = false;
-            this.dgcategorias.Name = "dgcategorias";
-            this.dgcategorias.ReadOnly = true;
-            this.dgcategorias.RowHeadersVisible = false;
-            this.dgcategorias.RowTemplate.Height = 30;
-            this.dgcategorias.RowTemplate.ReadOnly = true;
-            this.dgcategorias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgcategorias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgcategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgcategorias.Size = new System.Drawing.Size(191, 428);
-            this.dgcategorias.TabIndex = 0;
-            this.dgcategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellClick);
-            this.dgcategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellContentClick);
-            // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dgcuenta, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dgcuenta, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.button10, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(839, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(204, 488);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
@@ -285,10 +254,10 @@
             this.dgcuenta.BackgroundColor = System.Drawing.Color.White;
             this.dgcuenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgcuenta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgcuenta.Location = new System.Drawing.Point(3, 125);
+            this.dgcuenta.Location = new System.Drawing.Point(3, 173);
             this.dgcuenta.Name = "dgcuenta";
             this.dgcuenta.ReadOnly = true;
-            this.dgcuenta.Size = new System.Drawing.Size(198, 360);
+            this.dgcuenta.Size = new System.Drawing.Size(198, 312);
             this.dgcuenta.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -300,7 +269,7 @@
             this.tableLayoutPanel5.ColumnCount = 5;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.25733F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.87419F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.144745F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.144746F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.4664F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.25733F));
             this.tableLayoutPanel5.Controls.Add(this.pb1, 1, 1);
@@ -316,13 +285,13 @@
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 7;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.027094F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.48958F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.45986F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.651431F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.48958F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.45986F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.42259F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.02706F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.48966F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45987F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.65139F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.48966F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45987F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.422485F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(615, 482);
             this.tableLayoutPanel5.TabIndex = 2;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint_1);
@@ -339,13 +308,13 @@
             this.tableLayoutPanel8.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.button3, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(99, 383);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(99, 378);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(177, 50);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(177, 55);
             this.tableLayoutPanel8.TabIndex = 6;
             // 
             // label7
@@ -359,7 +328,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(126, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 25);
+            this.label7.Size = new System.Drawing.Size(48, 27);
             this.label7.TabIndex = 4;
             this.label7.Text = "$10";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,9 +346,9 @@
             this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 28);
+            this.button3.Location = new System.Drawing.Point(3, 30);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 19);
+            this.button3.Size = new System.Drawing.Size(171, 22);
             this.button3.TabIndex = 1;
             this.button3.Text = "Ver Publicación";
             this.button3.UseVisualStyleBackColor = false;
@@ -396,7 +365,7 @@
             this.label3.Location = new System.Drawing.Point(6, 6);
             this.label3.Margin = new System.Windows.Forms.Padding(6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.Size = new System.Drawing.Size(111, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,13 +382,13 @@
             this.tableLayoutPanel9.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.button4, 0, 1);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(332, 383);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(332, 378);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(181, 50);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(181, 55);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // label8
@@ -433,7 +402,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(129, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 25);
+            this.label8.Size = new System.Drawing.Size(49, 27);
             this.label8.TabIndex = 4;
             this.label8.Text = "$10";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -450,7 +419,7 @@
             this.label4.Location = new System.Drawing.Point(6, 6);
             this.label4.Margin = new System.Windows.Forms.Padding(6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 13);
+            this.label4.Size = new System.Drawing.Size(114, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "label4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,9 +437,9 @@
             this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 28);
+            this.button4.Location = new System.Drawing.Point(3, 30);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 19);
+            this.button4.Size = new System.Drawing.Size(175, 22);
             this.button4.TabIndex = 1;
             this.button4.Text = "Ver Publicación";
             this.button4.UseVisualStyleBackColor = false;
@@ -582,13 +551,13 @@
             this.tableLayoutPanel6.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(99, 165);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(99, 160);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(177, 50);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(177, 55);
             this.tableLayoutPanel6.TabIndex = 9;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
@@ -605,10 +574,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(2, 27);
+            this.button1.Location = new System.Drawing.Point(2, 29);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 21);
+            this.button1.Size = new System.Drawing.Size(173, 24);
             this.button1.TabIndex = 1;
             this.button1.Text = "Ver Publicación";
             this.button1.UseVisualStyleBackColor = false;
@@ -625,7 +594,7 @@
             this.label1.Location = new System.Drawing.Point(6, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.Size = new System.Drawing.Size(111, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -642,7 +611,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(126, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.Size = new System.Drawing.Size(48, 27);
             this.label5.TabIndex = 2;
             this.label5.Text = "$10";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -659,13 +628,13 @@
             this.tableLayoutPanel7.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.button2, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(332, 165);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(332, 160);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(181, 50);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(181, 55);
             this.tableLayoutPanel7.TabIndex = 10;
             // 
             // label6
@@ -679,7 +648,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(129, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 25);
+            this.label6.Size = new System.Drawing.Size(49, 27);
             this.label6.TabIndex = 3;
             this.label6.Text = "$10";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -697,9 +666,9 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 28);
+            this.button2.Location = new System.Drawing.Point(3, 30);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 19);
+            this.button2.Size = new System.Drawing.Size(175, 22);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ver Publicación";
             this.button2.UseVisualStyleBackColor = false;
@@ -716,23 +685,10 @@
             this.label2.Location = new System.Drawing.Point(6, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.Size = new System.Drawing.Size(114, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 579);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
-            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel11
             // 
@@ -749,6 +705,55 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(203, 488);
             this.tableLayoutPanel11.TabIndex = 3;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.dgcategorias);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(197, 452);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Categorías";
+            // 
+            // dgcategorias
+            // 
+            this.dgcategorias.AllowUserToAddRows = false;
+            this.dgcategorias.AllowUserToDeleteRows = false;
+            this.dgcategorias.AllowUserToResizeColumns = false;
+            this.dgcategorias.AllowUserToResizeRows = false;
+            this.dgcategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgcategorias.BackgroundColor = System.Drawing.Color.White;
+            this.dgcategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgcategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgcategorias.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgcategorias.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgcategorias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgcategorias.EnableHeadersVisualStyles = false;
+            this.dgcategorias.Location = new System.Drawing.Point(3, 21);
+            this.dgcategorias.MultiSelect = false;
+            this.dgcategorias.Name = "dgcategorias";
+            this.dgcategorias.ReadOnly = true;
+            this.dgcategorias.RowHeadersVisible = false;
+            this.dgcategorias.RowTemplate.Height = 30;
+            this.dgcategorias.RowTemplate.ReadOnly = true;
+            this.dgcategorias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgcategorias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgcategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgcategorias.Size = new System.Drawing.Size(191, 428);
+            this.dgcategorias.TabIndex = 0;
+            this.dgcategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellClick);
+            this.dgcategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgcategorias_CellContentClick);
+            // 
             // button9
             // 
             this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -764,31 +769,46 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // toolStripSeparator2
+            // tableLayoutPanel3
             // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // lbreportar
-            // 
-            this.lbreportar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.lbreportar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbreportar.Name = "lbreportar";
-            this.lbreportar.Size = new System.Drawing.Size(106, 22);
-            this.lbreportar.Text = "Reportar problema";
-            this.lbreportar.Click += new System.EventHandler(this.lbreportar_Click);
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 579);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::main.Properties.Resources.cart_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 78);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // button10
+            // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button10.BackgroundImage = global::main.Properties.Resources.mensaje;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
+            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button10.Image = global::main.Properties.Resources.mensaje;
+            this.button10.Location = new System.Drawing.Point(69, 6);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(65, 61);
+            this.button10.TabIndex = 2;
+            this.button10.Text = "0";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button10.UseVisualStyleBackColor = false;
             // 
             // pb1
             // 
@@ -797,7 +817,7 @@
             this.pb1.Location = new System.Drawing.Point(99, 14);
             this.pb1.Margin = new System.Windows.Forms.Padding(0);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(177, 151);
+            this.pb1.Size = new System.Drawing.Size(177, 146);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 0;
             this.pb1.TabStop = false;
@@ -809,7 +829,7 @@
             this.pb2.Location = new System.Drawing.Point(332, 14);
             this.pb2.Margin = new System.Windows.Forms.Padding(0);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(181, 151);
+            this.pb2.Size = new System.Drawing.Size(181, 146);
             this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 1;
             this.pb2.TabStop = false;
@@ -821,7 +841,7 @@
             this.pb3.Location = new System.Drawing.Point(99, 232);
             this.pb3.Margin = new System.Windows.Forms.Padding(0);
             this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(177, 151);
+            this.pb3.Size = new System.Drawing.Size(177, 146);
             this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 2;
             this.pb3.TabStop = false;
@@ -833,7 +853,7 @@
             this.pb4.Location = new System.Drawing.Point(332, 232);
             this.pb4.Margin = new System.Windows.Forms.Padding(0);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(181, 151);
+            this.pb4.Size = new System.Drawing.Size(181, 146);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb4.TabIndex = 3;
             this.pb4.TabStop = false;
@@ -919,8 +939,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -934,6 +952,8 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
@@ -996,5 +1016,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel lbreportar;
+        private System.Windows.Forms.Button button10;
     }
 }

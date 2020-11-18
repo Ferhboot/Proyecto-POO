@@ -12,6 +12,7 @@ namespace main
 {
     public partial class AgregarAdmin : Form
     {
+        Validaciones val = new Validaciones();
         Conexion cn = new Conexion();
         public AgregarAdmin()
         {
@@ -21,10 +22,7 @@ namespace main
 
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
-            txtid.Clear();
-            txtpass.Clear();
-            txtemail.Clear();
-            txtid.Focus();
+            limpiar();
         }
 
         void cargar()
@@ -34,22 +32,61 @@ namespace main
             dgadmin.ClearSelection();
         }
 
+        void limpiar()
+        {
+            txtid.Clear();
+            txtpass.Clear();
+            txtemail.Clear();
+            txtid.Focus();
+        }
+
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtemail.Text.Trim() != "" && txtid.Text.Trim() != "" && txtpass.Text.Trim() != "")
             {
-                cn.agregarAdmin(txtid.Text, txtemail.Text, txtpass.Text);
-                string mensaje = "El usuario administrador ha sido agregado al programa";
-                MessageBox.Show(mensaje, "Administrador agregado",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cargar();
+                if (val.esCorreo(txtemail.Text))
+                {
+                    if (val.esFuerte(txtpass.Text))
+                    {
+                        try
+                        {
+                            cn.agregarAdmin(txtid.Text, txtemail.Text, txtpass.Text);
+                            string mensaje = "El usuario administrador ha sido agregado al programa";
+                            MessageBox.Show(mensaje, "Administrador agregado",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            cargar();
+                            limpiar();
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show("No se pudo completar la acción",
+                                "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        string aviso = "Debe ingresar una contraseña válida con al menos " +
+                            Environment.NewLine + Environment.NewLine +
+                            "1 Mayúscula" + Environment.NewLine + "1 Número" +
+                            Environment.NewLine + "8 caracteres en total";
+                        MessageBox.Show(aviso, "Aviso", MessageBoxButtons.OK,
+                            MessageBoxIcon.Asterisk);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una dirección de correo electrónico válida",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                
             }
-            catch (Exception x)
+            else
             {
-                MessageBox.Show("No se pudo completar la acción", 
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe rellenar todos los campos", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+           
             
         }
     }

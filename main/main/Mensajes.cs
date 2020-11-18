@@ -12,14 +12,25 @@ namespace main
 {
     public partial class Mensajes : Form
     {
+        Conexion cn = new Conexion();
+        string user = "";
         public Mensajes(string id)
         {
             InitializeComponent();
+            user = id;
+            cargar();
         }
 
         private void Mensajes_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        void cargar()
+        {
+            MessageBox.Show(user);
+            dgmensajes.DataSource = null;
+            dgmensajes.DataSource = cn.verMensajes(user).Tables["mensajes"];
         }
     }
 }

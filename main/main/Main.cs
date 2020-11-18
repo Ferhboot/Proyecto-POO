@@ -717,5 +717,25 @@ namespace main
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnmensajes_Click(object sender, EventArgs e)
+        {
+            Mensajes msg;
+            if (d == null)
+            {
+                msg = new Mensajes(emp.IDusuario);
+                msg.ShowDialog();
+            }
+            else if (emp == null)
+            {
+                msg = new Mensajes(d.IDusuario);
+                msg.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error grave, por favor reinicie el programa.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

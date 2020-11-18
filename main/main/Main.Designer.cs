@@ -343,6 +343,7 @@
             this.btnmensajes.Text = "0";
             this.btnmensajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnmensajes.UseVisualStyleBackColor = false;
+            this.btnmensajes.Click += new System.EventHandler(this.btnmensajes_Click);
             // 
             // tableLayoutPanel5
             // 

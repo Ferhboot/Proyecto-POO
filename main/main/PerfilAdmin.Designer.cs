@@ -215,7 +215,6 @@
             this.Name = "PerfilAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-Market";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PerfilAdmin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

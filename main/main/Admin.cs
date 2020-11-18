@@ -72,5 +72,10 @@ namespace main
             VerReportes r = new VerReportes();
             r.ShowDialog();
         }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

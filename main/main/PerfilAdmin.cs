@@ -93,10 +93,5 @@ namespace main
             errorProvider1.SetError(txtconfirm, "");
             lbfuerte.Text = "";
         }
-
-        private void PerfilAdmin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
     }
 }

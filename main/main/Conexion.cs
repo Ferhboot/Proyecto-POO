@@ -585,6 +585,25 @@ namespace main
             if (cmd.ExecuteNonQuery() > 0) return true;
             else return false;
         }
+
+        public void enviarReporte(string id, string mensaje)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+
+            string com = "insert into reporte (userid, mensaje) values (@id, @mensaje);";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar));
+            cmd.Parameters["@id"].Value = id;
+
+            cmd.Parameters.Add(new SqlParameter("@mensaje", SqlDbType.VarChar));
+            cmd.Parameters["@mensaje"].Value = mensaje;
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 
 }

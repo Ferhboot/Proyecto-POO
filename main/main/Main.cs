@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 
 namespace main
 {
+    
     public partial class Main : Form
     {
         Datos d = null;
@@ -28,7 +29,6 @@ namespace main
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
             d = user;
-
 
         }
 
@@ -693,7 +693,7 @@ namespace main
 
         private void lbreportar_Click(object sender, EventArgs e)
         {
-            Reporte rp = new Reporte();
+            Reporte rp = new Reporte(d.IDusuario);
             rp.ShowDialog();
         }
     }

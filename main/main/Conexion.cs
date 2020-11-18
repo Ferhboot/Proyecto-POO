@@ -671,6 +671,21 @@ namespace main
             }
             return num;
         }
+
+        public DataSet verMensajes(string id)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "select Datos.nombre +' ' +Datos.apellido as 'Remitente', " +
+                "mensaje as 'Mensaje', estado as 'Estado' from mensaje " +
+                "inner join Datos on Datos.idUsuario = mensaje.id_origen " +
+                "where id_destino="+id+";";
+            DataSet ds = new DataSet();
+            SqlDataAdapter ad = new SqlDataAdapter(com, conexion);
+            ad.Fill(ds, "mensajes");
+            return ds;
+        }
     }
 
 }

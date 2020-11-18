@@ -12,9 +12,14 @@ namespace main
 {
     public partial class Mensajes : Form
     {
-        public Mensajes()
+        public Mensajes(string id)
         {
             InitializeComponent();
+        }
+
+        private void Mensajes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,13 +12,16 @@ namespace main
     {
         //SqlConnection conectar;
         //SqlCommand cmd;
+
+        string cadena;
+        string server = "server= poo-proyecto.cx8zwtd8qeeg.us-east-2.rds.amazonaws.com,1433;";
+        string db = "database= proyecto_poo;";
+        string user = "user id= admin;";
+        string pass = "password=poopassword123;";
+        
+
         public SqlConnection conect()
         {
-            string cadena;
-            string server = "server= poo-proyecto.cx8zwtd8qeeg.us-east-2.rds.amazonaws.com,1433;";
-            string db = "database= proyecto_poo;";
-            string user = "user id= admin;";
-            string pass = "password=poopassword123;";
             cadena = server + db + user + pass;
             SqlConnection conectar = new SqlConnection(cadena);
             conectar.Open();
@@ -321,13 +324,38 @@ namespace main
             return datos;
         }
 
-        public DataSet cargarReportes()
+        public DataSet cargarReportes(string param)
         {
-            string cmd = "select * from inforeporte;";
+            string cmd = "select * from inforeporte " + param + ";";
             DataSet Datos = new DataSet();
             SqlDataAdapter ad = new SqlDataAdapter(cmd, conect());
             ad.Fill(Datos, "reportes");
             return Datos;
+        }
+
+        public void cambiarEstadoReporte(int id)
+        {
+            string com = "update reporte set estado = 'Leido' where idreporte= @id;";
+            SqlCommand cmd = new SqlCommand(com, conect());
+
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = id;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void eliminarReporte(int id)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conectar = new SqlConnection(cadena);
+            conectar.Open();
+            string com = "delete from reporte where idreporte=@id;";
+            SqlCommand cmd = new SqlCommand(com, conectar);
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = id;
+
+            cmd.ExecuteNonQuery();
+            conectar.Close();
         }
 
         public DataSet leercat1()

@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsUser = new System.Windows.Forms.ToolStripSplitButton();
+            this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
@@ -39,11 +42,19 @@
             this.lbreportar = new System.Windows.Forms.ToolStripLabel();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbuser = new System.Windows.Forms.Label();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgcuenta = new System.Windows.Forms.DataGridView();
+            this.btnmensajes = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.pb3 = new System.Windows.Forms.PictureBox();
+            this.pb4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -70,23 +81,18 @@
             this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            this.pb4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnbuscar = new System.Windows.Forms.Button();
-            this.tsUser = new System.Windows.Forms.ToolStripSplitButton();
-            this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -95,12 +101,6 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -128,6 +128,35 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
             this.toolStripLabel1.Text = "Acerca de";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
+            // 
+            // tsUser
+            // 
+            this.tsUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miPerfilToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.tsUser.ForeColor = System.Drawing.Color.Black;
+            this.tsUser.Image = global::main.Properties.Resources.usuario;
+            this.tsUser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsUser.Name = "tsUser";
+            this.tsUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tsUser.Size = new System.Drawing.Size(96, 22);
+            this.tsUser.Text = "Mi Usuario";
+            this.tsUser.ButtonClick += new System.EventHandler(this.tsUser_ButtonClick);
+            // 
+            // miPerfilToolStripMenuItem
+            // 
+            this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
+            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -196,6 +225,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1046, 60);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::main.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(92, 54);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // lbuser
             // 
             this.lbuser.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -209,6 +249,22 @@
             this.lbuser.TabIndex = 5;
             this.lbuser.Text = "user";
             this.lbuser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnbuscar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnbuscar.BackgroundImage = global::main.Properties.Resources.search2;
+            this.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnbuscar.Location = new System.Drawing.Point(878, 9);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(40, 42);
+            this.btnbuscar.TabIndex = 6;
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -236,7 +292,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.dgcuenta, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.button10, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnmensajes, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(839, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -246,6 +302,17 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(204, 488);
             this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::main.Properties.Resources.cart_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(192, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // dgcuenta
             // 
@@ -259,6 +326,23 @@
             this.dgcuenta.ReadOnly = true;
             this.dgcuenta.Size = new System.Drawing.Size(198, 312);
             this.dgcuenta.TabIndex = 1;
+            // 
+            // btnmensajes
+            // 
+            this.btnmensajes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnmensajes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnmensajes.BackgroundImage = global::main.Properties.Resources.mensaje;
+            this.btnmensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnmensajes.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
+            this.btnmensajes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnmensajes.Image = global::main.Properties.Resources.mensaje;
+            this.btnmensajes.Location = new System.Drawing.Point(69, 6);
+            this.btnmensajes.Name = "btnmensajes";
+            this.btnmensajes.Size = new System.Drawing.Size(65, 61);
+            this.btnmensajes.TabIndex = 2;
+            this.btnmensajes.Text = "0";
+            this.btnmensajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnmensajes.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel5
             // 
@@ -295,6 +379,54 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(615, 482);
             this.tableLayoutPanel5.TabIndex = 2;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint_1);
+            // 
+            // pb1
+            // 
+            this.pb1.BackColor = System.Drawing.Color.Transparent;
+            this.pb1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb1.Location = new System.Drawing.Point(99, 14);
+            this.pb1.Margin = new System.Windows.Forms.Padding(0);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(177, 146);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb1.TabIndex = 0;
+            this.pb1.TabStop = false;
+            // 
+            // pb2
+            // 
+            this.pb2.BackColor = System.Drawing.Color.Transparent;
+            this.pb2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb2.Location = new System.Drawing.Point(332, 14);
+            this.pb2.Margin = new System.Windows.Forms.Padding(0);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(181, 146);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb2.TabIndex = 1;
+            this.pb2.TabStop = false;
+            // 
+            // pb3
+            // 
+            this.pb3.BackColor = System.Drawing.Color.Transparent;
+            this.pb3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb3.Location = new System.Drawing.Point(99, 232);
+            this.pb3.Margin = new System.Windows.Forms.Padding(0);
+            this.pb3.Name = "pb3";
+            this.pb3.Size = new System.Drawing.Size(177, 146);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb3.TabIndex = 2;
+            this.pb3.TabStop = false;
+            // 
+            // pb4
+            // 
+            this.pb4.BackColor = System.Drawing.Color.Transparent;
+            this.pb4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb4.Location = new System.Drawing.Point(332, 232);
+            this.pb4.Margin = new System.Windows.Forms.Padding(0);
+            this.pb4.Name = "pb4";
+            this.pb4.Size = new System.Drawing.Size(181, 146);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb4.TabIndex = 3;
+            this.pb4.TabStop = false;
             // 
             // tableLayoutPanel8
             // 
@@ -782,138 +914,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::main.Properties.Resources.cart_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button10
-            // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button10.BackgroundImage = global::main.Properties.Resources.mensaje;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
-            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button10.Image = global::main.Properties.Resources.mensaje;
-            this.button10.Location = new System.Drawing.Point(69, 6);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(65, 61);
-            this.button10.TabIndex = 2;
-            this.button10.Text = "0";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // pb1
-            // 
-            this.pb1.BackColor = System.Drawing.Color.Transparent;
-            this.pb1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb1.Location = new System.Drawing.Point(99, 14);
-            this.pb1.Margin = new System.Windows.Forms.Padding(0);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(177, 146);
-            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb1.TabIndex = 0;
-            this.pb1.TabStop = false;
-            // 
-            // pb2
-            // 
-            this.pb2.BackColor = System.Drawing.Color.Transparent;
-            this.pb2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb2.Location = new System.Drawing.Point(332, 14);
-            this.pb2.Margin = new System.Windows.Forms.Padding(0);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(181, 146);
-            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb2.TabIndex = 1;
-            this.pb2.TabStop = false;
-            // 
-            // pb3
-            // 
-            this.pb3.BackColor = System.Drawing.Color.Transparent;
-            this.pb3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb3.Location = new System.Drawing.Point(99, 232);
-            this.pb3.Margin = new System.Windows.Forms.Padding(0);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(177, 146);
-            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb3.TabIndex = 2;
-            this.pb3.TabStop = false;
-            // 
-            // pb4
-            // 
-            this.pb4.BackColor = System.Drawing.Color.Transparent;
-            this.pb4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb4.Location = new System.Drawing.Point(332, 232);
-            this.pb4.Margin = new System.Windows.Forms.Padding(0);
-            this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(181, 146);
-            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb4.TabIndex = 3;
-            this.pb4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::main.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(92, 54);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnbuscar.BackColor = System.Drawing.Color.IndianRed;
-            this.btnbuscar.BackgroundImage = global::main.Properties.Resources.search2;
-            this.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnbuscar.Location = new System.Drawing.Point(878, 9);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(40, 42);
-            this.btnbuscar.TabIndex = 6;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
-            // tsUser
-            // 
-            this.tsUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miPerfilToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.tsUser.ForeColor = System.Drawing.Color.Black;
-            this.tsUser.Image = global::main.Properties.Resources.usuario;
-            this.tsUser.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsUser.Name = "tsUser";
-            this.tsUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tsUser.Size = new System.Drawing.Size(96, 22);
-            this.tsUser.Text = "Mi Usuario";
-            this.tsUser.ButtonClick += new System.EventHandler(this.tsUser_ButtonClick);
-            // 
-            // miPerfilToolStripMenuItem
-            // 
-            this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
-            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -938,10 +938,16 @@
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -954,12 +960,6 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1016,6 +1016,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel lbreportar;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnmensajes;
     }
 }

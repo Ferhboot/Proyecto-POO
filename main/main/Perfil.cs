@@ -20,6 +20,7 @@ namespace main
             txtusuario.Text = user.IDusuario;
             txtcorreo.Text = user.Email;
             txtnombre.Text = user.Nombre;
+            txtapellido.Text = user.Apellido;
             txtciudad.Text = user.Municipio;
             txttelefono.Text = user.Telefono;
             txtdireccion.Text = user.Direccion;
@@ -33,6 +34,7 @@ namespace main
             txtusuario.Text = empresa.IDusuario;
             txtcorreo.Text = empresa.Email;
             txtnombre.Text = empresa.Nombre;
+            txtapellido.Text = empresa.Apellido;
             txtciudad.Text = empresa.Municipio;
             txttelefono.Text = empresa.Telefono;
             txtdireccion.Text = empresa.Direccion;
@@ -144,7 +146,7 @@ namespace main
                 Validaciones validacion = new Validaciones();
 
                 if ((validacion.enBlanco(txtnombre.Text) && validacion.enBlanco(txtciudad.Text) && 
-                    validacion.enBlanco(txtdireccion.Text) && 
+                    validacion.enBlanco(txtdireccion.Text) && validacion.enBlanco(txtapellido.Text)&&
                     validacion.enBlanco(txttelefono.Text)) == false)
                 {
 
@@ -157,11 +159,22 @@ namespace main
                     else
                     {
                         Conexion cn = new Conexion();
-                        cn.actualizardatos(txtnombre.Text, cmbdep.SelectedItem.ToString(),
+
+                        if (emp.IDusuario == null)
+                        {
+                            cn.actualizardatos(txtnombre.Text, txtapellido.Text, cmbdep.SelectedItem.ToString(),
                             txtciudad.Text, txtdireccion.Text, txttelefono.Text, d.IDusuario);
-                        MessageBox.Show("Datos modificados exitosamente", "E-Market",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+                            MessageBox.Show("Datos modificados exitosamente", "E-Market",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        if (d.IDusuario == null)
+                        {
+                            cn.actualizardatos(txtnombre.Text, txtapellido.Text, cmbdep.SelectedItem.ToString(),
+                            txtciudad.Text, txtdireccion.Text, txttelefono.Text, emp.IDusuario);
+                            MessageBox.Show("Datos modificados exitosamente", "E-Market",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                                               
                     }
 
                 }

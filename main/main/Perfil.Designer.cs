@@ -61,6 +61,8 @@
             this.btnlimpiarperso = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtapellido = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -243,6 +245,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Moccasin;
+            this.tabPage2.Controls.Add(this.txtapellido);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.cmbdep);
             this.tabPage2.Controls.Add(this.txttelefono);
             this.tabPage2.Controls.Add(this.label13);
@@ -319,7 +323,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(276, 148);
+            this.label11.Location = new System.Drawing.Point(264, 148);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 16);
@@ -379,7 +383,7 @@
             this.txtnombre.Location = new System.Drawing.Point(52, 110);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(385, 22);
+            this.txtnombre.Size = new System.Drawing.Size(160, 22);
             this.txtnombre.TabIndex = 13;
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
@@ -414,6 +418,24 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(264, 80);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 16);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Apellido";
+            // 
+            // txtapellido
+            // 
+            this.txtapellido.Location = new System.Drawing.Point(266, 110);
+            this.txtapellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.Size = new System.Drawing.Size(160, 22);
+            this.txtapellido.TabIndex = 32;
             // 
             // Perfil
             // 
@@ -474,5 +496,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtapellido;
+        private System.Windows.Forms.Label label9;
     }
 }

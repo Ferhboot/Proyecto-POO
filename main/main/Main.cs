@@ -30,19 +30,19 @@ namespace main
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
             d = user;
-
+            btnmensajes.Text=Convert.ToString(cat.numeroMensajes(d.IDusuario));
         }
 
         public Main(Empresa empresa)
         {
             InitializeComponent();
-            lbuser.Text = empresa.Nombre;
+            lbuser.Text = empresa.Nombre + ' ' + empresa.Apellido;
             toolStrip1.Items[3].Visible = false;
             Conexion cat = new Conexion();
             DataSet ds = cat.leercat();
             dgcategorias.DataSource = ds.Tables["categorias"];
             emp = empresa;
-
+            btnmensajes.Text = Convert.ToString(cat.numeroMensajes(emp.IDusuario));
         }
 
 
@@ -56,7 +56,7 @@ namespace main
             DataSet ds = cat.leercat();
             dgcategorias.DataSource = ds.Tables["categorias"];
             invitado = inv;
-
+            btnmensajes.Visible = false;
         }
 
 
@@ -156,6 +156,7 @@ namespace main
                 b = p.listaBienOServicio();
 
                 paginador();
+
 
                //if (b.Count>=4)
                // {

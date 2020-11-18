@@ -380,11 +380,11 @@ namespace main
         }
 
 
-        public void actualizardatos(string nom, string dep, string mun, string dir, string tel, string id)
+        public void actualizardatos(string nom, string ap, string dep, string mun, string dir, string tel, string id)
         {
             string com = "update datos set departamento=@departamento, nombre=@nombre, " +
-                "municipio=@municipio, direccion=@direccion, telefono=@telefono " +
-                "where userid=@userid;";
+                "municipio=@municipio, direccion=@direccion, telefono=@telefono, apellido=@apellido " +
+                "where idusuario=@userid;";
             SqlCommand cmd = new SqlCommand(com, conect());
 
             cmd.Parameters.Add(new SqlParameter("@departamento", SqlDbType.VarChar));
@@ -401,6 +401,9 @@ namespace main
 
             cmd.Parameters.Add(new SqlParameter("@telefono", SqlDbType.VarChar));
             cmd.Parameters["@telefono"].Value = tel;
+
+            cmd.Parameters.Add(new SqlParameter("@apellido", SqlDbType.VarChar));
+            cmd.Parameters["@apellido"].Value = ap;
 
             cmd.Parameters.Add(new SqlParameter("@userid", SqlDbType.VarChar));
             cmd.Parameters["@userid"].Value = id;
@@ -647,6 +650,26 @@ namespace main
             cmd.ExecuteNonQuery();
 
             conexion.Close();
+        }
+
+        public int numeroMensajes(string id)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "select count(estado) from mensaje where id_destino=@id and estado='no leido';";
+
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar));
+            cmd.Parameters["@id"].Value = id;
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            int num = 0;
+            if (rd.Read())
+            {               
+                num = int.Parse(rd[0].ToString());
+            }
+            return num;
         }
     }
 

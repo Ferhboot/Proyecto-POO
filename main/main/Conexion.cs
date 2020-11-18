@@ -672,19 +672,35 @@ namespace main
             return num;
         }
 
-        public DataSet verMensajes(string id)
+        public DataSet verMensajes(string id, string param)
         {
             cadena = server + db + user + pass;
-            SqlConnection conexion = new SqlConnection(cadena);
+            SqlConnection conexion = new SqlConnection(cadena); 
             conexion.Open();
-            string com = "select Datos.nombre +' ' +Datos.apellido as 'Remitente', " +
+            string com = "select idmensaje as [ID Mensaje] " +
+                ",id_origen as [Usuario Remitente], Datos.nombre +' ' +Datos.apellido as 'Nombre', " +
                 "mensaje as 'Mensaje', estado as 'Estado' from mensaje " +
                 "inner join Datos on Datos.idUsuario = mensaje.id_origen " +
-                "where id_destino='"+id+"';";
+                "where id_destino='"+id+"' " + param + ";";
             DataSet ds = new DataSet();
             SqlDataAdapter ad = new SqlDataAdapter(com, conexion);
             ad.Fill(ds, "mensajes");
             return ds;
+        }
+
+        public bool eliminarMensaje(int idmensaje)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+                conexion.Open();
+                string com = "delete from mensaje where idmensaje=@idmensaje;";
+                SqlCommand cmd = new SqlCommand(com, conexion);
+
+                cmd.Parameters.Add(new SqlParameter("@idmensaje", SqlDbType.Int));
+                cmd.Parameters["@idmensaje"].Value = idmensaje;
+
+                cmd.ExecuteNonQuery();
+                return true;
         }
     }
 

@@ -74,6 +74,12 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Datos.cs" />
+    <Compile Include="DetalleProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleProducto.Designer.cs">
+      <DependentUpon>DetalleProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empresa.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -157,6 +163,12 @@
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Validaciones.cs" />
+    <Compile Include="VerProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerProducto.Designer.cs">
+      <DependentUpon>VerProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="VerReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarAdmin.resx">
       <DependentUpon>AgregarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleProducto.resx">
+      <DependentUpon>DetalleProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -223,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TipoUsuario.resx">
       <DependentUpon>TipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerProducto.resx">
+      <DependentUpon>VerProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerReportes.resx">
       <DependentUpon>VerReportes.cs</DependentUpon>

@@ -17,6 +17,7 @@ namespace main
         Datos d = null;
         Empresa emp = null;
         int invitado = 0;
+        string iduser="";
 
         List<BienOServicio> b = new List<BienOServicio>();
 
@@ -30,7 +31,9 @@ namespace main
             DataSet ds = cat.leercat ();
             dgcategorias.DataSource = ds.Tables["categorias"];
             d = user;
+            iduser = user.IDusuario;
             btnmensajes.Text=Convert.ToString(cat.numeroMensajes(d.IDusuario));
+            btncarrito.Text = Convert.ToString(cat.numeroCarrito(d.IDusuario));
         }
 
         public Main(Empresa empresa)
@@ -42,7 +45,9 @@ namespace main
             DataSet ds = cat.leercat();
             dgcategorias.DataSource = ds.Tables["categorias"];
             emp = empresa;
+            iduser = empresa.IDusuario;
             btnmensajes.Text = Convert.ToString(cat.numeroMensajes(emp.IDusuario));
+            btncarrito.Text = Convert.ToString(cat.numeroCarrito(d.IDusuario));
         }
 
 
@@ -57,6 +62,7 @@ namespace main
             dgcategorias.DataSource = ds.Tables["categorias"];
             invitado = inv;
             btnmensajes.Visible = false;
+            btncarrito.Visible = false;
         }
 
 
@@ -156,182 +162,6 @@ namespace main
                 b = p.listaBienOServicio();
 
                 paginador();
-
-
-               //if (b.Count>=4)
-               // {
-               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-               //     System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
-               //     System.IO.MemoryStream ms3 = new System.IO.MemoryStream(b[2].Imagen);
-               //     System.IO.MemoryStream ms4 = new System.IO.MemoryStream(b[3].Imagen);
-
-               //     pb1.Image = Image.FromStream(ms);
-               //     pb2.Image = Image.FromStream(ms2);
-               //     pb3.Image = Image.FromStream(ms3);
-               //     pb4.Image = Image.FromStream(ms4);
-
-               //     label1.Text = b[0].Nombre;
-               //     label2.Text = b[1].Nombre;
-               //     label3.Text = b[2].Nombre;
-               //     label4.Text = b[3].Nombre;
-
-               //     label5.Text = b[0].Precio.ToString() ;
-               //     label6.Text = b[1].Precio.ToString();
-               //     label7.Text = b[2].Precio.ToString();
-               //     label8.Text = b[3].Precio.ToString();
-
-               //     pb1.Visible = true;
-               //     pb2.Visible = true;
-               //     pb3.Visible = true;
-               //     pb4.Visible = true;
-               //     label1.Visible = true;
-               //     label2.Visible = true;
-               //     label3.Visible = true;
-               //     label4.Visible = true;
-               //     button1.Visible = true;
-               //     button2.Visible = true;
-               //     button3.Visible = true;
-               //     button4.Visible = true;
-               //     tableLayoutPanel6.Visible = true;
-               //     tableLayoutPanel7.Visible = true;
-               //     tableLayoutPanel8.Visible = true;
-               //     tableLayoutPanel9.Visible = true;
-
-
-               // }
-               // else if(b.Count == 3)
-               // {
-               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-               //     System.IO.MemoryStream ms1 = new System.IO.MemoryStream(b[1].Imagen);
-               //     System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[2].Imagen);
-
-               //     pb1.Image = Image.FromStream(ms);
-               //     pb2.Image = Image.FromStream(ms1);
-               //     pb3.Image = Image.FromStream(ms2);
-
-               //     label1.Text = b[0].Nombre;
-               //     label2.Text = b[1].Nombre;
-               //     label3.Text = b[2].Nombre;
-
-               //     label5.Text = b[0].Precio.ToString();
-               //     label6.Text = b[1].Precio.ToString();
-               //     label7.Text = b[2].Precio.ToString();
-
-               //     pb1.Visible = true;
-               //     pb2.Visible = true;
-               //     pb3.Visible = true;
-               //     pb4.Visible = false;
-               //     label1.Visible = true;
-               //     label2.Visible = true;
-               //     label3.Visible = true;
-               //     label4.Visible = false;
-               //     button1.Visible = true;
-               //     button2.Visible = true;
-               //     button3.Visible = true;
-               //     button4.Visible = false;
-               //     tableLayoutPanel6.Visible = true;
-               //     tableLayoutPanel7.Visible = true;
-               //     tableLayoutPanel8.Visible = true;
-               //     tableLayoutPanel9.Visible = false;
-
-               //     button5.Enabled = false;
-               //     button6.Enabled = false;
-               //     button7.Enabled = false;
-               //     button8.Enabled = false;
-
-               // }
-               // else if (b.Count == 2)
-               // {
-               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-               //     System.IO.MemoryStream ms2 = new System.IO.MemoryStream(b[1].Imagen);
-
-               //     pb1.Image = Image.FromStream(ms);
-               //     pb2.Image = Image.FromStream(ms2);
-
-               //     label1.Text = b[0].Nombre;
-               //     label2.Text = b[1].Nombre;
-
-               //     label5.Text = b[0].Precio.ToString();
-               //     label6.Text = b[1].Precio.ToString();
-
-               //     pb1.Visible = true;
-               //     pb2.Visible = true;
-               //     pb3.Visible = false;
-               //     pb4.Visible = false;
-               //     label1.Visible = true;
-               //     label2.Visible = true;
-               //     label3.Visible = false;
-               //     label4.Visible = false;
-               //     button1.Visible = true;
-               //     button2.Visible = true;
-               //     button3.Visible = false;
-               //     button4.Visible = false;
-               //     tableLayoutPanel6.Visible = true;
-               //     tableLayoutPanel7.Visible = true;
-               //     tableLayoutPanel8.Visible = false;
-               //     tableLayoutPanel9.Visible = false;
-               //     button5.Enabled = false;
-               //     button6.Enabled = false;
-               //     button7.Enabled = false;
-               //     button8.Enabled = false;
-
-               // }
-               // else if (b.Count == 1)
-               // {
-               //     System.IO.MemoryStream ms = new System.IO.MemoryStream(b[0].Imagen);
-
-               //     pb1.Image = Image.FromStream(ms);
-
-               //     label1.Text = b[0].Nombre;
-
-               //     label5.Text = b[0].Precio.ToString();
-
-               //     pb1.Visible = true;
-               //     pb2.Visible = false;
-               //     pb3.Visible = false;
-               //     pb4.Visible = false;
-               //     label1.Visible = true;
-               //     label2.Visible = false;
-               //     label3.Visible = false;
-               //     label4.Visible = false;
-               //     button1.Visible = true;
-               //     button2.Visible = false;
-               //     button3.Visible = false;
-               //     button4.Visible = false;
-               //     tableLayoutPanel6.Visible = true;
-               //     tableLayoutPanel7.Visible = false;
-               //     tableLayoutPanel8.Visible = false;
-               //     tableLayoutPanel9.Visible = false;
-               //     button5.Enabled = false;
-               //     button6.Enabled = false;
-               //     button7.Enabled = false;
-               //     button8.Enabled = false;
-
-               // }
-               // else if (b.Count <= 1)
-               // {
-
-               //     pb1.Visible = false;
-               //     pb2.Visible = false;
-               //     pb3.Visible = false;
-               //     pb4.Visible = false;
-               //     label1.Visible = false;
-               //     label2.Visible = false;
-               //     label3.Visible = false;
-               //     label4.Visible = false;
-               //     button1.Visible = false;
-               //     button2.Visible = false;
-               //     button3.Visible = false;
-               //     button4.Visible = false;
-               //     tableLayoutPanel6.Visible = false;
-               //     tableLayoutPanel7.Visible = false;
-               //     tableLayoutPanel8.Visible = false;
-               //     tableLayoutPanel9.Visible = false;
-               //     button5.Enabled = false;
-               //     button6.Enabled = false;
-               //     button7.Enabled = false;
-               //     button8.Enabled = false;
-               // }
 
 
             }
@@ -736,6 +566,36 @@ namespace main
                 MessageBox.Show("Hubo un error grave, por favor reinicie el programa.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 4].IdBienOServicio);
+            p.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 3].IdBienOServicio);
+            p.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 2].IdBienOServicio);
+            p.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 1].IdBienOServicio);
+            p.Show();
+        }
+
+        private void btncarrito_Click(object sender, EventArgs e)
+        {
+            CarritoCompras c = new CarritoCompras(iduser);
+            c.Show();
         }
     }
 }

@@ -29,116 +29,109 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerProducto));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pbimagen = new System.Windows.Forms.PictureBox();
             this.lbnombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txbdescripcion = new System.Windows.Forms.TextBox();
+            this.lbvendendor = new System.Windows.Forms.Label();
+            this.pbimagen = new System.Windows.Forms.PictureBox();
             this.btncontactar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btncarrito = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lbstock = new System.Windows.Forms.Label();
             this.ncant = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbcategoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbimagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ncant)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.lbnombre, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 215);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // pbimagen
-            // 
-            this.pbimagen.BackColor = System.Drawing.Color.Goldenrod;
-            this.pbimagen.Location = new System.Drawing.Point(387, 12);
-            this.pbimagen.Name = "pbimagen";
-            this.pbimagen.Size = new System.Drawing.Size(215, 215);
-            this.pbimagen.TabIndex = 1;
-            this.pbimagen.TabStop = false;
-            // 
             // lbnombre
             // 
-            this.lbnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbnombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbnombre.AutoSize = true;
+            this.lbnombre.BackColor = System.Drawing.Color.Transparent;
             this.lbnombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbnombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbnombre.Location = new System.Drawing.Point(117, 3);
+            this.lbnombre.ForeColor = System.Drawing.Color.Black;
+            this.lbnombre.Location = new System.Drawing.Point(24, 15);
             this.lbnombre.Name = "lbnombre";
             this.lbnombre.Size = new System.Drawing.Size(134, 18);
             this.lbnombre.TabIndex = 2;
             this.lbnombre.Text = "NombreProducto";
             // 
-            // textBox1
+            // txbdescripcion
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(4, 28);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(360, 157);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Descripción";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbdescripcion.BackColor = System.Drawing.Color.White;
+            this.txbdescripcion.ForeColor = System.Drawing.Color.Black;
+            this.txbdescripcion.Location = new System.Drawing.Point(27, 46);
+            this.txbdescripcion.Multiline = true;
+            this.txbdescripcion.Name = "txbdescripcion";
+            this.txbdescripcion.ReadOnly = true;
+            this.txbdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txbdescripcion.Size = new System.Drawing.Size(363, 151);
+            this.txbdescripcion.TabIndex = 3;
+            this.txbdescripcion.Text = "Descripción";
             // 
-            // label1
+            // lbvendendor
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(148, 193);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Vendedor";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbvendendor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbvendendor.AutoSize = true;
+            this.lbvendendor.BackColor = System.Drawing.Color.Transparent;
+            this.lbvendendor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbvendendor.ForeColor = System.Drawing.Color.Black;
+            this.lbvendendor.Location = new System.Drawing.Point(131, 214);
+            this.lbvendendor.Name = "lbvendendor";
+            this.lbvendendor.Size = new System.Drawing.Size(94, 17);
+            this.lbvendendor.TabIndex = 4;
+            this.lbvendendor.Text = "Comerciante";
+            this.lbvendendor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbimagen
+            // 
+            this.pbimagen.BackColor = System.Drawing.Color.LightSlateGray;
+            this.pbimagen.Location = new System.Drawing.Point(414, 15);
+            this.pbimagen.Name = "pbimagen";
+            this.pbimagen.Size = new System.Drawing.Size(215, 258);
+            this.pbimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbimagen.TabIndex = 1;
+            this.pbimagen.TabStop = false;
             // 
             // btncontactar
             // 
-            this.btncontactar.BackColor = System.Drawing.Color.Gold;
+            this.btncontactar.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btncontactar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncontactar.FlatAppearance.BorderSize = 0;
             this.btncontactar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncontactar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncontactar.Location = new System.Drawing.Point(104, 253);
+            this.btncontactar.ForeColor = System.Drawing.Color.White;
+            this.btncontactar.Location = new System.Drawing.Point(414, 294);
             this.btncontactar.Name = "btncontactar";
-            this.btncontactar.Size = new System.Drawing.Size(128, 63);
+            this.btncontactar.Size = new System.Drawing.Size(215, 31);
             this.btncontactar.TabIndex = 2;
             this.btncontactar.Text = "Contactar al vendedor";
             this.btncontactar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btncarrito
             // 
-            this.button2.BackColor = System.Drawing.Color.Crimson;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(481, 267);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 63);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Agregar al carrito";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btncarrito.BackColor = System.Drawing.Color.Crimson;
+            this.btncarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncarrito.FlatAppearance.BorderSize = 0;
+            this.btncarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncarrito.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncarrito.ForeColor = System.Drawing.Color.White;
+            this.btncarrito.Location = new System.Drawing.Point(197, 296);
+            this.btncarrito.Name = "btncarrito";
+            this.btncarrito.Size = new System.Drawing.Size(181, 31);
+            this.btncarrito.TabIndex = 3;
+            this.btncarrito.Text = "Agregar al carrito";
+            this.btncarrito.UseVisualStyleBackColor = false;
+            this.btncarrito.Click += new System.EventHandler(this.btncarrito_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(302, 230);
+            this.label2.Location = new System.Drawing.Point(24, 255);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 18);
             this.label2.TabIndex = 4;
@@ -147,53 +140,108 @@
             // lbstock
             // 
             this.lbstock.AutoSize = true;
-            this.lbstock.Location = new System.Drawing.Point(361, 232);
+            this.lbstock.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbstock.Location = new System.Drawing.Point(83, 254);
             this.lbstock.Name = "lbstock";
-            this.lbstock.Size = new System.Drawing.Size(15, 17);
+            this.lbstock.Size = new System.Drawing.Size(17, 20);
             this.lbstock.TabIndex = 5;
             this.lbstock.Text = "0";
             // 
             // ncant
             // 
-            this.ncant.Location = new System.Drawing.Point(407, 307);
+            this.ncant.ForeColor = System.Drawing.Color.Black;
+            this.ncant.Location = new System.Drawing.Point(99, 302);
+            this.ncant.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.ncant.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ncant.Name = "ncant";
             this.ncant.Size = new System.Drawing.Size(68, 23);
             this.ncant.TabIndex = 6;
+            this.ncant.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.PeachPuff;
-            this.label3.Location = new System.Drawing.Point(332, 309);
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(24, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Ordernar:";
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(24, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Comerciante:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(131, 255);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 18);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Categoría:";
+            // 
+            // lbcategoria
+            // 
+            this.lbcategoria.AutoSize = true;
+            this.lbcategoria.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcategoria.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbcategoria.Location = new System.Drawing.Point(224, 254);
+            this.lbcategoria.Name = "lbcategoria";
+            this.lbcategoria.Size = new System.Drawing.Size(17, 20);
+            this.lbcategoria.TabIndex = 9;
+            this.lbcategoria.Text = "0";
+            // 
             // VerProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(614, 342);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(653, 354);
+            this.Controls.Add(this.lbnombre);
+            this.Controls.Add(this.txbdescripcion);
+            this.Controls.Add(this.lbcategoria);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbvendendor);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ncant);
             this.Controls.Add(this.lbstock);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btncarrito);
             this.Controls.Add(this.btncontactar);
             this.Controls.Add(this.pbimagen);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "VerProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbimagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ncant)).EndInit();
             this.ResumeLayout(false);
@@ -202,17 +250,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lbnombre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbdescripcion;
+        private System.Windows.Forms.Label lbvendendor;
         private System.Windows.Forms.PictureBox pbimagen;
         private System.Windows.Forms.Button btncontactar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btncarrito;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbstock;
         private System.Windows.Forms.NumericUpDown ncant;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbcategoria;
     }
 }

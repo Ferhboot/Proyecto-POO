@@ -680,7 +680,7 @@ namespace main
             string com = "select idmensaje as [ID Mensaje] " +
                 ",id_origen as [Usuario Remitente], Datos.nombre +' ' +Datos.apellido as 'Nombre', " +
                 "mensaje as 'Mensaje', estado as 'Estado' from mensaje " +
-                "inner join Datos on Datos.idUsuario = mensaje.id_origen " +
+                "left join Datos on Datos.idUsuario = mensaje.id_origen " +
                 "where id_destino='"+id+"' " + param + ";";
             DataSet ds = new DataSet();
             SqlDataAdapter ad = new SqlDataAdapter(com, conexion);

@@ -13,6 +13,7 @@ namespace main
     public partial class Admin : Form
     {
         Usuario u = new Usuario();
+        int num = 0;
         public Admin(Usuario user)
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace main
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //AgregarAdmin admin = new AgregarAdmin();
+            
         }
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,12 +65,14 @@ namespace main
 
         private void Admin_Load(object sender, EventArgs e)
         {
-
+            Conexion cn = new Conexion();
+            num = cn.numeroMensajes(u.IDusuario);
+            btnmensajes.Text = num.ToString();
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            VerReportes r = new VerReportes();
+            VerReportes r = new VerReportes(u.IDusuario);
             r.ShowDialog();
         }
 
@@ -77,6 +80,12 @@ namespace main
         {
             AgregarAdmin ad = new AgregarAdmin();
             ad.ShowDialog();
+        }
+
+        private void btnmensajes_Click(object sender, EventArgs e)
+        {
+            Mensajes msg = new Mensajes(u.IDusuario);
+            msg.Show();
         }
     }
 }

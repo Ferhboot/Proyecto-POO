@@ -22,7 +22,15 @@ namespace main
             orig = origen;
             dest = destino;
             name = nombre;
-            lbuser.Text = nombre;
+            if (nombre != "" && nombre!=null)
+            {
+                lbuser.Text = nombre;
+            }
+            else
+            {
+                lbuser.Text = "Administrador";
+            }
+            
         }
 
         private void lbuser_Click(object sender, EventArgs e)

@@ -92,7 +92,6 @@ namespace main
 
         private void btnresponder_Click(object sender, EventArgs e)
         {
-            //User=Origen
             string destino = dgmensajes.CurrentRow.Cells[1].FormattedValue.ToString();
             string nombre = dgmensajes.CurrentRow.Cells[2].FormattedValue.ToString();
             Respuesta resp = new Respuesta(user, destino, nombre);

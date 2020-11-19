@@ -162,6 +162,7 @@
             this.btnresponder.TabIndex = 5;
             this.btnresponder.Text = "Responder";
             this.btnresponder.UseVisualStyleBackColor = false;
+            this.btnresponder.Click += new System.EventHandler(this.btnresponder_Click);
             // 
             // btneliminar
             // 

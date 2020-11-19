@@ -13,10 +13,11 @@ namespace main
     public partial class VerReportes : Form
     {
         Conexion cn = new Conexion();
-        
-        public VerReportes()
+        string id = "";
+        public VerReportes(string idusuario)
         {
             InitializeComponent();
+            id = idusuario;
         }
 
         private void VerReportes_Load(object sender, EventArgs e)
@@ -64,8 +65,8 @@ namespace main
                 MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 cn.cambiarEstadoReporte(id);
-                rbtodo.Checked = true;
-                cargar("");
+                rbnoleido.Checked = true;
+                cargar("where Estado='No leido'");
             }
             
 
@@ -89,6 +90,14 @@ namespace main
                 rbtodo.Checked = true;
                 cargar("");
             }
+        }
+
+        private void btnresponder_Click(object sender, EventArgs e)
+        {
+            string dest = dgreportes.CurrentRow.Cells[1].FormattedValue.ToString();
+            string name = dgreportes.CurrentRow.Cells[2].FormattedValue.ToString();
+            Respuesta resp = new Respuesta(id, dest, name);
+            resp.ShowDialog();
         }
     }
 }

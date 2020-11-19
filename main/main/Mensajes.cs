@@ -97,5 +97,15 @@ namespace main
             Respuesta resp = new Respuesta(user, destino, nombre);
             resp.ShowDialog();
         }
+
+        private void dgmensajes_DoubleClick(object sender, EventArgs e)
+        {
+            int idm = int.Parse(dgmensajes.CurrentRow.Cells[0].FormattedValue.ToString());
+            string m = dgmensajes.CurrentRow.Cells[3].FormattedValue.ToString();
+            MessageBox.Show(m, "Mensaje", MessageBoxButtons.OK);
+            cn.cambiarEstadoMensaje(idm);
+            rbnoleido.Checked = true;
+            cargar(noleido);
+        }
     }
 }

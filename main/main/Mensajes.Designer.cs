@@ -79,6 +79,7 @@
             this.dgmensajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgmensajes.Size = new System.Drawing.Size(681, 230);
             this.dgmensajes.TabIndex = 0;
+            this.dgmensajes.DoubleClick += new System.EventHandler(this.dgmensajes_DoubleClick);
             // 
             // label1
             // 

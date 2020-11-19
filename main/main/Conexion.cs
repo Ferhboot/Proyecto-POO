@@ -700,6 +700,8 @@ namespace main
                 cmd.Parameters["@idmensaje"].Value = idmensaje;
 
                 cmd.ExecuteNonQuery();
+
+            conexion.Close();
                 return true;
         }
 
@@ -723,6 +725,20 @@ namespace main
 
             cmd.ExecuteNonQuery();
 
+            conexion.Close();
+        }
+
+        public void cambiarEstadoMensaje(int id)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "update mensaje set estado = 'Leido' where idmensaje= @id;";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = id;
+
+            cmd.ExecuteNonQuery();
             conexion.Close();
         }
     }

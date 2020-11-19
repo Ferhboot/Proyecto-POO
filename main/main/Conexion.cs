@@ -702,6 +702,29 @@ namespace main
                 cmd.ExecuteNonQuery();
                 return true;
         }
+
+        public void enviarMensaje(string origen, string destino, string mensaje)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "insert into mensaje (id_destino, id_origen, mensaje) " +
+                "values (@destino, @origen, @mensaje);";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+
+            cmd.Parameters.Add(new SqlParameter("@destino", SqlDbType.VarChar));
+            cmd.Parameters["@destino"].Value = destino;
+
+            cmd.Parameters.Add(new SqlParameter("@origen", SqlDbType.VarChar));
+            cmd.Parameters["@origen"].Value = origen;
+
+            cmd.Parameters.Add(new SqlParameter("@mensaje", SqlDbType.VarChar));
+            cmd.Parameters["@mensaje"].Value = mensaje;
+
+            cmd.ExecuteNonQuery();
+
+            conexion.Close();
+        }
     }
 
 }

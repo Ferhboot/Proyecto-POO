@@ -50,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.Location = new System.Drawing.Point(242, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 32);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(40, 465);
+            this.label2.Location = new System.Drawing.Point(35, 443);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 16);
             this.label2.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // txtcategoria
             // 
-            this.txtcategoria.Location = new System.Drawing.Point(205, 462);
+            this.txtcategoria.Location = new System.Drawing.Point(209, 443);
             this.txtcategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcategoria.Name = "txtcategoria";
             this.txtcategoria.Size = new System.Drawing.Size(238, 22);
@@ -80,7 +80,7 @@
             this.btnagregar.BackColor = System.Drawing.Color.LightCoral;
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(470, 459);
+            this.btnagregar.Location = new System.Drawing.Point(470, 367);
             this.btnagregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(87, 28);
@@ -94,7 +94,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(131, 127);
+            this.label3.Location = new System.Drawing.Point(125, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 16);
             this.label3.TabIndex = 4;
@@ -124,7 +124,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvcategorias.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvcategorias.EnableHeadersVisualStyles = false;
-            this.dgvcategorias.Location = new System.Drawing.Point(12, 146);
+            this.dgvcategorias.Location = new System.Drawing.Point(12, 84);
             this.dgvcategorias.Name = "dgvcategorias";
             this.dgvcategorias.ReadOnly = true;
             this.dgvcategorias.RowHeadersVisible = false;
@@ -165,7 +165,7 @@
             // 
             // txtnom
             // 
-            this.txtnom.Location = new System.Drawing.Point(432, 246);
+            this.txtnom.Location = new System.Drawing.Point(437, 234);
             this.txtnom.Name = "txtnom";
             this.txtnom.ReadOnly = true;
             this.txtnom.Size = new System.Drawing.Size(144, 22);
@@ -177,7 +177,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(467, 227);
+            this.label4.Location = new System.Drawing.Point(467, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 11;
@@ -186,7 +186,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(455, 274);
+            this.button1.Location = new System.Drawing.Point(463, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 24);
             this.button1.TabIndex = 12;
@@ -219,7 +219,7 @@
             this.MaximizeBox = false;
             this.Name = "AdminCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "E-Market";
+            this.Text = "2";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminCategorias_FormClosed);
             this.Load += new System.EventHandler(this.AdminCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategorias)).EndInit();

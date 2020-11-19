@@ -174,12 +174,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(193, 380);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(188, 364);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(105, 60);
             this.button1.TabIndex = 14;
             this.button1.Text = "Volver";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // about

@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Confirmacion));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvcarrito = new System.Windows.Forms.DataGridView();
+            this.dgconfirmacion = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbtotal = new System.Windows.Forms.Label();
@@ -47,11 +47,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtindicaciones = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnordenar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnlimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcarrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgconfirmacion)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -64,19 +64,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvcarrito
+            // dgconfirmacion
             // 
-            this.dgvcarrito.AllowUserToAddRows = false;
-            this.dgvcarrito.AllowUserToDeleteRows = false;
-            this.dgvcarrito.AllowUserToResizeRows = false;
+            this.dgconfirmacion.AllowUserToAddRows = false;
+            this.dgconfirmacion.AllowUserToDeleteRows = false;
+            this.dgconfirmacion.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            this.dgvcarrito.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvcarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvcarrito.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvcarrito.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvcarrito.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvcarrito.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgconfirmacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgconfirmacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgconfirmacion.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgconfirmacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgconfirmacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgconfirmacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,9 +84,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvcarrito.ColumnHeadersHeight = 42;
-            this.dgvcarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgconfirmacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgconfirmacion.ColumnHeadersHeight = 42;
+            this.dgconfirmacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,17 +94,17 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcarrito.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvcarrito.EnableHeadersVisualStyles = false;
-            this.dgvcarrito.Location = new System.Drawing.Point(36, 102);
-            this.dgvcarrito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvcarrito.Name = "dgvcarrito";
-            this.dgvcarrito.ReadOnly = true;
-            this.dgvcarrito.RowHeadersVisible = false;
-            this.dgvcarrito.RowTemplate.Height = 42;
-            this.dgvcarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcarrito.Size = new System.Drawing.Size(726, 179);
-            this.dgvcarrito.TabIndex = 14;
+            this.dgconfirmacion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgconfirmacion.EnableHeadersVisualStyles = false;
+            this.dgconfirmacion.Location = new System.Drawing.Point(36, 102);
+            this.dgconfirmacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgconfirmacion.Name = "dgconfirmacion";
+            this.dgconfirmacion.ReadOnly = true;
+            this.dgconfirmacion.RowHeadersVisible = false;
+            this.dgconfirmacion.RowTemplate.Height = 42;
+            this.dgconfirmacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgconfirmacion.Size = new System.Drawing.Size(726, 179);
+            this.dgconfirmacion.TabIndex = 14;
             // 
             // label1
             // 
@@ -249,18 +249,18 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "Indicaciones Adicionales";
             // 
-            // button1
+            // btnordenar
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(605, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 40);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Ordenar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnordenar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnordenar.FlatAppearance.BorderSize = 0;
+            this.btnordenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnordenar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnordenar.Location = new System.Drawing.Point(605, 415);
+            this.btnordenar.Name = "btnordenar";
+            this.btnordenar.Size = new System.Drawing.Size(144, 40);
+            this.btnordenar.TabIndex = 28;
+            this.btnordenar.Text = "Ordenar";
+            this.btnordenar.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -291,7 +291,7 @@
             this.ClientSize = new System.Drawing.Size(799, 463);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnordenar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtindicaciones);
             this.Controls.Add(this.label5);
@@ -305,7 +305,7 @@
             this.Controls.Add(this.lbtotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvcarrito);
+            this.Controls.Add(this.dgconfirmacion);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -317,7 +317,7 @@
             this.Text = "Confirmacion";
             this.Load += new System.EventHandler(this.Confirmacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcarrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgconfirmacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,7 +326,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgvcarrito;
+        private System.Windows.Forms.DataGridView dgconfirmacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbtotal;
@@ -340,7 +340,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtindicaciones;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnordenar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnlimpiar;
     }

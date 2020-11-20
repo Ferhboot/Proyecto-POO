@@ -12,9 +12,15 @@ namespace main
 {
     public partial class Confirmacion : Form
     {
-        public Confirmacion()
+        string usuario = "";
+        public Confirmacion(string idUser, List<Factura> lista, double total)
         {
             InitializeComponent();
+
+            usuario = idUser;
+
+            dgconfirmacion.DataSource = null;
+            dgconfirmacion.DataSource = lista;
         }
 
         private void Confirmacion_Load(object sender, EventArgs e)

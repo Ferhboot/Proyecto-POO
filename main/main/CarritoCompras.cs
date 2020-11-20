@@ -46,6 +46,7 @@ namespace main
 
             dgvcarrito.Columns[0].Visible = false;
             dgvcarrito.Columns[1].Visible = false;
+            dgvcarrito.Columns[6].Visible = false;
             user = iduser;
 
         }
@@ -142,7 +143,30 @@ namespace main
 
         private void btnpedido_Click(object sender, EventArgs e)
         {
-            Confirmacion conf = new Confirmacion();
+            List<Factura> lista = new List<Factura>();
+            int filas = dgvcarrito.Rows.Count;
+            for(int i=0; i < filas; i++)
+            {
+                Factura item = new Factura();
+                int idproducto = int.Parse(dgvcarrito.Rows[i].Cells[0].FormattedValue.ToString());
+                item.idproducto = idproducto;
+
+                int cantidad = int.Parse(dgvcarrito.Rows[i].Cells[4].FormattedValue.ToString());
+                item.cantidad = cantidad;
+
+                string producto = dgvcarrito.Rows[i].Cells[2].FormattedValue.ToString();
+                item.producto = producto;
+
+                string idvend = dgvcarrito.Rows[i].Cells[6].FormattedValue.ToString();
+                item.idVendedor = idvend;
+
+                double cost = double.Parse(dgvcarrito.Rows[i].Cells[5].FormattedValue.ToString());
+                item.precio = cost;
+
+                lista.Add(item);
+            }
+            Conexion cn = new Conexion();
+            Confirmacion conf = new Confirmacion(globalIDuser, lista,double.Parse(cn.precioTotal(globalIDuser).ToString()));
             conf.ShowDialog();
         }
     }

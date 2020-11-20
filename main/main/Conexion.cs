@@ -990,7 +990,7 @@ namespace main
             cadena = server + db + user + pass;
             SqlConnection conexion = new SqlConnection(cadena);
             conexion.Open();
-            string com = "select BienOServicio.idBienOServicio AS [ID],BienOServicio.cantidad AS [TIPO], BienOServicio.nombre AS [NOMBRE], CAST(BienOServicio.descripcion AS NVARCHAR(100)) AS [DESCRIPCION], COUNT(Carrito.idCarrito) AS [CANTIDAD], BienOServicio.precio AS [PRECIO]  from Compra INNER JOIN Carrito on Carrito.idCompra = Compra.idCompra INNER JOIN BienOServicio on BienOServicio.idBienOServicio = Carrito.idBienOServicio where Compra.estadoCompra=0 and Compra.idUsuario='" + id + "' group by BienOServicio.idBienOServicio, BienOServicio.cantidad, BienOServicio.nombre, CAST(BienOServicio.descripcion AS NVARCHAR(100)), BienOServicio.precio;";
+            string com = "select BienOServicio.idBienOServicio AS [ID],BienOServicio.cantidad AS [TIPO], BienOServicio.nombre AS [NOMBRE], CAST(BienOServicio.descripcion AS NVARCHAR(100)) AS [DESCRIPCION], COUNT(Carrito.idCarrito) AS [CANTIDAD], BienOServicio.precio AS [PRECIO], BienOServicio.idUsuario as [Vendedor]  from Compra INNER JOIN Carrito on Carrito.idCompra = Compra.idCompra INNER JOIN BienOServicio on BienOServicio.idBienOServicio = Carrito.idBienOServicio where Compra.estadoCompra=0 and Compra.idUsuario='" + id + "' group by BienOServicio.idBienOServicio, BienOServicio.cantidad, BienOServicio.nombre, CAST(BienOServicio.descripcion AS NVARCHAR(100)), BienOServicio.precio, BienOServicio.idUsuario;";
             DataSet ds = new DataSet();
             SqlDataAdapter ad = new SqlDataAdapter(com, conexion);
             ad.Fill(ds, "carrito");

@@ -20,7 +20,7 @@ namespace main
         private void Comprobante_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
+            
         }
     }
 }

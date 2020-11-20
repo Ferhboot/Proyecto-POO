@@ -21,6 +21,11 @@ namespace main
 
             dgconfirmacion.DataSource = null;
             dgconfirmacion.DataSource = lista;
+
+            dgconfirmacion.Columns[0].Visible = false;
+            dgconfirmacion.Columns[2].Visible = false;
+
+            lbtotal.Text = total.ToString();
         }
 
         private void Confirmacion_Load(object sender, EventArgs e)
@@ -47,6 +52,25 @@ namespace main
             txtmunicipio.Clear();
             cbdepartamento.SelectedIndex = -1;
             txtindicaciones.Focus();
+        }
+
+        private void btnordenar_Click(object sender, EventArgs e)
+        {
+            if (rbmidireccion.Checked == true)
+            {
+
+            }
+
+            else if (rbotradireccion.Checked == true)
+            {
+
+            }
+
+            else
+            {
+                MessageBox.Show("Hay un error con sus datos", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

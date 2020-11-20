@@ -77,7 +77,7 @@
             this.dgconfirmacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgconfirmacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgconfirmacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -87,7 +87,7 @@
             this.dgconfirmacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgconfirmacion.ColumnHeadersHeight = 42;
             this.dgconfirmacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -261,6 +261,7 @@
             this.btnordenar.TabIndex = 28;
             this.btnordenar.Text = "Ordenar";
             this.btnordenar.UseVisualStyleBackColor = false;
+            this.btnordenar.Click += new System.EventHandler(this.btnordenar_Click);
             // 
             // label7
             // 

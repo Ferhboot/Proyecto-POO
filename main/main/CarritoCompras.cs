@@ -152,16 +152,16 @@ namespace main
                 item.idproducto = idproducto;
 
                 int cantidad = int.Parse(dgvcarrito.Rows[i].Cells[4].FormattedValue.ToString());
-                item.cantidad = cantidad;
+                item.Cantidad = cantidad;
 
                 string producto = dgvcarrito.Rows[i].Cells[2].FormattedValue.ToString();
-                item.producto = producto;
+                item.Producto = producto;
 
                 string idvend = dgvcarrito.Rows[i].Cells[6].FormattedValue.ToString();
                 item.idVendedor = idvend;
 
                 double cost = double.Parse(dgvcarrito.Rows[i].Cells[5].FormattedValue.ToString());
-                item.precio = cost;
+                item.Precio = cost;
 
                 lista.Add(item);
             }

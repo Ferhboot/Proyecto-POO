@@ -14,7 +14,7 @@ namespace main
             get;set;
         }
 
-        public string producto
+        public string Producto
         {
             get;set;
         }
@@ -24,12 +24,12 @@ namespace main
             get;set;
         }
 
-        public int cantidad
+        public int Cantidad
         {
             get;set;
         }
 
-        public double precio
+        public double Precio
         {
             get;set;
         }

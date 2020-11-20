@@ -15,7 +15,7 @@ namespace main
 
         BienOServicio b = null;
         string iduser = "";
-        public VerProducto(string user, int idProducto)
+        public VerProducto(string user, int idProducto, int tipoUsuario)
         {
 
             InitializeComponent();
@@ -39,6 +39,12 @@ namespace main
                 label2.Text = "Stock: ";
                 lbstock.Text = b.Cantidad.ToString();
                 ncant.Enabled = true;
+            }
+
+            if (tipoUsuario == 0)
+            {
+                btncontactar.Visible = false;
+                btncarrito.Text = "Comprar ahora";
             }
 
             lbcategoria.Text = b.Cat.Nombre;
@@ -70,7 +76,7 @@ namespace main
                     }
                     else
                     {
-                        MessageBox.Show("existencias no disponibles o servicio ya en carrito", "E-Market",
+                        MessageBox.Show("Existencias no disponibles o servicio ya en carrito", "E-Market",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
@@ -85,6 +91,15 @@ namespace main
                 MessageBox.Show("Debe registrarse previamente", "E-Market",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void btncontactar_Click(object sender, EventArgs e)
+        {
+            Conexion cn = new Conexion();
+            Respuesta resp = new Respuesta(iduser, b.User.IDusuario, cn.nombre(b.User.IDusuario));
+            MessageBox.Show("Recuerde especificar el producto de su interés en el mensaje",
+                "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            resp.ShowDialog();
         }
     }
 }

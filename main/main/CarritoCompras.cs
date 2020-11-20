@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,12 @@ namespace main
         int idproducto;
         int tipo;
         int cantidadActual;
+        string globalIDuser = "";
         public CarritoCompras(string iduser)
         {
             InitializeComponent();
+
+            globalIDuser = iduser;
 
             Conexion cn = new Conexion();
             dgvcarrito.DataSource = cn.verCarrito(iduser).Tables["carrito"];
@@ -29,7 +33,7 @@ namespace main
 
             DateTime fechaActual = DateTime.Today;
 
-            lbfecha.Text = fechaActual.ToString("dd/mm/yyyy");
+            lbfecha.Text = fechaActual.ToString("dd/MM/yyyy",CultureInfo.InvariantCulture);
 
             dgvcarrito.Columns[0].Visible = false;
             dgvcarrito.Columns[1].Visible = false;
@@ -69,15 +73,21 @@ namespace main
                 cant.Enabled = false;
                 btnactualizar.Enabled = false;
                 btneliminar.Enabled = false;
-                MessageBox.Show("Existencias actualizadas", "E-Market",
+                MessageBox.Show("Cantidad Actualizada", "E-Market",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                dgvcarrito.DataSource = cn.verCarrito(globalIDuser).Tables["carrito"];
+                dgvcarrito.ClearSelection();
             }
             else
             {
-                MessageBox.Show("existencias no disponibles o es un servicio", "E-Market",
+                MessageBox.Show("Existencias no disponibles o es un servicio", "E-Market",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void CarritoCompras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

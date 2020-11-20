@@ -110,6 +110,7 @@
             this.btncontactar.TabIndex = 2;
             this.btncontactar.Text = "Contactar al vendedor";
             this.btncontactar.UseVisualStyleBackColor = false;
+            this.btncontactar.Click += new System.EventHandler(this.btncontactar_Click);
             // 
             // btncarrito
             // 
@@ -176,9 +177,9 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(24, 304);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Ordernar:";
+            this.label3.Text = "Cantidad";
             // 
             // label1
             // 

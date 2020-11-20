@@ -18,6 +18,7 @@ namespace main
         Empresa emp = null;
         int invitado = 0;
         string iduser="";
+        int tipo = 0;
 
         List<BienOServicio> b = new List<BienOServicio>();
 
@@ -34,6 +35,7 @@ namespace main
             iduser = user.IDusuario;
             btnmensajes.Text=Convert.ToString(cat.numeroMensajes(d.IDusuario));
             btncarrito.Text = Convert.ToString(cat.numeroCarrito(d.IDusuario));
+            tipo = 1;
         }
 
         public Main(Empresa empresa)
@@ -47,7 +49,8 @@ namespace main
             emp = empresa;
             iduser = empresa.IDusuario;
             btnmensajes.Text = Convert.ToString(cat.numeroMensajes(emp.IDusuario));
-            btncarrito.Text = Convert.ToString(cat.numeroCarrito(d.IDusuario));
+            btncarrito.Text = Convert.ToString(cat.numeroCarrito(emp.IDusuario));
+            tipo = 2;
         }
 
 
@@ -63,6 +66,7 @@ namespace main
             invitado = inv;
             btnmensajes.Visible = false;
             btncarrito.Visible = false;
+            tipo = 0;
         }
 
 
@@ -570,25 +574,25 @@ namespace main
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 4].IdBienOServicio);
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 4].IdBienOServicio,tipo);
             p.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 3].IdBienOServicio);
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 3].IdBienOServicio,tipo);
             p.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 2].IdBienOServicio);
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 2].IdBienOServicio,tipo);
             p.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 1].IdBienOServicio);
+            VerProducto p = new VerProducto(iduser,b[(paginaActual * 4) - 1].IdBienOServicio,tipo);
             p.Show();
         }
 

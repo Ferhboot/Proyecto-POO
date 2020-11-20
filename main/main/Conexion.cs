@@ -1031,10 +1031,11 @@ namespace main
             conexion.Open();
 
 
-            if (cantidadActual < cantidad)
+            if (cantidadActual > cantidad)
             {
 
-                string com3 = "delete from Carrito where idCarrrito in (select top @cantidad Carrito.idCarrito from Carrito INNER JOIN Compra on Compra.idCompra = Carrito.idCompra where idBienOServicio=@idBienOServicio and Compra.estadoCompra=0); ";
+                //string com3 = "delete from Carrito where idCarrrito in (select top @cantidad Carrito.idCarrito from Carrito INNER JOIN Compra on Compra.idCompra = Carrito.idCompra where idBienOServicio=@idBienOServicio and Compra.estadoCompra=0); ";
+                string com3 = "delete from Carrito where idCarrito in (select top " + cantidad.ToString() +" Carrito.idCarrito from Carrito INNER JOIN Compra on Compra.idCompra = Carrito.idCompra where idBienOServicio=@idBienOServicio and Compra.estadoCompra=0); ";
                 SqlCommand cmd3 = new SqlCommand(com3, conexion);
 
                 cmd3.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
@@ -1045,7 +1046,7 @@ namespace main
 
                 cmd3.ExecuteNonQuery();
 
-                string com2 = "update BienOServicio SET cantidad = cantidad + @cantidad WHERE idBienOServicio=@idBienOServicio;";
+                string com2 = "update BienOServicio SET cantidad = cantidad+ @cantidad WHERE idBienOServicio=@idBienOServicio;";
                 SqlCommand cmd2 = new SqlCommand(com2, conexion);
 
                 cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
@@ -1057,7 +1058,7 @@ namespace main
                 cmd2.ExecuteNonQuery();
 
                 
-            }else if(cantidadActual > cantidad)
+            }else if(cantidadActual < cantidad)
             {
 
 
@@ -1113,13 +1114,6 @@ namespace main
                     return false;
                 }
             }
-
-
-            
-
-
-
-
 
             conexion.Close();
             return true;

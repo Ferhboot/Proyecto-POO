@@ -45,11 +45,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtindicaciones = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnordenar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnlimpiar = new System.Windows.Forms.Button();
+            this.txttelefono = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgconfirmacion)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +96,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgconfirmacion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgconfirmacion.EnableHeadersVisualStyles = false;
-            this.dgconfirmacion.Location = new System.Drawing.Point(36, 102);
+            this.dgconfirmacion.Location = new System.Drawing.Point(63, 102);
             this.dgconfirmacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgconfirmacion.Name = "dgconfirmacion";
             this.dgconfirmacion.ReadOnly = true;
@@ -122,14 +122,14 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(602, 297);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Total:";
+            this.label2.Text = "Total: $";
             // 
             // lbtotal
             // 
             this.lbtotal.AutoSize = true;
-            this.lbtotal.Location = new System.Drawing.Point(651, 297);
+            this.lbtotal.Location = new System.Drawing.Point(653, 297);
             this.lbtotal.Name = "lbtotal";
             this.lbtotal.Size = new System.Drawing.Size(45, 17);
             this.lbtotal.TabIndex = 17;
@@ -141,10 +141,10 @@
             this.rbmidireccion.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.rbmidireccion.Location = new System.Drawing.Point(20, 305);
             this.rbmidireccion.Name = "rbmidireccion";
-            this.rbmidireccion.Size = new System.Drawing.Size(321, 23);
-            this.rbmidireccion.TabIndex = 18;
+            this.rbmidireccion.Size = new System.Drawing.Size(294, 23);
+            this.rbmidireccion.TabIndex = 1;
             this.rbmidireccion.TabStop = true;
-            this.rbmidireccion.Text = "Enviar a la dirección registrada en mi perfil";
+            this.rbmidireccion.Text = "Usar la dirección y teléfono de mi perfil";
             this.rbmidireccion.UseVisualStyleBackColor = true;
             this.rbmidireccion.CheckedChanged += new System.EventHandler(this.rbmidireccion_CheckedChanged);
             // 
@@ -154,28 +154,28 @@
             this.rbotradireccion.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.rbotradireccion.Location = new System.Drawing.Point(20, 332);
             this.rbotradireccion.Name = "rbotradireccion";
-            this.rbotradireccion.Size = new System.Drawing.Size(184, 23);
-            this.rbotradireccion.TabIndex = 19;
+            this.rbotradireccion.Size = new System.Drawing.Size(134, 23);
+            this.rbotradireccion.TabIndex = 2;
             this.rbotradireccion.TabStop = true;
-            this.rbotradireccion.Text = "Enviar a otra dirección";
+            this.rbotradireccion.Text = "Usar otros datos";
             this.rbotradireccion.UseVisualStyleBackColor = true;
             this.rbotradireccion.CheckedChanged += new System.EventHandler(this.rbotradireccion_CheckedChanged);
             // 
             // txtdireccion
             // 
             this.txtdireccion.Enabled = false;
-            this.txtdireccion.Location = new System.Drawing.Point(210, 332);
+            this.txtdireccion.Location = new System.Drawing.Point(160, 332);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(248, 22);
-            this.txtdireccion.TabIndex = 20;
+            this.txtdireccion.TabIndex = 3;
             // 
             // txtmunicipio
             // 
             this.txtmunicipio.Enabled = false;
-            this.txtmunicipio.Location = new System.Drawing.Point(646, 332);
+            this.txtmunicipio.Location = new System.Drawing.Point(578, 332);
             this.txtmunicipio.Name = "txtmunicipio";
             this.txtmunicipio.Size = new System.Drawing.Size(141, 22);
-            this.txtmunicipio.TabIndex = 21;
+            this.txtmunicipio.TabIndex = 5;
             // 
             // cbdepartamento
             // 
@@ -197,16 +197,16 @@
             "Santa Ana",
             "Sonsonate",
             "Usulután"});
-            this.cbdepartamento.Location = new System.Drawing.Point(474, 330);
+            this.cbdepartamento.Location = new System.Drawing.Point(414, 331);
             this.cbdepartamento.Name = "cbdepartamento";
             this.cbdepartamento.Size = new System.Drawing.Size(158, 25);
-            this.cbdepartamento.TabIndex = 22;
+            this.cbdepartamento.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label3.Location = new System.Drawing.Point(301, 357);
+            this.label3.Location = new System.Drawing.Point(251, 355);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
             this.label3.TabIndex = 23;
@@ -216,7 +216,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label4.Location = new System.Drawing.Point(505, 355);
+            this.label4.Location = new System.Drawing.Point(445, 360);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 17);
             this.label4.TabIndex = 24;
@@ -226,28 +226,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label5.Location = new System.Drawing.Point(683, 355);
+            this.label5.Location = new System.Drawing.Point(615, 355);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Municipio";
-            // 
-            // txtindicaciones
-            // 
-            this.txtindicaciones.Location = new System.Drawing.Point(210, 386);
-            this.txtindicaciones.Name = "txtindicaciones";
-            this.txtindicaciones.Size = new System.Drawing.Size(577, 22);
-            this.txtindicaciones.TabIndex = 26;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label6.Location = new System.Drawing.Point(16, 389);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 19);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Indicaciones Adicionales";
             // 
             // btnordenar
             // 
@@ -255,7 +238,7 @@
             this.btnordenar.FlatAppearance.BorderSize = 0;
             this.btnordenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnordenar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnordenar.Location = new System.Drawing.Point(605, 415);
+            this.btnordenar.Location = new System.Drawing.Point(605, 390);
             this.btnordenar.Name = "btnordenar";
             this.btnordenar.Size = new System.Drawing.Size(144, 40);
             this.btnordenar.TabIndex = 28;
@@ -266,7 +249,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 437);
+            this.label7.Location = new System.Drawing.Point(17, 416);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(258, 17);
             this.label7.TabIndex = 29;
@@ -278,23 +261,42 @@
             this.btnlimpiar.FlatAppearance.BorderSize = 0;
             this.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiar.Location = new System.Drawing.Point(356, 415);
+            this.btnlimpiar.Location = new System.Drawing.Point(382, 390);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(150, 40);
             this.btnlimpiar.TabIndex = 30;
             this.btnlimpiar.Text = "Limpiar Campos";
             this.btnlimpiar.UseVisualStyleBackColor = false;
             // 
+            // txttelefono
+            // 
+            this.txttelefono.Enabled = false;
+            this.txttelefono.Location = new System.Drawing.Point(725, 331);
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.Size = new System.Drawing.Size(116, 22);
+            this.txttelefono.TabIndex = 6;
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefono_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.label6.Location = new System.Drawing.Point(751, 355);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Teléfono";
+            // 
             // Confirmacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 463);
+            this.ClientSize = new System.Drawing.Size(847, 442);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnordenar);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtindicaciones);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -339,10 +341,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtindicaciones;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnordenar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnlimpiar;
+        private System.Windows.Forms.TextBox txttelefono;
+        private System.Windows.Forms.Label label6;
     }
 }

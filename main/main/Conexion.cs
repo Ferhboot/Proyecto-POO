@@ -990,7 +990,7 @@ namespace main
             cadena = server + db + user + pass;
             SqlConnection conexion = new SqlConnection(cadena);
             conexion.Open();
-            string com = "select BienOServicio.idBienOServicio AS [ID],BienOServicio.cantidad AS [TIPO], BienOServicio.nombre AS [NOMBRE], CAST(BienOServicio.descripcion AS NVARCHAR(100)) AS [DESCRIPCION], COUNT(Carrito.idCarrito) AS [CANTIDAD], BienOServicio.precio AS [PRECIO], BienOServicio.idUsuario as [Vendedor]  from Compra INNER JOIN Carrito on Carrito.idCompra = Compra.idCompra INNER JOIN BienOServicio on BienOServicio.idBienOServicio = Carrito.idBienOServicio where Compra.estadoCompra=0 and Compra.idUsuario='" + id + "' group by BienOServicio.idBienOServicio, BienOServicio.cantidad, BienOServicio.nombre, CAST(BienOServicio.descripcion AS NVARCHAR(100)), BienOServicio.precio, BienOServicio.idUsuario;";
+            string com = "select BienOServicio.idBienOServicio AS [ID],BienOServicio.cantidad AS [TIPO], BienOServicio.nombre AS [NOMBRE], CAST(BienOServicio.descripcion AS NVARCHAR(100)) AS [DESCRIPCION], COUNT(Carrito.idCarrito) AS [CANTIDAD], BienOServicio.precio AS [PRECIO UNITARIO], BienOServicio.idUsuario as [Vendedor]  from Compra INNER JOIN Carrito on Carrito.idCompra = Compra.idCompra INNER JOIN BienOServicio on BienOServicio.idBienOServicio = Carrito.idBienOServicio where Compra.estadoCompra=0 and Compra.idUsuario='" + id + "' group by BienOServicio.idBienOServicio, BienOServicio.cantidad, BienOServicio.nombre, CAST(BienOServicio.descripcion AS NVARCHAR(100)), BienOServicio.precio, BienOServicio.idUsuario;";
             DataSet ds = new DataSet();
             SqlDataAdapter ad = new SqlDataAdapter(com, conexion);
             ad.Fill(ds, "carrito");
@@ -1113,6 +1113,8 @@ namespace main
                 {
                     return false;
                 }
+
+                conexion.Close();
             }
 
             conexion.Close();
@@ -1144,6 +1146,93 @@ namespace main
                 cmd2.Parameters["@idproducto"].Value = idProducto;
                 cmd2.ExecuteNonQuery();
             }
+
+            conexion.Close();
+        }
+
+        public string ObtenerDatosConf(string idusuario)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "select top 1 nombre + ' ' + apellido as Nombre, direccion as Direccion, municipio + ', ' + departamento as Municipio, telefono as Telefono from Datos where idUsuario = @id;";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar));
+            cmd.Parameters["@id"].Value = idusuario;
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            if (rd.Read())
+            {
+                string nom = rd[0].ToString();
+                string dir = rd[1].ToString();
+                string mun = rd[2].ToString();
+                string tel = rd[3].ToString();
+
+                string info = nom + ", " + dir + ". " + mun + ". " + tel;
+                conexion.Close();
+                return info;
+            }
+            else
+            {
+                conexion.Close();
+                throw new Exception("Hubo un error grave, por favor intente en breve");
+            }
+
+        }
+
+        public string ObtenerNombre(string idusuario)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "select top 1 nombre + ' ' + apellido as Nombre from datos where idUsuario = @id;";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar));
+            cmd.Parameters["@id"].Value = idusuario;
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            if (rd.Read())
+            {
+                string nom = rd[0].ToString();
+                conexion.Close();
+                return nom;               
+            }
+            else
+            {
+                conexion.Close();
+                throw new Exception("Hubo un error grave, por favor intente en breve");                
+            }
+        }
+
+        public void AlertarCompra(string origen, string destino, string mensaje)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "insert into mensaje (id_destino, id_origen, mensaje) values (@destino, @origen, @mensaje);";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@destino", SqlDbType.VarChar));
+            cmd.Parameters["@destino"].Value = destino;
+            cmd.Parameters.Add(new SqlParameter("@origen", SqlDbType.VarChar));
+            cmd.Parameters["@origen"].Value = origen;
+            cmd.Parameters.Add(new SqlParameter("@mensaje", SqlDbType.VarChar));
+            cmd.Parameters["@mensaje"].Value = mensaje;
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+
+        }
+
+        public void CambiarEstadoCompra(string idusuario)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "update Compra set estadocompra=1 where idusuario=@user and estadocompra=0;";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@user", SqlDbType.VarChar));
+            cmd.Parameters["@user"].Value = idusuario;
+            cmd.ExecuteNonQuery();
+            conexion.Close();
         }
 
 

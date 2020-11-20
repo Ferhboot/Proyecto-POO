@@ -168,6 +168,7 @@ namespace main
             Conexion cn = new Conexion();
             Confirmacion conf = new Confirmacion(globalIDuser, lista,double.Parse(cn.precioTotal(globalIDuser).ToString()));
             conf.ShowDialog();
+            this.Close();
         }
     }
 }

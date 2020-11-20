@@ -75,6 +75,12 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Confirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Confirmacion.Designer.cs">
+      <DependentUpon>Confirmacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datos.cs" />
     <Compile Include="DetalleProducto.cs">
       <SubType>Form</SubType>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarAdmin.resx">
       <DependentUpon>AgregarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Confirmacion.resx">
+      <DependentUpon>Confirmacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetalleProducto.resx">
       <DependentUpon>DetalleProducto.cs</DependentUpon>
@@ -355,6 +364,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

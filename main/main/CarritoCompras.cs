@@ -32,10 +32,12 @@ namespace main
             if (dgvcarrito.Rows.Count != 0)
             {
                 lbtotal.Text = "$" + cn.precioTotal(globalIDuser).ToString();
+                btnpedido.Enabled = true;
             }
             else
             {
                 lbtotal.Text = "$0";
+                btnpedido.Enabled = false;
             }
 
             DateTime fechaActual = DateTime.Today;
@@ -87,10 +89,12 @@ namespace main
                 if (dgvcarrito.Rows.Count != 0)
                 {
                     lbtotal.Text = "$" + cn.precioTotal(globalIDuser).ToString();
+                    btnpedido.Enabled = true;
                 }
                 else
                 {
                     lbtotal.Text = "$0";
+                    btnpedido.Enabled = false;
                 }
            
         }
@@ -124,10 +128,12 @@ namespace main
                 if (dgvcarrito.Rows.Count != 0)
                 {
                     lbtotal.Text = "$" + cn.precioTotal(globalIDuser).ToString();
+                    btnpedido.Enabled = true;
                 }
                 else
                 {
                     lbtotal.Text = "$0";
+                    btnpedido.Enabled = false;
                 }
             }
 
@@ -136,7 +142,8 @@ namespace main
 
         private void btnpedido_Click(object sender, EventArgs e)
         {
-
+            Confirmacion conf = new Confirmacion();
+            conf.ShowDialog();
         }
     }
 }

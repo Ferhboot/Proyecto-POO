@@ -1033,9 +1033,9 @@ namespace main
 
             if (cantidadActual > cantidad)
             {
-
+                int diferencia = cantidadActual - cantidad;
                 //string com3 = "delete from Carrito where idCarrrito in (select top @cantidad Carrito.idCarrito from Carrito INNER JOIN Compra on Compra.idCompra = Carrito.idCompra where idBienOServicio=@idBienOServicio and Compra.estadoCompra=0); ";
-                string com3 = "delete from Carrito where idCarrito in (select top " + cantidad.ToString() +" Carrito.idCarrito from Carrito INNER JOIN Compra on Compra.idCompra = Carrito.idCompra where idBienOServicio=@idBienOServicio and Compra.estadoCompra=0); ";
+                string com3 = "delete from Carrito where idCarrito in (select top " + diferencia.ToString() +" Carrito.idCarrito from Carrito INNER JOIN Compra on Compra.idCompra = Carrito.idCompra where idBienOServicio=@idBienOServicio and Compra.estadoCompra=0); ";
                 SqlCommand cmd3 = new SqlCommand(com3, conexion);
 
                 cmd3.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
@@ -1061,7 +1061,7 @@ namespace main
             }else if(cantidadActual < cantidad)
             {
 
-
+                int diferencia = cantidad - cantidadActual;
                 string getCantidad = "select cantidad from BienOServicio where idBienOServicio=@idBienOServicio;";
                 SqlCommand obtenerCantidad = new SqlCommand(getCantidad, conexion);
                 obtenerCantidad.Parameters.Add(new SqlParameter("@idBienOServicio", SqlDbType.Int));
@@ -1078,7 +1078,7 @@ namespace main
 
                 if (cant >= cantidad) { 
 
-                    for (int i = 0; i < cantidad; i++)
+                    for (int i = 0; i < diferencia; i++)
                     {
 
                         string com3 = "insert into Carrito (idBienOServicio, idCompra) " +

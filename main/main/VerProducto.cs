@@ -15,6 +15,7 @@ namespace main
 
         BienOServicio b = null;
         string iduser = "";
+        int globalCantidad = 1;
         public VerProducto(string user, int idProducto, int tipoUsuario)
         {
 
@@ -38,6 +39,7 @@ namespace main
             {
                 label2.Text = "Stock: ";
                 lbstock.Text = b.Cantidad.ToString();
+                globalCantidad = b.Cantidad;
                 ncant.Enabled = true;
             }
 
@@ -61,7 +63,7 @@ namespace main
 
         private void btncarrito_Click(object sender, EventArgs e)
         {
-            if (iduser!="")
+            if (iduser!="" && globalCantidad>=ncant.Value)
             {
 
                 if(int.Parse(ncant.Text)>0) { 

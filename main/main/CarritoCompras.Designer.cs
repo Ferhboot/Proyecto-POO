@@ -147,6 +147,7 @@
             this.btnpedido.TabIndex = 7;
             this.btnpedido.Text = "Finalizar pedido";
             this.btnpedido.UseVisualStyleBackColor = false;
+            this.btnpedido.Click += new System.EventHandler(this.btnpedido_Click);
             // 
             // label3
             // 

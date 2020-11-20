@@ -29,7 +29,14 @@ namespace main
             dgvcarrito.DataSource = cn.verCarrito(iduser).Tables["carrito"];
             dgvcarrito.ClearSelection();
 
-            lbtotal.Text = "$"+cn.precioTotal(iduser).ToString();
+            if (dgvcarrito.Rows.Count != 0)
+            {
+                lbtotal.Text = "$" + cn.precioTotal(globalIDuser).ToString();
+            }
+            else
+            {
+                lbtotal.Text = "$0";
+            }
 
             DateTime fechaActual = DateTime.Today;
 
@@ -66,9 +73,9 @@ namespace main
 
         private void btnactualizar_Click(object sender, EventArgs e)
         {
-            if (tipo !=-1 && tipo >0) { 
+            if (tipo != -1 && tipo > 0) {
                 Conexion cn = new Conexion();
-                cn.actualizarCarrito(user,idproducto,Convert.ToInt32(cant.Value),cantidadActual);
+                cn.actualizarCarrito(user, idproducto, Convert.ToInt32(cant.Value), cantidadActual);
                 cant.Value = 1;
                 cant.Enabled = false;
                 btnactualizar.Enabled = false;
@@ -76,8 +83,17 @@ namespace main
                 MessageBox.Show("Cantidad Actualizada", "E-Market",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvcarrito.DataSource = cn.verCarrito(globalIDuser).Tables["carrito"];
-                dgvcarrito.ClearSelection();
-            }
+                dgvcarrito.ClearSelection(); 
+                if (dgvcarrito.Rows.Count != 0)
+                {
+                    lbtotal.Text = "$" + cn.precioTotal(globalIDuser).ToString();
+                }
+                else
+                {
+                    lbtotal.Text = "$0";
+                }
+           
+        }
             else
             {
                 MessageBox.Show("Existencias no disponibles o es un servicio", "E-Market",
@@ -105,9 +121,22 @@ namespace main
 
                 btneliminar.Enabled = false;
                 btnactualizar.Enabled = false;
+                if (dgvcarrito.Rows.Count != 0)
+                {
+                    lbtotal.Text = "$" + cn.precioTotal(globalIDuser).ToString();
+                }
+                else
+                {
+                    lbtotal.Text = "$0";
+                }
             }
 
             
+        }
+
+        private void btnpedido_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

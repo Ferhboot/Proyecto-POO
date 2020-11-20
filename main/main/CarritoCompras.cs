@@ -89,5 +89,25 @@ namespace main
         {
 
         }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            Conexion cn = new Conexion();
+
+            if (MessageBox.Show("¿Desea eliminar este producto?", 
+                "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int idproducto = int.Parse(dgvcarrito.CurrentRow.Cells[0].FormattedValue.ToString());
+                int cantidad = int.Parse(dgvcarrito.CurrentRow.Cells[4].FormattedValue.ToString());
+                cn.eliminarDelCarrito(idproducto, globalIDuser, cantidad);
+                dgvcarrito.DataSource = cn.verCarrito(globalIDuser).Tables["carrito"];
+                dgvcarrito.ClearSelection();
+
+                btneliminar.Enabled = false;
+                btnactualizar.Enabled = false;
+            }
+
+            
+        }
     }
 }

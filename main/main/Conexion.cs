@@ -1050,7 +1050,7 @@ namespace main
                 SqlCommand cmd2 = new SqlCommand(com2, conexion);
 
                 cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
-                cmd2.Parameters["@cantidad"].Value = cantidad;
+                cmd2.Parameters["@cantidad"].Value = diferencia;
 
                 cmd2.Parameters.Add(new SqlParameter("@idBienOServicio", SqlDbType.Int));
                 cmd2.Parameters["@idBienOServicio"].Value = idBienOServicio;
@@ -1061,7 +1061,7 @@ namespace main
             }else if(cantidadActual < cantidad)
             {
 
-                int diferencia = cantidad - cantidadActual;
+                int diferencia2 = cantidad - cantidadActual;
                 string getCantidad = "select cantidad from BienOServicio where idBienOServicio=@idBienOServicio;";
                 SqlCommand obtenerCantidad = new SqlCommand(getCantidad, conexion);
                 obtenerCantidad.Parameters.Add(new SqlParameter("@idBienOServicio", SqlDbType.Int));
@@ -1078,7 +1078,7 @@ namespace main
 
                 if (cant >= cantidad) { 
 
-                    for (int i = 0; i < diferencia; i++)
+                    for (int i = 0; i < diferencia2; i++)
                     {
 
                         string com3 = "insert into Carrito (idBienOServicio, idCompra) " +
@@ -1100,7 +1100,7 @@ namespace main
                     SqlCommand cmd2 = new SqlCommand(com2, conexion);
 
                     cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
-                    cmd2.Parameters["@cantidad"].Value = cantidad;
+                    cmd2.Parameters["@cantidad"].Value = diferencia2;
 
                     cmd2.Parameters.Add(new SqlParameter("@idBienOServicio", SqlDbType.Int));
                     cmd2.Parameters["@idBienOServicio"].Value = idBienOServicio;
@@ -1117,6 +1117,33 @@ namespace main
 
             conexion.Close();
             return true;
+        }
+
+        public void eliminarDelCarrito(int idProducto, string userid, int cantidad)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+
+            int idcompra = obtenerIdCompra(userid);
+            string com1 = "delete from carrito where idcompra=@idcompra and idbienoservicio=@idproducto;";
+            SqlCommand cmd1 = new SqlCommand(com1, conexion);
+            cmd1.Parameters.Add(new SqlParameter("@idcompra", SqlDbType.Int));
+            cmd1.Parameters["@idcompra"].Value = idcompra;
+            cmd1.Parameters.Add(new SqlParameter("@idproducto", SqlDbType.Int));
+            cmd1.Parameters["@idproducto"].Value = idProducto;
+            cmd1.ExecuteNonQuery();
+            
+            if (cantidad != -1)
+            {
+                string com2 = "update bienoservicio set cantidad=cantidad+@cantidad where idbienoservicio=@idproducto;";
+                SqlCommand cmd2 = new SqlCommand(com2, conexion);
+                cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
+                cmd2.Parameters["@cantidad"].Value = cantidad;
+                cmd2.Parameters.Add(new SqlParameter("@idproducto", SqlDbType.Int));
+                cmd2.Parameters["@idproducto"].Value = idProducto;
+                cmd2.ExecuteNonQuery();
+            }
         }
 
 

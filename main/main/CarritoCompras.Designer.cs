@@ -113,6 +113,7 @@
             this.btneliminar.TabIndex = 4;
             this.btneliminar.Text = "Eliminar producto o servicio";
             this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // lbproducto
             // 
@@ -194,9 +195,9 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(271, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(477, 17);
+            this.label4.Size = new System.Drawing.Size(432, 17);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Haga doble clic en un producto o servicio para verlo o ejecutar alguna acción";
+            this.label4.Text = "Haga doble clic en un producto o servicio para ejecutar alguna acción";
             // 
             // dgvcarrito
             // 

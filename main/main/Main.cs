@@ -95,7 +95,17 @@ namespace main
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil(d);
+            Perfil perfil;
+            if (d != null)
+            {
+                perfil = new Perfil(d);
+            }
+            else
+            {
+                perfil = new Perfil(emp);
+            }
+
+
             perfil.ShowDialog();
         }
 
@@ -646,7 +656,17 @@ namespace main
 
         private void btnmiperfil_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil(d);
+            Perfil perfil;
+            if (d != null)
+            {
+                perfil = new Perfil(d);
+            }
+            else
+            {
+                perfil = new Perfil(emp);
+            }
+
+
             perfil.ShowDialog();
         }
 

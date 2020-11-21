@@ -1264,6 +1264,18 @@ namespace main
             return lista;
         }
 
+        public DataSet VerMisProductos(string idusuario)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "select idbienoservicio, bienoservicio.nombre as Producto, descripcion as Descripción,categorias.nombre as Categoría, precio as [Precio $], cantidad as Stock from BienOServicio inner join categorias on BienOServicio.idCategoria = categorias.idcategoria where idUsuario = '" + idusuario + "';";
+            DataSet ds = new DataSet();
+            SqlDataAdapter ad = new SqlDataAdapter(com, conexion);
+            ad.Fill(ds, "productos");
+            conexion.Close();
+            return ds;
+        }
 
     }
 

@@ -180,8 +180,8 @@
             this.toolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(95, 22);
-            this.toolStripLabel3.Text = "Vender Producto";
+            this.toolStripLabel3.Size = new System.Drawing.Size(83, 22);
+            this.toolStripLabel3.Text = "Mis Productos";
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
             // toolStripSeparator2

@@ -17,7 +17,7 @@ namespace main
         {
             InitializeComponent();
             txtpormayor.Enabled = false;
-            idUsuario = personal.IDusuario;
+            idUsuario = personal.IDusuario;           
         }
 
         public Publicacion(Empresa empresa)
@@ -65,6 +65,17 @@ namespace main
             cmbcategoria.DisplayMember = "nombre";
             cmbcategoria.ValueMember = "idcategoria";
             cmbcategoria.DataSource = ds.Tables["categorias"];
+
+            dtvpublicaciones.DataSource = null;
+            dtvpublicaciones.DataSource = cat.VerMisProductos(idUsuario).Tables["productos"];
+            dtvpublicaciones.Columns[0].Visible = false;
+            dtvpublicaciones.Columns[5].Visible = false;
+
+            txtnom.Enabled = false;
+            txtprec.Enabled = false;
+            cbcat.Enabled = false;
+            txtsto.Enabled = false;
+            txtdesc.Enabled = false;
 
         }
 
@@ -144,6 +155,40 @@ namespace main
         private void btnREGRESAR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtvpublicaciones_DoubleClick(object sender, EventArgs e)
+        {
+            if (dtvpublicaciones.Rows.Count != 0)
+            {
+                int prod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
+                string nom = dtvpublicaciones.CurrentRow.Cells[1].FormattedValue.ToString();
+                txtnom.Text = nom;
+                txtnom.Enabled = true;
+                string desc = dtvpublicaciones.CurrentRow.Cells[2].FormattedValue.ToString();
+                txtdesc.Text = desc;
+                txtdesc.Enabled = true;
+                string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
+                cbcat.Text = cat;
+                cbcat.Enabled = true;
+                double prec = double.Parse(dtvpublicaciones.CurrentRow.Cells[4].FormattedValue.ToString());
+                txtprec.Text = prec.ToString();
+                txtprec.Enabled = true;
+                int sto = int.Parse(dtvpublicaciones.CurrentRow.Cells[5].FormattedValue.ToString());
+                if (sto > 0)
+                {
+                    txtsto.Text = sto.ToString();
+                    txtsto.Enabled = true;
+                }
+                else
+                {
+                    txtsto.Enabled = false;
+                }
+            }
+            else
+            {
+
+            }
         }
     }
 }

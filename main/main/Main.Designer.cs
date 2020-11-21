@@ -47,8 +47,6 @@
             this.btnbuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgcuenta = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btncarrito = new System.Windows.Forms.Button();
             this.btnmensajes = new System.Windows.Forms.Button();
@@ -83,13 +81,14 @@
             this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnmisproductos = new System.Windows.Forms.Button();
+            this.btnmiperfil = new System.Windows.Forms.Button();
+            this.btnreportar = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -150,14 +149,14 @@
             // miPerfilToolStripMenuItem
             // 
             this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
             this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -293,42 +292,20 @@
             this.tableLayoutPanel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.dgcuenta, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.btnreportar, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.btnmiperfil, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel12, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnmisproductos, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(839, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(204, 488);
             this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::main.Properties.Resources.cart_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dgcuenta
-            // 
-            this.dgcuenta.AllowUserToAddRows = false;
-            this.dgcuenta.AllowUserToDeleteRows = false;
-            this.dgcuenta.BackgroundColor = System.Drawing.Color.White;
-            this.dgcuenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgcuenta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgcuenta.Location = new System.Drawing.Point(3, 173);
-            this.dgcuenta.Name = "dgcuenta";
-            this.dgcuenta.ReadOnly = true;
-            this.dgcuenta.Size = new System.Drawing.Size(198, 312);
-            this.dgcuenta.TabIndex = 1;
             // 
             // tableLayoutPanel12
             // 
@@ -968,6 +945,51 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // btnmisproductos
+            // 
+            this.btnmisproductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnmisproductos.BackColor = System.Drawing.Color.Maroon;
+            this.btnmisproductos.FlatAppearance.BorderSize = 0;
+            this.btnmisproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmisproductos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmisproductos.Location = new System.Drawing.Point(20, 106);
+            this.btnmisproductos.Name = "btnmisproductos";
+            this.btnmisproductos.Size = new System.Drawing.Size(164, 72);
+            this.btnmisproductos.TabIndex = 3;
+            this.btnmisproductos.Text = "Mis Productos";
+            this.btnmisproductos.UseVisualStyleBackColor = false;
+            this.btnmisproductos.Click += new System.EventHandler(this.btnmisproductos_Click);
+            // 
+            // btnmiperfil
+            // 
+            this.btnmiperfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnmiperfil.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnmiperfil.FlatAppearance.BorderSize = 0;
+            this.btnmiperfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmiperfil.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmiperfil.Location = new System.Drawing.Point(20, 244);
+            this.btnmiperfil.Name = "btnmiperfil";
+            this.btnmiperfil.Size = new System.Drawing.Size(164, 72);
+            this.btnmiperfil.TabIndex = 4;
+            this.btnmiperfil.Text = "Mi Perfil";
+            this.btnmiperfil.UseVisualStyleBackColor = false;
+            this.btnmiperfil.Click += new System.EventHandler(this.btnmiperfil_Click);
+            // 
+            // btnreportar
+            // 
+            this.btnreportar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnreportar.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnreportar.FlatAppearance.BorderSize = 0;
+            this.btnreportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportar.Location = new System.Drawing.Point(20, 382);
+            this.btnreportar.Name = "btnreportar";
+            this.btnreportar.Size = new System.Drawing.Size(164, 72);
+            this.btnreportar.TabIndex = 5;
+            this.btnreportar.Text = "Reportar un Inconveniente";
+            this.btnreportar.UseVisualStyleBackColor = false;
+            this.btnreportar.Click += new System.EventHandler(this.btnreportar_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -995,8 +1017,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
@@ -1039,8 +1059,6 @@
         private System.Windows.Forms.DataGridView dgcategorias;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgcuenta;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.PictureBox pb2;
@@ -1074,5 +1092,8 @@
         private System.Windows.Forms.Button btnmensajes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         public System.Windows.Forms.Button btncarrito;
+        private System.Windows.Forms.Button btnreportar;
+        private System.Windows.Forms.Button btnmiperfil;
+        private System.Windows.Forms.Button btnmisproductos;
     }
 }

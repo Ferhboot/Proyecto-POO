@@ -628,5 +628,51 @@ namespace main
             CarritoCompras c = new CarritoCompras(iduser);
             c.Show();
         }
+
+        private void btnmisproductos_Click(object sender, EventArgs e)
+        {
+            Publicacion pub;
+            if (d != null)
+            {
+                pub = new Publicacion(d);
+            }
+            else
+            {
+                pub = new Publicacion(emp);
+            }
+
+            pub.ShowDialog();
+        }
+
+        private void btnmiperfil_Click(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil(d);
+            perfil.ShowDialog();
+        }
+
+        private void btnreportar_Click(object sender, EventArgs e)
+        {
+            Reporte rp;
+            if (emp == null && invitado == 0)
+            {
+                rp = new Reporte(d.IDusuario);
+                rp.ShowDialog();
+            }
+            else if (d == null && invitado == 0)
+            {
+                rp = new Reporte(emp.IDusuario);
+                rp.ShowDialog();
+            }
+            else if (d == null && emp == null)
+            {
+                MessageBox.Show("Debe registrarse previamente", "E-Market",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error grave, por favor reinicie el programa",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

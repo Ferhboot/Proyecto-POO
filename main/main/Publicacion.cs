@@ -66,6 +66,11 @@ namespace main
             cmbcategoria.ValueMember = "idcategoria";
             cmbcategoria.DataSource = ds.Tables["categorias"];
 
+            cbcat.DisplayMember = "nombre";
+            cbcat.ValueMember = "idcategoria";
+            cbcat.DataSource = ds.Tables["categorias"];
+            cbcat.SelectedIndex = -1;
+
             dtvpublicaciones.DataSource = null;
             dtvpublicaciones.DataSource = cat.VerMisProductos(idUsuario).Tables["productos"];
             dtvpublicaciones.Columns[0].Visible = false;
@@ -214,6 +219,45 @@ namespace main
             }
             
 
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            if (txtsto.Enabled == true)
+            {
+                Conexion cn = new Conexion();
+                string nom = txtnom.Text;
+                string desc = txtdesc.Text;
+                string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
+                double prec = double.Parse(txtprec.Text);
+                int sto = int.Parse(txtsto.Text);
+                int idprod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
+                
+                cn.UpdateProductoA(idprod, nom, desc, int.Parse(cbcat.SelectedValue.ToString()), prec, sto);
+                
+                MessageBox.Show("Producto actualizado", "Éxito", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+                                
+                dtvpublicaciones.DataSource = null;
+                dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                dtvpublicaciones.Columns[0].Visible = false;
+                dtvpublicaciones.Columns[5].Visible = false;
+
+                txtnom.Enabled = false;
+                txtprec.Enabled = false;
+                cbcat.Enabled = false;
+                txtsto.Enabled = false;
+                txtdesc.Enabled = false;
+
+                txtnom.Clear();
+                txtprec.Clear();
+                cbcat.SelectedIndex = -1;
+                txtsto.Clear();
+                txtdesc.Clear();
+
+                btnupdate.Enabled = false;
+                btneliminar.Enabled = false;
+            }
         }
     }
 }

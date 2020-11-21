@@ -389,6 +389,7 @@
             this.btnupdate.TabIndex = 1;
             this.btnupdate.Text = "Actualizar información";
             this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // dtvpublicaciones
             // 
@@ -532,6 +533,7 @@
             // 
             // cbcat
             // 
+            this.cbcat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbcat.FormattingEnabled = true;
             this.cbcat.Location = new System.Drawing.Point(124, 354);
             this.cbcat.Name = "cbcat";

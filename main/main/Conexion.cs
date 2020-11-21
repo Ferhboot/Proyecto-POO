@@ -1236,6 +1236,35 @@ namespace main
         }
 
 
+
+        public List<ComprobanteVenta> verComprobante(string id)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "select BienOServicio.nombre AS [NOMBRE], COUNT(Carrito.idCarrito) AS [CANTIDAD], BienOServicio.precio AS [PRECIO UNITARIO] from Compra INNER JOIN Carrito on Carrito.idCompra = Compra.idCompra INNER JOIN BienOServicio on BienOServicio.idBienOServicio = Carrito.idBienOServicio where Compra.estadoCompra=0 and Compra.idUsuario='" + id + "' group by BienOServicio.nombre, BienOServicio.precio;";
+
+            SqlCommand cmd = new SqlCommand(com, conexion);
+
+            List<ComprobanteVenta> lista = new List<ComprobanteVenta>();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                ComprobanteVenta cv = new ComprobanteVenta();
+
+                cv.Precio = float.Parse(rd["PRECIO UNITARIO"].ToString());
+                cv.Nombre = rd["NOMBRE"].ToString();
+                cv.Cantidad = int.Parse(rd["CANTIDAD"].ToString());
+
+                lista.Add(cv);
+            }
+
+            conexion.Close();
+            return lista;
+        }
+
+
     }
 
 }

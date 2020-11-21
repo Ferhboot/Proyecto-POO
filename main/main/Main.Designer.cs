@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsUser = new System.Windows.Forms.ToolStripSplitButton();
+            this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
@@ -39,11 +42,21 @@
             this.lbreportar = new System.Windows.Forms.ToolStripLabel();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbuser = new System.Windows.Forms.Label();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgcuenta = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.btncarrito = new System.Windows.Forms.Button();
+            this.btnmensajes = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.pb3 = new System.Windows.Forms.PictureBox();
+            this.pb4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -70,25 +83,19 @@
             this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btncarrito = new System.Windows.Forms.Button();
-            this.btnmensajes = new System.Windows.Forms.Button();
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            this.pb4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnbuscar = new System.Windows.Forms.Button();
-            this.tsUser = new System.Windows.Forms.ToolStripSplitButton();
-            this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).BeginInit();
+            this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -97,13 +104,6 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).BeginInit();
-            this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -131,6 +131,35 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
             this.toolStripLabel1.Text = "Acerca de";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
+            // 
+            // tsUser
+            // 
+            this.tsUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miPerfilToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.tsUser.ForeColor = System.Drawing.Color.Black;
+            this.tsUser.Image = global::main.Properties.Resources.usuario;
+            this.tsUser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsUser.Name = "tsUser";
+            this.tsUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tsUser.Size = new System.Drawing.Size(96, 22);
+            this.tsUser.Text = "Mi Usuario";
+            this.tsUser.ButtonClick += new System.EventHandler(this.tsUser_ButtonClick);
+            // 
+            // miPerfilToolStripMenuItem
+            // 
+            this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
+            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -199,6 +228,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1046, 60);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::main.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(92, 54);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // lbuser
             // 
             this.lbuser.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -212,6 +252,22 @@
             this.lbuser.TabIndex = 5;
             this.lbuser.Text = "user";
             this.lbuser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnbuscar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnbuscar.BackgroundImage = global::main.Properties.Resources.search2;
+            this.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnbuscar.Location = new System.Drawing.Point(878, 9);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(40, 42);
+            this.btnbuscar.TabIndex = 6;
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -250,6 +306,17 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(204, 488);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::main.Properties.Resources.cart_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(192, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // dgcuenta
             // 
             this.dgcuenta.AllowUserToAddRows = false;
@@ -262,6 +329,68 @@
             this.dgcuenta.ReadOnly = true;
             this.dgcuenta.Size = new System.Drawing.Size(198, 312);
             this.dgcuenta.TabIndex = 1;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.btncarrito, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnmensajes, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(198, 67);
+            this.tableLayoutPanel12.TabIndex = 2;
+            // 
+            // btncarrito
+            // 
+            this.btncarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btncarrito.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btncarrito.BackgroundImage = global::main.Properties.Resources.carrito;
+            this.btncarrito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncarrito.FlatAppearance.BorderSize = 0;
+            this.btncarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncarrito.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncarrito.ForeColor = System.Drawing.Color.Black;
+            this.btncarrito.Image = global::main.Properties.Resources.carrito;
+            this.btncarrito.Location = new System.Drawing.Point(113, 3);
+            this.btncarrito.Name = "btncarrito";
+            this.btncarrito.Size = new System.Drawing.Size(70, 61);
+            this.btncarrito.TabIndex = 3;
+            this.btncarrito.Text = "0";
+            this.btncarrito.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btncarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btncarrito.UseVisualStyleBackColor = false;
+            this.btncarrito.Click += new System.EventHandler(this.btncarrito_Click);
+            // 
+            // btnmensajes
+            // 
+            this.btnmensajes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnmensajes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnmensajes.BackgroundImage = global::main.Properties.Resources.mensaje;
+            this.btnmensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnmensajes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmensajes.FlatAppearance.BorderSize = 0;
+            this.btnmensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmensajes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmensajes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnmensajes.Image = global::main.Properties.Resources.mensaje;
+            this.btnmensajes.Location = new System.Drawing.Point(14, 3);
+            this.btnmensajes.Name = "btnmensajes";
+            this.btnmensajes.Size = new System.Drawing.Size(70, 61);
+            this.btnmensajes.TabIndex = 2;
+            this.btnmensajes.Text = "0";
+            this.btnmensajes.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnmensajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnmensajes.UseVisualStyleBackColor = false;
+            this.btnmensajes.Click += new System.EventHandler(this.btnmensajes_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -298,6 +427,54 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(615, 482);
             this.tableLayoutPanel5.TabIndex = 2;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint_1);
+            // 
+            // pb1
+            // 
+            this.pb1.BackColor = System.Drawing.Color.Transparent;
+            this.pb1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb1.Location = new System.Drawing.Point(99, 14);
+            this.pb1.Margin = new System.Windows.Forms.Padding(0);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(177, 146);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb1.TabIndex = 0;
+            this.pb1.TabStop = false;
+            // 
+            // pb2
+            // 
+            this.pb2.BackColor = System.Drawing.Color.Transparent;
+            this.pb2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb2.Location = new System.Drawing.Point(332, 14);
+            this.pb2.Margin = new System.Windows.Forms.Padding(0);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(181, 146);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb2.TabIndex = 1;
+            this.pb2.TabStop = false;
+            // 
+            // pb3
+            // 
+            this.pb3.BackColor = System.Drawing.Color.Transparent;
+            this.pb3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb3.Location = new System.Drawing.Point(99, 232);
+            this.pb3.Margin = new System.Windows.Forms.Padding(0);
+            this.pb3.Name = "pb3";
+            this.pb3.Size = new System.Drawing.Size(177, 146);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb3.TabIndex = 2;
+            this.pb3.TabStop = false;
+            // 
+            // pb4
+            // 
+            this.pb4.BackColor = System.Drawing.Color.Transparent;
+            this.pb4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb4.Location = new System.Drawing.Point(332, 232);
+            this.pb4.Margin = new System.Windows.Forms.Padding(0);
+            this.pb4.Name = "pb4";
+            this.pb4.Size = new System.Drawing.Size(181, 146);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb4.TabIndex = 3;
+            this.pb4.TabStop = false;
             // 
             // tableLayoutPanel8
             // 
@@ -791,183 +968,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.btncarrito, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.btnmensajes, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(6, 3);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(195, 69);
-            this.tableLayoutPanel12.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::main.Properties.Resources.cart_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btncarrito
-            // 
-            this.btncarrito.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btncarrito.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btncarrito.BackgroundImage = global::main.Properties.Resources.carrito;
-            this.btncarrito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncarrito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncarrito.FlatAppearance.BorderSize = 0;
-            this.btncarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncarrito.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncarrito.ForeColor = System.Drawing.Color.Black;
-            this.btncarrito.Image = global::main.Properties.Resources.carrito;
-            this.btncarrito.Location = new System.Drawing.Point(111, 3);
-            this.btncarrito.Name = "btncarrito";
-            this.btncarrito.Size = new System.Drawing.Size(70, 63);
-            this.btncarrito.TabIndex = 3;
-            this.btncarrito.Text = "0";
-            this.btncarrito.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btncarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btncarrito.UseVisualStyleBackColor = false;
-            this.btncarrito.Click += new System.EventHandler(this.btncarrito_Click);
-            // 
-            // btnmensajes
-            // 
-            this.btnmensajes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnmensajes.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnmensajes.BackgroundImage = global::main.Properties.Resources.mensaje;
-            this.btnmensajes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnmensajes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmensajes.FlatAppearance.BorderSize = 0;
-            this.btnmensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmensajes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmensajes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnmensajes.Image = global::main.Properties.Resources.mensaje;
-            this.btnmensajes.Location = new System.Drawing.Point(13, 3);
-            this.btnmensajes.Name = "btnmensajes";
-            this.btnmensajes.Size = new System.Drawing.Size(70, 63);
-            this.btnmensajes.TabIndex = 2;
-            this.btnmensajes.Text = "0";
-            this.btnmensajes.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnmensajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnmensajes.UseVisualStyleBackColor = false;
-            this.btnmensajes.Click += new System.EventHandler(this.btnmensajes_Click);
-            // 
-            // pb1
-            // 
-            this.pb1.BackColor = System.Drawing.Color.Transparent;
-            this.pb1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb1.Location = new System.Drawing.Point(99, 14);
-            this.pb1.Margin = new System.Windows.Forms.Padding(0);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(177, 146);
-            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb1.TabIndex = 0;
-            this.pb1.TabStop = false;
-            // 
-            // pb2
-            // 
-            this.pb2.BackColor = System.Drawing.Color.Transparent;
-            this.pb2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb2.Location = new System.Drawing.Point(332, 14);
-            this.pb2.Margin = new System.Windows.Forms.Padding(0);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(181, 146);
-            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb2.TabIndex = 1;
-            this.pb2.TabStop = false;
-            // 
-            // pb3
-            // 
-            this.pb3.BackColor = System.Drawing.Color.Transparent;
-            this.pb3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb3.Location = new System.Drawing.Point(99, 232);
-            this.pb3.Margin = new System.Windows.Forms.Padding(0);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(177, 146);
-            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb3.TabIndex = 2;
-            this.pb3.TabStop = false;
-            // 
-            // pb4
-            // 
-            this.pb4.BackColor = System.Drawing.Color.Transparent;
-            this.pb4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb4.Location = new System.Drawing.Point(332, 232);
-            this.pb4.Margin = new System.Windows.Forms.Padding(0);
-            this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(181, 146);
-            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb4.TabIndex = 3;
-            this.pb4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::main.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(92, 54);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnbuscar.BackColor = System.Drawing.Color.IndianRed;
-            this.btnbuscar.BackgroundImage = global::main.Properties.Resources.search2;
-            this.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnbuscar.Location = new System.Drawing.Point(878, 9);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(40, 42);
-            this.btnbuscar.TabIndex = 6;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
-            // tsUser
-            // 
-            this.tsUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miPerfilToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.tsUser.ForeColor = System.Drawing.Color.Black;
-            this.tsUser.Image = global::main.Properties.Resources.usuario;
-            this.tsUser.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsUser.Name = "tsUser";
-            this.tsUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tsUser.Size = new System.Drawing.Size(96, 22);
-            this.tsUser.Text = "Mi Usuario";
-            this.tsUser.ButtonClick += new System.EventHandler(this.tsUser_ButtonClick);
-            // 
-            // miPerfilToolStripMenuItem
-            // 
-            this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
-            this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -992,10 +992,17 @@
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcuenta)).EndInit();
+            this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -1008,13 +1015,6 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgcategorias)).EndInit();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1073,6 +1073,6 @@
         private System.Windows.Forms.ToolStripLabel lbreportar;
         private System.Windows.Forms.Button btnmensajes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Button btncarrito;
+        public System.Windows.Forms.Button btncarrito;
     }
 }

@@ -340,6 +340,29 @@ namespace main
                 button8.Enabled = false;
 
             }
+            else
+            {
+                pb1.Visible = false;
+                pb2.Visible = false;
+                pb3.Visible = false;
+                pb4.Visible = false;
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Visible = false;
+                label4.Visible = false;
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                tableLayoutPanel6.Visible = false;
+                tableLayoutPanel7.Visible = false;
+                tableLayoutPanel8.Visible = false;
+                tableLayoutPanel9.Visible = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
+                button8.Enabled = false;
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -473,6 +496,10 @@ namespace main
 
                 paginador();
 
+            }
+            else
+            {
+                b = new List<BienOServicio>();
             }
 
         }

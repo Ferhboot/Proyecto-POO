@@ -74,6 +74,17 @@ namespace main
                     {
                         MessageBox.Show("Se ha agregado al carrito de compras exitosamente", "E-Market",
                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Main main = Application.OpenForms.OfType<Main>().FirstOrDefault();
+
+                        if (main != null)  //Si encuentra una instancia abierta
+                        {
+                            Conexion cat = new Conexion();
+                            main.btncarrito.Text = Convert.ToString(cat.numeroCarrito(iduser));
+                            
+                            main.Refresh();
+                        }
+
                         this.Close();
                     }
                     else

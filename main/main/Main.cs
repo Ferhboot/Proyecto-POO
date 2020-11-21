@@ -66,6 +66,10 @@ namespace main
             invitado = inv;
             btnmensajes.Visible = false;
             btncarrito.Visible = false;
+            btnmisproductos.Visible = false;
+            btnmiperfil.Visible = false;
+            btnreportar.Visible = false;
+
             tipo = 0;
         }
 
@@ -199,6 +203,7 @@ namespace main
             
             button6.Text = (paginaActual).ToString();
             button7.Text = (paginaActual + 1).ToString();        
+
 
             if (b.Count >= (paginaActual * 4))
             {
@@ -380,7 +385,7 @@ namespace main
 
             paginaActual += 1;
 
-            if((paginaActual * 4) >= (b.Count)) {
+            if((b.Count) >= (paginaActual * 4)) {
 
                 paginador();
 
@@ -434,7 +439,7 @@ namespace main
         {
             paginaActual += 1;
 
-            if ((paginaActual * 4) >= (b.Count))
+            if ((b.Count) >= (paginaActual * 4))
             {   
 
                 paginador();

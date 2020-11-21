@@ -99,5 +99,24 @@ namespace main
             Respuesta resp = new Respuesta(id, dest, name);
             resp.ShowDialog();
         }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (rbleido.Checked) { 
+
+                InformeReportes ir = new InformeReportes("where Estado='Leido'");
+                ir.ShowDialog();
+            }
+            else if (rbnoleido.Checked)
+            {
+                InformeReportes ir = new InformeReportes("where Estado = 'No leido'");
+                ir.ShowDialog();
+            }
+            else
+            {
+                InformeReportes ir = new InformeReportes("");
+                ir.ShowDialog();
+            }
+        }
     }
 }

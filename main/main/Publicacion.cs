@@ -16,14 +16,12 @@ namespace main
         public Publicacion(Datos personal)
         {
             InitializeComponent();
-            txtpormayor.Enabled = false;
             idUsuario = personal.IDusuario;           
         }
 
         public Publicacion(Empresa empresa)
         {
             InitializeComponent();
-            txtpormayor.Enabled = true;
             idUsuario = empresa.IDusuario;
         }
 
@@ -41,20 +39,14 @@ namespace main
                 lblnombre.Text = "NOMBRE DEL PRODUCTO:";
                 lblprecio.Text = "PRECIO UNITARIO:";
                 txtcantidad.Visible = true;
-                txtpormayor.Visible = true;
                 lblcantidad.Text = "CANTIDAD:";
-                lblpormayor.Text = "CANTIDAD AL POR MAYOR:";
-                lble.Text = "*solo empresas";
             }
             else
             {
                 lblnombre.Text = "NOMBRE DEL SERVICIO:";
                 lblprecio.Text = "PRECIO POR SERVICIO:";
                 txtcantidad.Visible = false;
-                txtpormayor.Visible = false;
                 lblcantidad.Text = "";
-                lblpormayor.Text = "";
-                lble.Text = "";
             }
         }
 
@@ -97,6 +89,8 @@ namespace main
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
         {
+
+
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
 
@@ -123,16 +117,6 @@ namespace main
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
-            
-
-            if (txtpormayor.Text.Trim() != "")
-            {
-                b.Mayoreo = int.Parse(txtpormayor.Text);
-            }
-            else
-            {
-                b.Mayoreo = 0;
-            }
 
             b.Imagen = ms.GetBuffer();
             b.User = new Usuario();
@@ -140,9 +124,18 @@ namespace main
             b.Cat = new Categoria();
             b.Cat.Idcategoria = Convert.ToInt32(cmbcategoria.SelectedValue.ToString());
 
-            b.registrarBienOServicio(b);
+            b.registrarBienOServicio(b);       
 
             MessageBox.Show("Producto registrado y publicado exitosamente", "E-Market",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Conexion cn = new Conexion();
+
+            dtvpublicaciones.DataSource = null;
+            dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+            dtvpublicaciones.Columns[0].Visible = false;
+            dtvpublicaciones.Columns[5].Visible = false;
+
+            dtvpublicaciones.ClearSelection();
 
             limpiar();
         }
@@ -153,7 +146,6 @@ namespace main
             txtdescripcion.Text = "";
             txtprecio.Text = "";
             txtcantidad.Text = "";
-            txtpormayor.Text = "";
             pictureBox1.Image = null;
         }
 

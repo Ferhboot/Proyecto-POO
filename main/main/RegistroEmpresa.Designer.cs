@@ -150,6 +150,7 @@
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(159, 21);
             this.txtpass.TabIndex = 9;
+            this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             // 
             // txtemail
             // 

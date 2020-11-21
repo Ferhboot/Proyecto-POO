@@ -43,6 +43,7 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgreportes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,7 +157,7 @@
             this.btnresponder.FlatAppearance.BorderSize = 0;
             this.btnresponder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnresponder.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnresponder.Location = new System.Drawing.Point(124, 312);
+            this.btnresponder.Location = new System.Drawing.Point(98, 312);
             this.btnresponder.Name = "btnresponder";
             this.btnresponder.Size = new System.Drawing.Size(84, 40);
             this.btnresponder.TabIndex = 5;
@@ -170,7 +171,7 @@
             this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Location = new System.Drawing.Point(290, 312);
+            this.btneliminar.Location = new System.Drawing.Point(344, 312);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(83, 40);
             this.btneliminar.TabIndex = 6;
@@ -197,12 +198,27 @@
             this.label3.Text = "label3";
             this.label3.Visible = false;
             // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnVer.FlatAppearance.BorderSize = 0;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(210, 312);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(107, 40);
+            this.btnVer.TabIndex = 9;
+            this.btnVer.Text = "Ver Reporte";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // VerReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(747, 384);
+            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btneliminar);
@@ -242,5 +258,6 @@
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnVer;
     }
 }

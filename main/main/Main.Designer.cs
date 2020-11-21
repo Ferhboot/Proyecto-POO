@@ -47,9 +47,12 @@
             this.btnbuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnreportar = new System.Windows.Forms.Button();
+            this.btnmiperfil = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btncarrito = new System.Windows.Forms.Button();
             this.btnmensajes = new System.Windows.Forms.Button();
+            this.btnmisproductos = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
@@ -81,9 +84,6 @@
             this.dgcategorias = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnmisproductos = new System.Windows.Forms.Button();
-            this.btnmiperfil = new System.Windows.Forms.Button();
-            this.btnreportar = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -149,14 +149,14 @@
             // miPerfilToolStripMenuItem
             // 
             this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.miPerfilToolStripMenuItem.Text = "Mi Perfil";
             this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -307,6 +307,38 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(204, 488);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
+            // btnreportar
+            // 
+            this.btnreportar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnreportar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnreportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnreportar.FlatAppearance.BorderSize = 0;
+            this.btnreportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportar.Location = new System.Drawing.Point(20, 382);
+            this.btnreportar.Name = "btnreportar";
+            this.btnreportar.Size = new System.Drawing.Size(164, 72);
+            this.btnreportar.TabIndex = 5;
+            this.btnreportar.Text = "Reportar un Inconveniente";
+            this.btnreportar.UseVisualStyleBackColor = false;
+            this.btnreportar.Click += new System.EventHandler(this.btnreportar_Click);
+            // 
+            // btnmiperfil
+            // 
+            this.btnmiperfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnmiperfil.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnmiperfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmiperfil.FlatAppearance.BorderSize = 0;
+            this.btnmiperfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmiperfil.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmiperfil.Location = new System.Drawing.Point(20, 244);
+            this.btnmiperfil.Name = "btnmiperfil";
+            this.btnmiperfil.Size = new System.Drawing.Size(164, 72);
+            this.btnmiperfil.TabIndex = 4;
+            this.btnmiperfil.Text = "Mi Perfil";
+            this.btnmiperfil.UseVisualStyleBackColor = false;
+            this.btnmiperfil.Click += new System.EventHandler(this.btnmiperfil_Click);
+            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -368,6 +400,22 @@
             this.btnmensajes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnmensajes.UseVisualStyleBackColor = false;
             this.btnmensajes.Click += new System.EventHandler(this.btnmensajes_Click);
+            // 
+            // btnmisproductos
+            // 
+            this.btnmisproductos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnmisproductos.BackColor = System.Drawing.Color.Maroon;
+            this.btnmisproductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmisproductos.FlatAppearance.BorderSize = 0;
+            this.btnmisproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmisproductos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmisproductos.Location = new System.Drawing.Point(20, 106);
+            this.btnmisproductos.Name = "btnmisproductos";
+            this.btnmisproductos.Size = new System.Drawing.Size(164, 72);
+            this.btnmisproductos.TabIndex = 3;
+            this.btnmisproductos.Text = "Mis Productos";
+            this.btnmisproductos.UseVisualStyleBackColor = false;
+            this.btnmisproductos.Click += new System.EventHandler(this.btnmisproductos_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -944,51 +992,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 10);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // btnmisproductos
-            // 
-            this.btnmisproductos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnmisproductos.BackColor = System.Drawing.Color.Maroon;
-            this.btnmisproductos.FlatAppearance.BorderSize = 0;
-            this.btnmisproductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmisproductos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmisproductos.Location = new System.Drawing.Point(20, 106);
-            this.btnmisproductos.Name = "btnmisproductos";
-            this.btnmisproductos.Size = new System.Drawing.Size(164, 72);
-            this.btnmisproductos.TabIndex = 3;
-            this.btnmisproductos.Text = "Mis Productos";
-            this.btnmisproductos.UseVisualStyleBackColor = false;
-            this.btnmisproductos.Click += new System.EventHandler(this.btnmisproductos_Click);
-            // 
-            // btnmiperfil
-            // 
-            this.btnmiperfil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnmiperfil.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnmiperfil.FlatAppearance.BorderSize = 0;
-            this.btnmiperfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmiperfil.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmiperfil.Location = new System.Drawing.Point(20, 244);
-            this.btnmiperfil.Name = "btnmiperfil";
-            this.btnmiperfil.Size = new System.Drawing.Size(164, 72);
-            this.btnmiperfil.TabIndex = 4;
-            this.btnmiperfil.Text = "Mi Perfil";
-            this.btnmiperfil.UseVisualStyleBackColor = false;
-            this.btnmiperfil.Click += new System.EventHandler(this.btnmiperfil_Click);
-            // 
-            // btnreportar
-            // 
-            this.btnreportar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnreportar.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnreportar.FlatAppearance.BorderSize = 0;
-            this.btnreportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportar.Location = new System.Drawing.Point(20, 382);
-            this.btnreportar.Name = "btnreportar";
-            this.btnreportar.Size = new System.Drawing.Size(164, 72);
-            this.btnreportar.TabIndex = 5;
-            this.btnreportar.Text = "Reportar un Inconveniente";
-            this.btnreportar.UseVisualStyleBackColor = false;
-            this.btnreportar.Click += new System.EventHandler(this.btnreportar_Click);
             // 
             // Main
             // 

@@ -84,10 +84,13 @@ namespace main
                     }
                     string n = "Su orden ha sido efectuada. El vendedor se contactará con usted en caso de necesitar mayor información";
                     MessageBox.Show(n, "Orden recibida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cn.CambiarEstadoCompra(usuario);
 
                     Comprobante c = new Comprobante(usuario);
                     c.ShowDialog();
+
+                    cn.CambiarEstadoCompra(usuario);
+
+                    
 
                     this.Close();
                 }

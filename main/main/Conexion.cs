@@ -767,7 +767,7 @@ namespace main
                 b.Cat.Nombre = rd["categoria"].ToString();
                 b.User = new Usuario();
                 b.User.IDusuario = rd["idUsuario"].ToString();
-
+                rd.Close();
             }
 
             conexion.Close();
@@ -777,11 +777,15 @@ namespace main
         public String nombre(string userid)
         {
             cadena = server + db + user + pass;
-            SqlConnection conexion = new SqlConnection(cadena);
-            conexion.Open();
+            SqlConnection conexion2 = new SqlConnection(cadena);
+            conexion2.Open();
             string com = "select Empresa.nombreEmpresa FROM Empresa INNER JOIN Datos on Datos.idDatos = Empresa.idDatos INNER JOIN Usuarios on Usuarios.userid = Datos.idUsuario WHERE Usuarios.userid='" + userid + "';";
-            SqlCommand cmd = new SqlCommand(com, conexion);
+            SqlCommand cmd = new SqlCommand(com, conexion2);
             SqlDataReader rd = cmd.ExecuteReader();
+
+            string cadena2 = server + db + user + pass;
+            SqlConnection conexion3 = new SqlConnection(cadena2);
+            conexion3.Open();
 
             string nom;
 
@@ -789,19 +793,19 @@ namespace main
             {
 
                 nom = rd["nombreEmpresa"].ToString();
-
+                rd.Close();
             }
             else
             {
-                string com1 = "select Datos.nombre,Datos.apellido FROM Datos INNER JOIN Usuarios on Usuarios.userid = Datos.idUsuario WHERE Usuarios.userid='" + userid + "';";
-                SqlCommand cmd1 = new SqlCommand(com, conexion);
-                SqlDataReader rd1 = cmd.ExecuteReader();
+                string com3 = "select Datos.nombre,Datos.apellido FROM Datos INNER JOIN Usuarios on Usuarios.userid = Datos.idUsuario WHERE Usuarios.userid='" + userid + "';";
+                SqlCommand cmd3 = new SqlCommand(com3, conexion3);
+                SqlDataReader rd3 = cmd3.ExecuteReader();
 
-                if (rd1.Read())
+                if (rd3.Read())
                 {
 
-                    nom = rd["nombre"].ToString() + rd["nombre"].ToString();
-
+                    nom = rd3["nombre"].ToString() +" "+ rd3["apellido"].ToString();
+                    rd3.Close();
                 }
                 else
                 {
@@ -809,8 +813,8 @@ namespace main
                 }
 
             }
-
-            conexion.Close();
+            conexion2.Close();
+            conexion3.Close();
             return nom;
 
         }

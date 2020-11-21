@@ -1015,7 +1015,7 @@ namespace main
             int num = 0;
             if (rd.Read())
             {
-                Dnum = int.Parse(rd[0].ToString());
+                num = int.Parse(rd[0].ToString());
             }
             conexion.Close();
             return num;

@@ -258,6 +258,41 @@ namespace main
                 btnupdate.Enabled = false;
                 btneliminar.Enabled = false;
             }
+
+            else
+            {
+                Conexion cn = new Conexion();
+                string nom = txtnom.Text;
+                string desc = txtdesc.Text;
+                string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
+                double prec = double.Parse(txtprec.Text);
+                int idprod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
+                
+                cn.UpdateProductoB(idprod, nom, desc, int.Parse(cbcat.SelectedValue.ToString()), prec);
+                
+                MessageBox.Show("Producto actualizado", "Éxito", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+                                
+                dtvpublicaciones.DataSource = null;
+                dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                dtvpublicaciones.Columns[0].Visible = false;
+                dtvpublicaciones.Columns[5].Visible = false;
+
+                txtnom.Enabled = false;
+                txtprec.Enabled = false;
+                cbcat.Enabled = false;
+                txtsto.Enabled = false;
+                txtdesc.Enabled = false;
+
+                txtnom.Clear();
+                txtprec.Clear();
+                cbcat.SelectedIndex = -1;
+                txtsto.Clear();
+                txtdesc.Clear();
+
+                btnupdate.Enabled = false;
+                btneliminar.Enabled = false;
+            }
         }
     }
 }

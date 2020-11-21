@@ -1312,12 +1312,31 @@ namespace main
             cmd.Parameters.Add(new SqlParameter("@idprod", SqlDbType.Int));
             cmd.Parameters["@idprod"].Value = idprod;
 
-            int r = cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
             conexion.Close();
         }
 
-        
+        public void UpdateProductoB(int idprod, string nombre, string descripcion, int categoria, double precio)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "update bienoservicio set nombre=@nombre, descripcion=@descripcion, precio=@precio, idcategoria=@categoria where idbienoservicio=@idprod;";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+            cmd.Parameters["@nombre"].Value = nombre;
+            cmd.Parameters.Add(new SqlParameter("@descripcion", SqlDbType.VarChar));
+            cmd.Parameters["@descripcion"].Value = descripcion;
+            cmd.Parameters.Add(new SqlParameter("@categoria", SqlDbType.Int));
+            cmd.Parameters["@categoria"].Value = categoria;
+            cmd.Parameters.Add(new SqlParameter("@precio", SqlDbType.Float));
+            cmd.Parameters["@precio"].Value = float.Parse(precio.ToString());
+            cmd.Parameters.Add(new SqlParameter("@idprod", SqlDbType.Int));
+            cmd.Parameters["@idprod"].Value = idprod;
 
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 
 }

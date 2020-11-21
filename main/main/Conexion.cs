@@ -914,18 +914,18 @@ namespace main
 
                         cmd3.ExecuteNonQuery();
 
-                        string com2 = "update BienOServicio SET cantidad = cantidad - @cantidad WHERE idBienOServicio=@idBienOServicio;";
-                        SqlCommand cmd2 = new SqlCommand(com2, conexion);
-
-                        cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
-                        cmd2.Parameters["@cantidad"].Value = cantidad;
-
-                        cmd2.Parameters.Add(new SqlParameter("@idBienOServicio", SqlDbType.Int));
-                        cmd2.Parameters["@idBienOServicio"].Value = idBienOServicio;
-
-                        cmd2.ExecuteNonQuery();
-
                     }
+
+                    string com2 = "update BienOServicio SET cantidad = cantidad - @cantidad WHERE idBienOServicio=@idBienOServicio;";
+                    SqlCommand cmd2 = new SqlCommand(com2, conexion);
+
+                    cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
+                    cmd2.Parameters["@cantidad"].Value = cantidad;
+
+                    cmd2.Parameters.Add(new SqlParameter("@idBienOServicio", SqlDbType.Int));
+                    cmd2.Parameters["@idBienOServicio"].Value = idBienOServicio;
+
+                    cmd2.ExecuteNonQuery();
 
                 }
                 else

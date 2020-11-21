@@ -1277,6 +1277,18 @@ namespace main
             return ds;
         }
 
+        public void eliminarProducto(int idproducto)
+        {
+            cadena = server + db + user + pass;
+            SqlConnection conexion = new SqlConnection(cadena);
+            conexion.Open();
+            string com = "delete from bienoservicio where idbienoservicio=@id;";
+            SqlCommand cmd = new SqlCommand(com, conexion);
+            cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+            cmd.Parameters["@id"].Value = idproducto;
+            cmd.ExecuteNonQuery();
+        }
+
     }
 
 }

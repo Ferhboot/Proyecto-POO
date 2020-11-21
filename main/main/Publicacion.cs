@@ -161,7 +161,6 @@ namespace main
         {
             if (dtvpublicaciones.Rows.Count != 0)
             {
-                int prod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
                 string nom = dtvpublicaciones.CurrentRow.Cells[1].FormattedValue.ToString();
                 txtnom.Text = nom;
                 txtnom.Enabled = true;
@@ -189,6 +188,32 @@ namespace main
             {
 
             }
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            int prod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
+            Conexion cn = new Conexion();
+            if (MessageBox.Show("¿Realmente desea eliminar este producto? Esta acción no se puede deshacer",
+                "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cn.eliminarProducto(prod);
+                MessageBox.Show("Producto eliminado", "Aviso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                dtvpublicaciones.DataSource = null;
+                dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                dtvpublicaciones.Columns[0].Visible = false;
+                dtvpublicaciones.Columns[5].Visible = false;
+
+                txtnom.Enabled = false;
+                txtprec.Enabled = false;
+                cbcat.Enabled = false;
+                txtsto.Enabled = false;
+                txtdesc.Enabled = false;
+            }
+            
+
         }
     }
 }

@@ -374,6 +374,7 @@
             this.btneliminar.TabIndex = 2;
             this.btneliminar.Text = "Eliminar este producto";
             this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnupdate
             // 

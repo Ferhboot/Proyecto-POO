@@ -244,6 +244,11 @@ namespace main
                 tableLayoutPanel8.Visible = true;
                 tableLayoutPanel9.Visible = true;
 
+                button5.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                button8.Enabled = true;
+
 
             }
             else if (b.Count == (paginaActual * 4) - 1)
@@ -559,7 +564,10 @@ namespace main
         private void button9_Click(object sender, EventArgs e)
         {
             Conexion p = new Conexion();
-            b = p.buscarBienOServicio("");
+            b = p.listaBienOServicio();
+
+            paginaActual = 1;
+
             paginador();
             dgcategorias.ClearSelection();
         }

@@ -83,7 +83,27 @@ namespace main
 
             if (rs == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(fo.FileName);
+
+                if(fo.FileName.ToLower().EndsWith("jpg") || fo.FileName.ToLower().EndsWith("jpeg") || fo.FileName.ToLower().EndsWith("png"))
+                {
+                    try
+                    {
+                        pictureBox1.Image = Image.FromFile(fo.FileName);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("El tamaño de la imagen es demasiado grande", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("El archivo no cumple el formato: jpg, jpeg o png", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+                
             }
         }
 

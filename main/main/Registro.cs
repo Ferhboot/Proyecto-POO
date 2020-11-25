@@ -72,7 +72,7 @@ namespace main
         {
             if (txtnom.Text != "" && txtuser.Text != "" && txtpass.Text != "" &&
                 txtpass2.Text != "" && txtemail.Text != "" && cmbdep.SelectedIndex!=-1 &&
-                txtmunicipio.Text!="" && txttelefono.Text!="" && txtpass.Text!="")
+                txtmunicipio.Text!="" && txttelefono.Text!="" && txtpass.Text!="" && txtdireccion.Text!="")
             {
                 if (txtpass.Text != txtpass2.Text)
                 {
@@ -84,31 +84,44 @@ namespace main
                     {
 
                         Validaciones validacion = new Validaciones();
-                        if (validacion.esFuerte(txtpass.Text))
+
+                        if (!validacion.esTelefono(txttelefono.Text))
                         {
+                            MessageBox.Show("Teléfono con formato incorrecto");
+                        }
 
-                            Datos user = new Datos();
-
-                            user.Nombre = txtnom.Text;
-                            user.Apellido = txtapellido.Text;
-                            user.Departamento = cmbdep.Text;
-                            user.Municipio = txtmunicipio.Text;
-                            user.Direccion = txtdireccion.Text;
-                            user.Telefono = txttelefono.Text;
-
-                            user.IDusuario = txtuser.Text;
-                            user.Contra = txtpass.Text;
-                            user.Idtipousuario = 1;
-                            user.Email = txtemail.Text;
-
-                            user.registrar(user);
-                            MessageBox.Show("Usuario registrado exitosamente", "E-Market",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                        else if (!validacion.esCorreo(txtemail.Text))
+                        {
+                            errorProvider1.SetError(txtemail, "Correo inválido");
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar una contraseña más fuerte\n\nDebe contener al menos:\n1 Letra mayúscula\n1 Número\n8 Carácteres");
+                            if (validacion.esFuerte(txtpass.Text))
+                            {
+
+                                Datos user = new Datos();
+
+                                user.Nombre = txtnom.Text;
+                                user.Apellido = txtapellido.Text;
+                                user.Departamento = cmbdep.Text;
+                                user.Municipio = txtmunicipio.Text;
+                                user.Direccion = txtdireccion.Text;
+                                user.Telefono = txttelefono.Text;
+
+                                user.IDusuario = txtuser.Text;
+                                user.Contra = txtpass.Text;
+                                user.Idtipousuario = 1;
+                                user.Email = txtemail.Text;
+
+                                user.registrar(user);
+                                MessageBox.Show("Usuario registrado exitosamente", "E-Market",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Debe ingresar una contraseña más fuerte\n\nDebe contener al menos:\n1 Letra mayúscula\n1 Número\n8 Carácteres");
+                            }
                         }
 
 
@@ -134,6 +147,75 @@ namespace main
                 e.Handled = false;
             }
             else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+            if (txttelefono.Text.Length == 4)
+            {
+                if (!char.IsControl(e.KeyChar))
+                {
+                    txttelefono.Text += "-";
+                    txttelefono.SelectionStart = 5;
+                }
+            }
+        }
+
+        private void txtnom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtapellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtmunicipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }

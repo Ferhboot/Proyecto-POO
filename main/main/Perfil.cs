@@ -153,7 +153,7 @@ namespace main
                     
                     if (!validacion.esTelefono(txttelefono.Text))
                     {
-                        errorProvider1.SetError(txttelefono, "Teléfono debe ser mayor a 7 dígitos");
+                        errorProvider1.SetError(txttelefono, "Teléfono con formato incorrecto");
                     }
 
                     else

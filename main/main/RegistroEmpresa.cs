@@ -70,35 +70,50 @@ namespace main
                     {
 
                         Validaciones validacion = new Validaciones();
-                        if (validacion.esFuerte(txtpass.Text))
+
+                        if (!validacion.esTelefono(txttelefono.Text))
                         {
+                            MessageBox.Show("Teléfono con formato incorrecto");
+                        }
 
-                            Empresa user = new Empresa();
-
-                            user.NombreEmpresa = txtempresa.Text;
-
-                            user.Nombre = txtnom.Text;
-                            user.Apellido = txtapellido.Text;
-                            user.Departamento = cmbdep.Text;
-                            user.Municipio = txtmunicipio.Text;
-                            user.Direccion = txtdireccion.Text;
-                            user.Telefono = txttelefono.Text;
-
-                            user.IDusuario = txtuser.Text;
-                            user.Contra = txtpass.Text;
-                            user.Idtipousuario = 2;
-                            user.Email = txtemail.Text;
-
-                            user.registrar(user);
-
-                            MessageBox.Show("Empresa registrada exitosamente", "E-Market",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                        else if (!validacion.esCorreo(txtemail.Text))
+                        {
+                            errorProvider1.SetError(txtemail, "Correo inválido");
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar una contraseña más fuerte\n\nDebe contener al menos:\n1 Letra mayúscula\n1 Número\n8 Carácteres");
+                            if (validacion.esFuerte(txtpass.Text))
+                            {
+
+                                Empresa user = new Empresa();
+
+                                user.NombreEmpresa = txtempresa.Text;
+
+                                user.Nombre = txtnom.Text;
+                                user.Apellido = txtapellido.Text;
+                                user.Departamento = cmbdep.Text;
+                                user.Municipio = txtmunicipio.Text;
+                                user.Direccion = txtdireccion.Text;
+                                user.Telefono = txttelefono.Text;
+
+                                user.IDusuario = txtuser.Text;
+                                user.Contra = txtpass.Text;
+                                user.Idtipousuario = 2;
+                                user.Email = txtemail.Text;
+
+                                user.registrar(user);
+
+                                MessageBox.Show("Empresa registrada exitosamente", "E-Market",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Debe ingresar una contraseña más fuerte\n\nDebe contener al menos:\n1 Letra mayúscula\n1 Número\n8 Carácteres");
+                            }
                         }
+
+                        
 
                     }
                     catch (Exception x)
@@ -158,6 +173,77 @@ namespace main
                 e.Handled = false;
             }
             else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+
+            if (txttelefono.Text.Length == 4)
+            {
+                if (!char.IsControl(e.KeyChar))
+                {
+                    txttelefono.Text += "-";
+                    txttelefono.SelectionStart = 5;
+                }
+            }
+
+        }
+
+        private void txtnom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtapellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtmunicipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }

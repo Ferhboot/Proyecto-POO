@@ -109,55 +109,150 @@ namespace main
 
         private void btnGUARDAR_Click(object sender, EventArgs e)
         {
-
-
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-
-            BienOServicio b = new BienOServicio();
-
-            b.Nombre = txtnombre.Text;
-            b.Descripcion = txtdescripcion.Text;
-            b.Precio = float.Parse(txtprecio.Text);
-
-            if (txtcantidad.Text.Trim() != "")
+            if (rbtnBIEN.Checked == true)
             {
-                b.Cantidad = int.Parse(txtcantidad.Text);
-            }
-            else
-            {
-                if (rbtnSERVICIO.Checked)
+                if (txtnombre.Text != "" && cmbcategoria.SelectedIndex != -1 &&
+                txtprecio.Text != "" && txtcantidad.Text!="" && txtdescripcion.Text != "")
                 {
-                    b.Cantidad = -1;
+                    if (pictureBox1.Image != null)
+                    {
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                        pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+
+                        BienOServicio b = new BienOServicio();
+
+                        b.Nombre = txtnombre.Text;
+                        b.Descripcion = txtdescripcion.Text;
+                        b.Precio = float.Parse(txtprecio.Text);
+
+                        if (txtcantidad.Text.Trim() != "")
+                        {
+                            b.Cantidad = int.Parse(txtcantidad.Text);
+                        }
+                        else
+                        {
+                            if (rbtnSERVICIO.Checked)
+                            {
+                                b.Cantidad = -1;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Debe ingresar una cantidad", "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
+                        }
+
+                        b.Imagen = ms.GetBuffer();
+                        b.User = new Usuario();
+                        b.User.IDusuario = idUsuario;
+                        b.Cat = new Categoria();
+                        b.Cat.Idcategoria = Convert.ToInt32(cmbcategoria.SelectedValue.ToString());
+
+                        b.registrarBienOServicio(b);
+
+                        MessageBox.Show("Producto registrado y publicado exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Conexion cn = new Conexion();
+
+                        dtvpublicaciones.DataSource = null;
+                        dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                        dtvpublicaciones.Columns[0].Visible = false;
+                        dtvpublicaciones.Columns[5].Visible = false;
+
+                        dtvpublicaciones.ClearSelection();
+
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe asignar una imagen al producto", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Debe ingresar una cantidad", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Debe rellenar todos los campos", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+            }
+            else if (rbtnSERVICIO.Checked == true)
+            {
+                if (txtnombre.Text != "" && cmbcategoria.SelectedIndex != -1 &&
+                txtprecio.Text != ""  && txtdescripcion.Text != "")
+                {
+                    if (pictureBox1.Image != null)
+                    {
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                        pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+
+                        BienOServicio b = new BienOServicio();
+
+                        b.Nombre = txtnombre.Text;
+                        b.Descripcion = txtdescripcion.Text;
+                        b.Precio = float.Parse(txtprecio.Text);
+
+                        if (txtcantidad.Text.Trim() != "")
+                        {
+                            b.Cantidad = int.Parse(txtcantidad.Text);
+                        }
+                        else
+                        {
+                            if (rbtnSERVICIO.Checked)
+                            {
+                                b.Cantidad = -1;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Debe ingresar una cantidad", "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
+                        }
+
+                        b.Imagen = ms.GetBuffer();
+                        b.User = new Usuario();
+                        b.User.IDusuario = idUsuario;
+                        b.Cat = new Categoria();
+                        b.Cat.Idcategoria = Convert.ToInt32(cmbcategoria.SelectedValue.ToString());
+
+                        b.registrarBienOServicio(b);
+
+                        MessageBox.Show("Producto registrado y publicado exitosamente", "E-Market", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Conexion cn = new Conexion();
+
+                        dtvpublicaciones.DataSource = null;
+                        dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                        dtvpublicaciones.Columns[0].Visible = false;
+                        dtvpublicaciones.Columns[5].Visible = false;
+
+                        dtvpublicaciones.ClearSelection();
+
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe asignar una imagen al producto", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Debe rellenar todos los campos", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-
-            b.Imagen = ms.GetBuffer();
-            b.User = new Usuario();
-            b.User.IDusuario = idUsuario;
-            b.Cat = new Categoria();
-            b.Cat.Idcategoria = Convert.ToInt32(cmbcategoria.SelectedValue.ToString());
-
-            b.registrarBienOServicio(b);       
-
-            MessageBox.Show("Producto registrado y publicado exitosamente", "E-Market",MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            Conexion cn = new Conexion();
-
-            dtvpublicaciones.DataSource = null;
-            dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
-            dtvpublicaciones.Columns[0].Visible = false;
-            dtvpublicaciones.Columns[5].Visible = false;
-
-            dtvpublicaciones.ClearSelection();
-
-            limpiar();
+            else
+            {
+                MessageBox.Show("Elija un tipo de publicación", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+            
         }
 
         private void limpiar()
@@ -190,6 +285,8 @@ namespace main
                 double prec = double.Parse(dtvpublicaciones.CurrentRow.Cells[4].FormattedValue.ToString());
                 txtprec.Text = prec.ToString();
                 txtprec.Enabled = true;
+                btnupdate.Enabled = true;
+                btneliminar.Enabled = true;
                 int sto = int.Parse(dtvpublicaciones.CurrentRow.Cells[5].FormattedValue.ToString());
                 if (sto > 0)
                 {
@@ -228,6 +325,8 @@ namespace main
                 cbcat.Enabled = false;
                 txtsto.Enabled = false;
                 txtdesc.Enabled = false;
+                btnupdate.Enabled = false;
+                btneliminar.Enabled = false;
             }
             
 
@@ -237,73 +336,189 @@ namespace main
         {
             if (txtsto.Enabled == true)
             {
-                Conexion cn = new Conexion();
-                string nom = txtnom.Text;
-                string desc = txtdesc.Text;
-                string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
-                double prec = double.Parse(txtprec.Text);
-                int sto = int.Parse(txtsto.Text);
-                int idprod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
+                if(txtnom.Text!="" && cbcat.SelectedIndex!=-1 && txtprec.Text!=""
+                    && txtsto.Text!="" && txtdesc.Text != "")
+                {
+                    Conexion cn = new Conexion();
+                    string nom = txtnom.Text;
+                    string desc = txtdesc.Text;
+                    string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
+                    double prec = double.Parse(txtprec.Text);
+                    int sto = int.Parse(txtsto.Text);
+                    int idprod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
+
+                    cn.UpdateProductoA(idprod, nom, desc, int.Parse(cbcat.SelectedValue.ToString()), prec, sto);
+
+                    MessageBox.Show("Producto actualizado", "Éxito", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    dtvpublicaciones.DataSource = null;
+                    dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                    dtvpublicaciones.Columns[0].Visible = false;
+                    dtvpublicaciones.Columns[5].Visible = false;
+
+                    txtnom.Enabled = false;
+                    txtprec.Enabled = false;
+                    cbcat.Enabled = false;
+                    txtsto.Enabled = false;
+                    txtdesc.Enabled = false;
+
+                    txtnom.Clear();
+                    txtprec.Clear();
+                    cbcat.SelectedIndex = -1;
+                    txtsto.Clear();
+                    txtdesc.Clear();
+
+                    btnupdate.Enabled = false;
+                    btneliminar.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe rellenar todos los campos", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 
-                cn.UpdateProductoA(idprod, nom, desc, int.Parse(cbcat.SelectedValue.ToString()), prec, sto);
-                
-                MessageBox.Show("Producto actualizado", "Éxito", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-                                
-                dtvpublicaciones.DataSource = null;
-                dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
-                dtvpublicaciones.Columns[0].Visible = false;
-                dtvpublicaciones.Columns[5].Visible = false;
-
-                txtnom.Enabled = false;
-                txtprec.Enabled = false;
-                cbcat.Enabled = false;
-                txtsto.Enabled = false;
-                txtdesc.Enabled = false;
-
-                txtnom.Clear();
-                txtprec.Clear();
-                cbcat.SelectedIndex = -1;
-                txtsto.Clear();
-                txtdesc.Clear();
-
-                btnupdate.Enabled = false;
-                btneliminar.Enabled = false;
             }
 
             else
             {
-                Conexion cn = new Conexion();
-                string nom = txtnom.Text;
-                string desc = txtdesc.Text;
-                string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
-                double prec = double.Parse(txtprec.Text);
-                int idprod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
-                
-                cn.UpdateProductoB(idprod, nom, desc, int.Parse(cbcat.SelectedValue.ToString()), prec);
-                
-                MessageBox.Show("Producto actualizado", "Éxito", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-                                
-                dtvpublicaciones.DataSource = null;
-                dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
-                dtvpublicaciones.Columns[0].Visible = false;
-                dtvpublicaciones.Columns[5].Visible = false;
+                if (txtnom.Text != "" && cbcat.SelectedIndex != -1 && txtprec.Text != ""
+                     && txtdesc.Text != "")
+                {
+                    Conexion cn = new Conexion();
+                    string nom = txtnom.Text;
+                    string desc = txtdesc.Text;
+                    string cat = dtvpublicaciones.CurrentRow.Cells[3].FormattedValue.ToString();
+                    double prec = double.Parse(txtprec.Text);
+                    int idprod = int.Parse(dtvpublicaciones.CurrentRow.Cells[0].FormattedValue.ToString());
 
-                txtnom.Enabled = false;
-                txtprec.Enabled = false;
-                cbcat.Enabled = false;
-                txtsto.Enabled = false;
-                txtdesc.Enabled = false;
+                    cn.UpdateProductoB(idprod, nom, desc, int.Parse(cbcat.SelectedValue.ToString()), prec);
 
-                txtnom.Clear();
-                txtprec.Clear();
-                cbcat.SelectedIndex = -1;
-                txtsto.Clear();
-                txtdesc.Clear();
+                    MessageBox.Show("Producto actualizado", "Éxito", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
-                btnupdate.Enabled = false;
-                btneliminar.Enabled = false;
+                    dtvpublicaciones.DataSource = null;
+                    dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+                    dtvpublicaciones.Columns[0].Visible = false;
+                    dtvpublicaciones.Columns[5].Visible = false;
+
+                    txtnom.Enabled = false;
+                    txtprec.Enabled = false;
+                    cbcat.Enabled = false;
+                    txtsto.Enabled = false;
+                    txtdesc.Enabled = false;
+
+                    txtnom.Clear();
+                    txtprec.Clear();
+                    cbcat.SelectedIndex = -1;
+                    txtsto.Clear();
+                    txtdesc.Clear();
+
+                    btnupdate.Enabled = false;
+                    btneliminar.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Debe rellenar todos los campos", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                    
+            }
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            Conexion cn = new Conexion();
+            dtvpublicaciones.DataSource = null;
+            dtvpublicaciones.DataSource = cn.VerMisProductos(idUsuario).Tables["productos"];
+            dtvpublicaciones.Columns[0].Visible = false;
+            dtvpublicaciones.Columns[5].Visible = false;
+
+            txtnom.Enabled = false;
+            txtprec.Enabled = false;
+            cbcat.Enabled = false;
+            txtsto.Enabled = false;
+            txtdesc.Enabled = false;
+
+            txtnom.Clear();
+            txtprec.Clear();
+            cbcat.SelectedIndex = -1;
+            txtsto.Clear();
+            txtdesc.Clear();
+
+            btnupdate.Enabled = false;
+            btneliminar.Enabled = false;
+        }
+
+        private void txtprec_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if((e.KeyChar == '.') && (!txtprec.Text.Contains(".")))
+            { 
+                e.Handled = false; 
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtsto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == '.') && (!txtprecio.Text.Contains(".")))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

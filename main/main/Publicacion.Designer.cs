@@ -85,6 +85,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(827, 490);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // tabPage1
             // 
@@ -213,6 +214,7 @@
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(215, 22);
             this.txtcantidad.TabIndex = 9;
+            this.txtcantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcantidad_KeyPress);
             // 
             // lblcantidad
             // 
@@ -220,9 +222,9 @@
             this.lblcantidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcantidad.Location = new System.Drawing.Point(560, 108);
             this.lblcantidad.Name = "lblcantidad";
-            this.lblcantidad.Size = new System.Drawing.Size(73, 16);
+            this.lblcantidad.Size = new System.Drawing.Size(144, 16);
             this.lblcantidad.TabIndex = 8;
-            this.lblcantidad.Text = "CANTIDAD:";
+            this.lblcantidad.Text = "UNIDADES DISPONIBLES:";
             // 
             // txtprecio
             // 
@@ -232,6 +234,7 @@
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(215, 22);
             this.txtprecio.TabIndex = 7;
+            this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             // 
             // lblprecio
             // 
@@ -396,6 +399,7 @@
             this.txtsto.Name = "txtsto";
             this.txtsto.Size = new System.Drawing.Size(176, 22);
             this.txtsto.TabIndex = 7;
+            this.txtsto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsto_KeyPress);
             // 
             // txtdesc
             // 
@@ -411,6 +415,7 @@
             this.txtprec.Name = "txtprec";
             this.txtprec.Size = new System.Drawing.Size(176, 22);
             this.txtprec.TabIndex = 4;
+            this.txtprec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprec_KeyPress);
             // 
             // txtnom
             // 

@@ -57,7 +57,7 @@ namespace main
                             cargar();
                             limpiar();
                         }
-                        catch (Exception x)
+                        catch
                         {
                             MessageBox.Show("No se pudo completar la acción",
                                 "Error",

@@ -68,7 +68,7 @@ namespace main
                         MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception x)
+                catch
                 {
                     MessageBox.Show("Hubo un error", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);

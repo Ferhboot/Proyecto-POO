@@ -71,7 +71,8 @@ namespace main
         private void registrar()
         {
             if (txtnom.Text != "" && txtuser.Text != "" && txtpass.Text != "" &&
-                txtpass2.Text != "" && txtemail.Text != "")
+                txtpass2.Text != "" && txtemail.Text != "" && cmbdep.SelectedIndex!=-1 &&
+                txtmunicipio.Text!="" && txttelefono.Text!="" && txtpass.Text!="")
             {
                 if (txtpass.Text != txtpass2.Text)
                 {
@@ -123,6 +124,22 @@ namespace main
             {
                 MessageBox.Show("Debe rellenar todos los campos", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

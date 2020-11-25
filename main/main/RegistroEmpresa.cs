@@ -56,7 +56,9 @@ namespace main
         private void registrar()
         {
             if (txtnom.Text != "" && txtuser.Text != "" && txtpass.Text != "" &&
-                txtpass2.Text != "" && txtemail.Text != "")
+                txtpass2.Text != "" && txtemail.Text != "" && txtapellido.Text!=""
+                && txttelefono.Text!="" && txtempresa.Text!="" && cmbdep.SelectedIndex!=-1 &&
+                txtmunicipio.Text!="" && txtdireccion.Text!="")
             {
                 if (txtpass.Text != txtpass2.Text)
                 {
@@ -147,6 +149,22 @@ namespace main
             txtpass.Clear();
             txtpass2.Clear();
             txtuser.Clear();
+        }
+
+        private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

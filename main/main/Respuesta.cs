@@ -49,7 +49,7 @@ namespace main
             }
             else
             {
-                MessageBox.Show("El mensaje debe tener menos de 299 caracteres",
+                MessageBox.Show("El mensaje no puede estar vacío ni debe tener más de 299 caracteres",
                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }

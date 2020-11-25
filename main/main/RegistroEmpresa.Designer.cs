@@ -102,7 +102,7 @@
             this.groupBox2.Location = new System.Drawing.Point(362, 169);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(306, 179);
-            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de usuario";
             // 
@@ -123,7 +123,7 @@
             this.txtuser.Location = new System.Drawing.Point(139, 22);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(159, 21);
-            this.txtuser.TabIndex = 7;
+            this.txtuser.TabIndex = 8;
             // 
             // txtpass2
             // 
@@ -132,7 +132,7 @@
             this.txtpass2.Name = "txtpass2";
             this.txtpass2.PasswordChar = '*';
             this.txtpass2.Size = new System.Drawing.Size(159, 21);
-            this.txtpass2.TabIndex = 10;
+            this.txtpass2.TabIndex = 11;
             // 
             // lbfuerte
             // 
@@ -149,7 +149,7 @@
             this.txtpass.Name = "txtpass";
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(159, 21);
-            this.txtpass.TabIndex = 9;
+            this.txtpass.TabIndex = 10;
             this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             // 
             // txtemail
@@ -158,7 +158,7 @@
             this.txtemail.Location = new System.Drawing.Point(139, 62);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(159, 21);
-            this.txtemail.TabIndex = 8;
+            this.txtemail.TabIndex = 9;
             // 
             // label5
             // 
@@ -228,6 +228,7 @@
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(159, 21);
             this.txttelefono.TabIndex = 3;
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefono_KeyPress);
             // 
             // label4
             // 
@@ -309,7 +310,7 @@
             this.txtdireccion.Multiline = true;
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(159, 57);
-            this.txtdireccion.TabIndex = 6;
+            this.txtdireccion.TabIndex = 7;
             // 
             // label10
             // 
@@ -328,7 +329,7 @@
             this.txtmunicipio.Location = new System.Drawing.Point(140, 99);
             this.txtmunicipio.Name = "txtmunicipio";
             this.txtmunicipio.Size = new System.Drawing.Size(159, 21);
-            this.txtmunicipio.TabIndex = 5;
+            this.txtmunicipio.TabIndex = 6;
             // 
             // label7
             // 
@@ -404,7 +405,7 @@
             this.groupBox3.Location = new System.Drawing.Point(32, 326);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(306, 209);
-            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de empresa";
             // 

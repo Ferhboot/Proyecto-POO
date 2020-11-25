@@ -56,48 +56,77 @@ namespace main
 
         private void dgreportes_DoubleClick(object sender, EventArgs e)
         {   
-            int id = int.Parse(dgreportes.CurrentRow.Cells[0].FormattedValue.ToString());
-            string mensaje = dgreportes.CurrentRow.Cells[3].FormattedValue.ToString();
-            string ver = "Reporte: " + Environment.NewLine + 
-                Environment.NewLine + "'" +mensaje + "'";
-
-            if (MessageBox.Show(ver, "Reporte", 
-                MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+            if (dgreportes.CurrentRow != null)
             {
-                cn.cambiarEstadoReporte(id);
-                rbnoleido.Checked = true;
-                cargar("where Estado='No leido'");
+                int id = int.Parse(dgreportes.CurrentRow.Cells[0].FormattedValue.ToString());
+                string mensaje = dgreportes.CurrentRow.Cells[3].FormattedValue.ToString();
+                string ver = "Reporte: " + Environment.NewLine +
+                    Environment.NewLine + "'" + mensaje + "'";
+
+                if (MessageBox.Show(ver, "Reporte",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    cn.cambiarEstadoReporte(id);
+                    rbnoleido.Checked = true;
+                    cargar("where Estado='No leido'");
+                }
             }
-            
+
+            else
+            {
+
+            }
 
         }
 
         private void dgreportes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = int.Parse(dgreportes.CurrentRow.Cells[0].FormattedValue.ToString());
-            label3.Visible = true;
-            label3.Text = "Reporte ID " + id.ToString() + " seleccionado";
+            if (dgreportes.CurrentRow != null)
+            {
+                int id = int.Parse(dgreportes.CurrentRow.Cells[0].FormattedValue.ToString());
+                label3.Visible = true;
+                label3.Text = "Reporte ID " + id.ToString() + " seleccionado";
+            }
+            else
+            {
+
+            }
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dgreportes.CurrentRow.Cells[0].FormattedValue.ToString());
-            string alerta = "¿Realmente desea eliminar este reporte? Esta acción no puede deshacerse";
-            if (MessageBox.Show(alerta,"Advertencia", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
+            if (dgreportes.CurrentRow != null)
             {
-                cn.eliminarReporte(id);
-                rbtodo.Checked = true;
-                cargar("");
+                int id = int.Parse(dgreportes.CurrentRow.Cells[0].FormattedValue.ToString());
+                string alerta = "¿Realmente desea eliminar este reporte? Esta acción no puede deshacerse";
+                if (MessageBox.Show(alerta, "Advertencia", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.eliminarReporte(id);
+                    rbtodo.Checked = true;
+                    cargar("");
+                }
+            }
+            else
+            {
+
             }
         }
 
         private void btnresponder_Click(object sender, EventArgs e)
         {
-            string dest = dgreportes.CurrentRow.Cells[1].FormattedValue.ToString();
-            string name = dgreportes.CurrentRow.Cells[2].FormattedValue.ToString();
-            Respuesta resp = new Respuesta(id, dest, name);
-            resp.ShowDialog();
+            if (dgreportes.CurrentRow != null)
+            {
+                string dest = dgreportes.CurrentRow.Cells[1].FormattedValue.ToString();
+                string name = dgreportes.CurrentRow.Cells[2].FormattedValue.ToString();
+                Respuesta resp = new Respuesta(id, dest, name);
+                resp.ShowDialog();
+            }
+            else
+            {
+
+            }
+                
         }
 
         private void btnVer_Click(object sender, EventArgs e)

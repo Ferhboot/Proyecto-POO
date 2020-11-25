@@ -48,6 +48,7 @@ namespace main
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
+            Categoria cat = new Categoria();
             Validaciones validacion = new Validaciones();
             if (!validacion.enBlanco(txtcategoria.Text))
             {
@@ -68,7 +69,7 @@ namespace main
                         MessageBoxIcon.Error);
                     }
                 }
-                catch
+                catch (Exception x)
                 {
                     MessageBox.Show("Hubo un error", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -144,14 +145,14 @@ namespace main
                     }
                     else
                     {
-                        MessageBox.Show("Hubo un error, intente nuevamente", "Error",
+                        MessageBox.Show("Esta categoría no puede eliminarse porque posee productos registrados", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Hubo un error, intente nuevamente", "Error",
+                MessageBox.Show("Esta categoría no puede eliminarse porque posee productos registrados", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

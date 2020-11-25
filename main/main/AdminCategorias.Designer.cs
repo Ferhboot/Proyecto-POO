@@ -125,6 +125,7 @@
             this.dgvcategorias.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvcategorias.EnableHeadersVisualStyles = false;
             this.dgvcategorias.Location = new System.Drawing.Point(12, 84);
+            this.dgvcategorias.MultiSelect = false;
             this.dgvcategorias.Name = "dgvcategorias";
             this.dgvcategorias.ReadOnly = true;
             this.dgvcategorias.RowHeadersVisible = false;
@@ -139,7 +140,7 @@
             this.btnmodificar.Enabled = false;
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.Location = new System.Drawing.Point(415, 331);
+            this.btnmodificar.Location = new System.Drawing.Point(470, 331);
             this.btnmodificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(87, 28);
@@ -154,7 +155,7 @@
             this.btneliminar.Enabled = false;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(508, 331);
+            this.btneliminar.Location = new System.Drawing.Point(470, 403);
             this.btneliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(87, 28);

@@ -390,7 +390,7 @@ namespace main
 
             paginaActual += 1;
 
-            if((b.Count) >= (paginaActual * 4)) {
+            if((b.Count) >= ((paginaActual - 1) * 4)) {
 
                 paginador();
 
@@ -444,7 +444,7 @@ namespace main
         {
             paginaActual += 1;
 
-            if ((b.Count) >= (paginaActual * 4))
+            if ((b.Count) >= ((paginaActual-1) * 4))
             {   
 
                 paginador();
@@ -507,12 +507,17 @@ namespace main
 
             Conexion p = new Conexion();
 
-            if (p.listaBienOServicio() != null)
+            if (p.listaPorCategoria(categoria) != null)
             {
 
                 paginaActual = 1;
 
                 b = p.listaPorCategoria(categoria);
+
+                button6.BackColor = Color.Wheat;
+                button6.ForeColor = Color.Black;
+                button7.BackColor = Color.IndianRed;
+                button7.ForeColor = Color.White;
 
                 paginador();
 
@@ -567,7 +572,10 @@ namespace main
             b = p.listaBienOServicio();
 
             paginaActual = 1;
-
+            button6.BackColor = Color.Wheat;
+            button6.ForeColor = Color.Black;
+            button7.BackColor = Color.IndianRed;
+            button7.ForeColor = Color.White;
             paginador();
             dgcategorias.ClearSelection();
         }

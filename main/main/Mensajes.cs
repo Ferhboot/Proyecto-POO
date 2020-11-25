@@ -55,33 +55,34 @@ namespace main
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            int idmensaje = -1;
-            idmensaje = int.Parse(dgmensajes.CurrentRow.Cells[0].FormattedValue.ToString());
-            
-            if (idmensaje != -1)
+            if (dgmensajes.CurrentRow != null) 
             {
-                //MessageBox.Show(idmensaje.ToString());
-                if (MessageBox.Show("Esta acción no puede deshacerse. ¿Desea Continuar?",
-                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                int idmensaje = int.Parse(dgmensajes.CurrentRow.Cells[0].FormattedValue.ToString());
+                if (idmensaje != -1)
                 {
-                    if (cn.eliminarMensaje(idmensaje))
+                    //MessageBox.Show(idmensaje.ToString());
+                    if (MessageBox.Show("Esta acción no puede deshacerse. ¿Desea Continuar?",
+                        "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
- 
-                        MessageBox.Show("Mensaje Eliminado", "Éxito", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                        cargar(todo);
-                        rbtodo.Checked = true;
+                        if (cn.eliminarMensaje(idmensaje))
+                        {
+
+                            MessageBox.Show("Mensaje Eliminado", "Éxito", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                            cargar(todo);
+                            rbtodo.Checked = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Hubo un error");
-                    }                   
                 }
             }
+                          
             else
             {
-                MessageBox.Show("Por favor, elija un mensaje", "E-Market", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                
             }
         }
 
@@ -92,20 +93,35 @@ namespace main
 
         private void btnresponder_Click(object sender, EventArgs e)
         {
-            string destino = dgmensajes.CurrentRow.Cells[1].FormattedValue.ToString();
-            string nombre = dgmensajes.CurrentRow.Cells[2].FormattedValue.ToString();
-            Respuesta resp = new Respuesta(user, destino, nombre);
-            resp.ShowDialog();
+            if (dgmensajes.CurrentRow != null)
+            {
+                string destino = dgmensajes.CurrentRow.Cells[1].FormattedValue.ToString();
+                string nombre = dgmensajes.CurrentRow.Cells[2].FormattedValue.ToString();
+                Respuesta resp = new Respuesta(user, destino, nombre);
+                resp.ShowDialog();
+            }
+            else
+            {
+
+            }
+                
         }
 
         private void dgmensajes_DoubleClick(object sender, EventArgs e)
         {
-            int idm = int.Parse(dgmensajes.CurrentRow.Cells[0].FormattedValue.ToString());
-            string m = dgmensajes.CurrentRow.Cells[3].FormattedValue.ToString();
-            MessageBox.Show(m, "Mensaje", MessageBoxButtons.OK);
-            cn.cambiarEstadoMensaje(idm);
-            rbnoleido.Checked = true;
-            cargar(noleido);
+            if (dgmensajes.CurrentRow!= null)
+            {
+                int idm = int.Parse(dgmensajes.CurrentRow.Cells[0].FormattedValue.ToString());
+                string m = dgmensajes.CurrentRow.Cells[3].FormattedValue.ToString();
+                MessageBox.Show(m, "Mensaje", MessageBoxButtons.OK);
+                cn.cambiarEstadoMensaje(idm);
+                rbnoleido.Checked = true;
+                cargar(noleido);
+            }
+            else
+            {
+                
+            }
         }
     }
 }
